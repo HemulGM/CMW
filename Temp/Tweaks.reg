@@ -1,0 +1,597 @@
+Windows Registry Editor Version 5.00
+
+
+;------------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------------
+;HKCR.AddReg
+;------------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------------
+
+;Добавляет в контекстное меню "Моего компьютера" команду "Редактор реестра"
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\regedit]
+@="Редактор реестра"
+[HKEY_CLASSES_ROOT\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\regedit\command]
+@="Regedit.exe"
+
+;Добавляет в контекстное меню файлов команду "Как текст..."
+[HKEY_CLASSES_ROOT\*\Shell]
+
+[HKEY_CLASSES_ROOT\*\Shell\astext]
+@="Как текст..."
+
+[HKEY_CLASSES_ROOT\*\Shell\astext\command]
+@="notepad.exe \"%1\""
+
+;Добавить в контекстное меню dll-файлов команду register/unregister
+[HKEY_CLASSES_ROOT\.dll]
+"Content Type"="application/x-msdownload"
+@="dllfile"
+[HKEY_CLASSES_ROOT\dllfile]
+@="Application Extension"
+[HKEY_CLASSES_ROOT\dllfile\Shell\Register\command]
+@="regsvr32.exe \"%1\""
+[HKEY_CLASSES_ROOT\dllfile\Shell\UnRegister\command]
+@="regsvr32.exe /u \"%1\""
+
+;Позволить переименовывать Корзину
+[HKEY_CLASSES_ROOT\CLSID\{645FF040-5081-101B-9F08-00AA002F954E}\ShellFolder]
+"Attributes"=hex:50,01,00,20
+"CallForAttributes"=dword:00000000
+
+
+;------------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------------
+;HKLM.AddReg
+;------------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------------
+
+;Корзина использует 3% от доступного места на диске (не 10%)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\BitBucket]
+"Percent"=dword:00000003
+
+;Отключить поиск драйверов в сети Интернет при подключении нового устройства
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DriverSearching]
+"DontSearchWindowsUpdate"=dword:00000001
+"DontPromptForWindowsUpdate"=dword:00000001
+
+;Отключить сообщения об ошибках, но оставить уведомление о критических ошибках
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PCHealth\ErrorReporting]
+"IncludeMicrosoftApps"=dword:00000000
+"IncludeWindowsApps"=dword:00000000
+"IncludeKernelFaults"=dword:00000000
+"DoReport"=dword:00000000
+"ShowUI"=dword:00000000
+
+;Отключить автоматическую перезагрузку в случае BSOD
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
+"AutoReboot"=dword:00000000
+"CrashDumpEnabled"=dword:00000000
+"LogEvent"=dword:00000001
+"Overwrite"=dword:00000001
+"SendAlert"=dword:00000000
+
+;Оптимизировать расположение загрузочных файлов, для ускорения загрузки
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Dfrg\BootOptimizeFunction]
+"Enable"="Y"
+
+;Добавляет в контекстное меню "Моего компьютера" команду "Диспетчер устройств"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\_DevMgr]
+@="Диспетчер устройств"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\_DevMgr\command]
+@=hex(2):25,00,77,00,69,00,6e,00,64,00,69,00,72,00,25,00,5c,00,73,00,79,00,73,\
+  00,74,00,65,00,6d,00,33,00,32,00,5c,00,6d,00,6d,00,63,00,2e,00,65,00,78,00,\
+  65,00,20,00,2f,00,73,00,20,00,25,00,77,00,69,00,6e,00,64,00,69,00,72,00,25,\
+  00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,64,00,65,00,\
+  76,00,6d,00,67,00,6d,00,74,00,2e,00,6d,00,73,00,63,00,00,00
+
+;Добавляет в контекстное меню "Моего компьютера" команду "Установка и удаление программ"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\_appwiz]
+@="Установка и удаление программ"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\shell\_appwiz\command]
+@="control appwiz.cpl"
+
+;Увеличение количества кешируемых иконок
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer]
+"Max Cached Icons"="8192"
+
+;Отключить эффекты затухания или скольжения при обращении к меню
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\MenuAnimation]
+"DefaultValue"=dword:00000000
+"DefaultByAlphaTest"=dword:00000000
+
+;Отключить анимацию окон при свертывании и развертывании
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\AnimateMinMax]
+"DefaultValue"=dword:00000000
+
+;Эффекты затухания или скольжения при появлении подсказок
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects\TooltipAnimation]
+"DefaultValue"=dword:00000000
+"DefaultByAlphaTest"=dword:00000000
+
+;Отoбpaжaть  "Сетевое окружение" в Моём компьютере
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{7007ACC7-3202-11D1-AAD2-00805FC1270E}]
+
+;Отключить поиск в сети Интернет при открытии файла с неизвестными расширением
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system]
+"NoInternetOpenWith"=dword:00000001
+
+;Отключить автоматические обновления системы
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update]
+"AUOptions"=dword:00000001
+"AUState"=dword:00000007
+
+;Отключить Prefetch ускоряет загрузку системы
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters]
+"EnablePrefetcher"=dword:00000003
+
+;Отключение локальной и доменной политики брэндмауэра
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\DomainProfile]
+"EnableFirewall"=dword:00000000
+"DisableNotifications"=dword:00000001
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile]
+"EnableFirewall"=dword:00000000
+"DisableNotifications"=dword:00000001
+
+;Отключение уведомлений файера, обновления и антивируса (сама служба работает, более корректно)
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Security Center]
+"FirstRunDisabled"=dword:00000001
+"FirewallDisableNotify"=dword:00000001
+"FirewallOverride"=dword:00000001
+"UpdatesDisableNotify"=dword:00000001
+"UpdatesOverride"=dword:00000001
+"AntiVirusDisableNotify"=dword:00000001
+"AntiVirusOverride"=dword:00000001
+
+;Отключить приглашение Знакомство с Windows
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Applets\Tour]
+"RunCount"=dword:00000000
+
+;Отключить восстановление системы
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore]
+"DisableSR"=dword:00000001
+
+;Ускорить перезагрузку
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"EnableQuickReboot"="1"
+
+;Ускорение работы CD-ROM
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem\CDFS]
+"Prefetch"=dword:00004000
+"PrefetchTail"=dword:00004000
+"CacheSize"=hex:ff,ff,00,00
+
+; Откл. "Удалённого помощника" и "Дистанционное управлнение раб.столом"
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
+"fAllowToGetHelp"=dword:00000000
+"fDenyTSConnections"=dword:00000001
+  
+;Отключить синхронизацию системного времени Windows
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters]
+"Type"="NoSync"
+
+;Ускорение и оптимизация интерфейса
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control]
+"WaitToKillServiceTimeout"="3000"
+
+;Ускорить открытие "Моего компьютера"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoRemoteRecursiveEvents"=dword:00000001
+
+;Отключить "Знакомство с системой"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\ShellServiceObjectDelayLoad]
+"PostBootReminder"=-
+
+;------------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------------
+;Конфигурация служб
+;"Start"=dword:00000002 - Авто 
+;"Start"=dword:00000003 - Вручную 
+;"Start"=dword:00000004 - Отключить 
+;------------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------------
+
+;Отключить службу модуль поддержки смарт-карт (Smart-Card Helper)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SCardDrv]
+"Start"=dword:00000004
+
+;Отключить службу серийных номеров переносных устройств мультимедиа
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WmdmPmSN]
+"Start"=dword:00000004
+
+;Отключить службу индексирования
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CiSvc]
+"Start"=dword:00000004
+
+;Отключить службу сообщений (останавливает спам. не влияет на MSN или Windows Messenger)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Messenger]
+"Start"=dword:00000004
+
+;Отключить службу удаленный доступ к реестру
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RemoteRegistry]
+"Start"=dword:00000004
+
+;Отключить службу "Центр обеспечения безопасности (Security Center)"
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wscsvc] 
+"Start"=dword:00000004
+
+;Отключить службу "Брандмауэр Windows/Общий доступ к Интернету (ICS)"
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess]
+"Start"=dword:00000004
+
+;Отключить службу "Восстановление системы"
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Srservice]
+"Start"=dword:00000004
+
+;Отключить службу загрузки изображений (WIA)
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\stisvc]
+"Start"=dword:00000004
+
+;Отключить службу "Диспетчер сеанса справки для удаленного рабочего стола"
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RDSessMgr]
+"Start"=dword:00000004
+
+;Отключить службу "NetMeeting Remote Desktop Sharing"
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\mnmsrvc]
+"Start"=dword:00000004
+
+;------------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------------
+;HKCU.AddReg
+;------------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------------
+
+;Отключить кэширование  эскизов изображений
+;Отключить проверку недостатка места на диске
+;Отключить меню Недавние Документы в меню Пуск
+;Убрать ярлык "Программы по умолчанию" из меню Пуск
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoThumbnailCache"=dword:00000001
+"NoLowDiskSpaceChecks"=dword:00000001
+"NoRecentDocsMenu"=hex:01,00,00,00
+"NoSMConfigurePrograms"=dword:00000001
+
+;Не показывать Справку и поддержку в меню Пуск
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoSMHelp"=dword:00000001
+
+;Ускорение и оптимизация интерфейса
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"AutoEndTasks"="1"
+"HungAppTimeout"="100"
+"MenuShowDelay"="200"
+"WaitToKillAppTimeout"="3000"
+
+;cached "folder-view settings", currently 250 (to speed-up browsing local folders)
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell]
+"BagMRU Size"=dword:000000FA
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\ShellNoRoam]
+"BagMRU Size"=dword:000000FA
+
+;Убрать автоматический поиск сетевых папок и принтеров
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"NoNetCrawling"=dword:00000001
+
+;Включить панель быстрого запуска
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Streams\Desktop]
+"TaskbarWinXP"=hex:0c,00,00,00,08,00,00,00,03,00,00,00,00,00,00,00,b0,e2,2b,d8,\
+  64,57,d0,11,a9,6e,00,c0,4f,d7,05,a2,22,00,1c,00,0a,10,00,00,1a,00,00,00,01,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,4c,00,00,00,01,14,02,00,00,00,\
+  00,00,c0,00,00,00,00,00,00,46,81,00,00,00,11,00,00,00,b8,ef,13,2c,e7,84,c8,\
+  01,fe,70,c2,56,8b,86,c8,01,84,f2,91,94,4f,85,c8,01,00,00,00,00,00,00,00,00,\
+  01,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,13,02,14,00,1f,50,e0,4f,d0,\
+  20,ea,3a,69,10,a2,d8,08,00,2b,30,30,9d,19,00,2f,43,3a,5c,00,00,00,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,5c,00,31,00,00,00,00,00,6d,38,a0,45,\
+  10,00,44,4f,43,55,4d,45,7e,31,00,00,44,00,03,00,04,00,ef,be,6d,38,ec,5a,6f,\
+  38,92,51,14,00,00,00,44,00,6f,00,63,00,75,00,6d,00,65,00,6e,00,74,00,73,00,\
+  20,00,61,00,6e,00,64,00,20,00,53,00,65,00,74,00,74,00,69,00,6e,00,67,00,73,\
+  00,00,00,18,00,48,00,31,00,00,00,00,00,6f,38,96,56,10,00,39,33,33,35,7e,31,\
+  00,00,32,00,03,00,04,00,ef,be,6d,38,a0,45,6f,38,96,56,14,00,00,00,10,04,34,\
+  04,3c,04,38,04,3d,04,38,04,41,04,42,04,40,04,30,04,42,04,3e,04,40,04,00,00,\
+  16,00,64,00,31,00,00,00,00,00,6d,38,67,89,13,00,41,50,50,4c,49,43,7e,31,00,\
+  00,4c,00,03,00,04,00,ef,be,6d,38,a0,45,6e,38,51,6e,14,00,36,00,41,00,70,00,\
+  70,00,6c,00,69,00,63,00,61,00,74,00,69,00,6f,00,6e,00,20,00,44,00,61,00,74,\
+  00,61,00,00,00,40,73,68,65,6c,6c,33,32,2e,64,6c,6c,2c,2d,32,31,37,36,35,00,\
+  18,00,42,00,31,00,00,00,00,00,38,31,4f,a6,14,00,4d,49,43,52,4f,53,7e,31,00,\
+  00,2a,00,03,00,04,00,ef,be,38,31,d8,a8,38,31,00,a0,14,00,00,00,4d,00,69,00,\
+  63,00,72,00,6f,00,73,00,6f,00,66,00,74,00,00,00,18,00,52,00,31,00,00,00,00,\
+  00,38,31,2e,a8,10,00,49,4e,54,45,52,4e,7e,31,00,00,3a,00,03,00,04,00,ef,be,\
+  38,31,d8,a8,38,31,00,a0,14,00,00,00,49,00,6e,00,74,00,65,00,72,00,6e,00,65,\
+  00,74,00,20,00,45,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,00,00,18,00,\
+  48,00,31,00,00,00,00,00,38,31,e5,a8,11,00,51,55,49,43,4b,4c,7e,31,00,00,30,\
+  00,03,00,04,00,ef,be,38,31,dc,a8,38,31,00,a0,14,00,00,00,51,00,75,00,69,00,\
+  63,00,6b,00,20,00,4c,00,61,00,75,00,6e,00,63,00,68,00,00,00,18,00,00,00,60,\
+  00,00,00,03,00,00,a0,58,00,00,00,00,00,00,00,6d,69,63,72,6f,73,6f,66,2d,34,\
+  34,65,66,32,65,00,2e,4b,c2,bc,ad,c1,f2,47,b3,bc,d7,94,05,c0,c5,c8,a3,1b,34,\
+  66,da,f0,dc,11,9c,62,00,16,d4,1a,5e,0e,2e,4b,c2,bc,ad,c1,f2,47,b3,bc,d7,94,\
+  05,c0,c5,c8,a3,1b,34,66,da,f0,dc,11,9c,62,00,16,d4,1a,5e,0e,10,00,00,00,05,\
+  00,00,a0,1a,00,00,00,35,01,00,00,00,00,00,00,00,00,00,00,60,07,00,00,00,00,\
+  00,00,1e,00,00,00,00,00,00,00,00,00,00,00,1e,00,00,00,00,00,00,00,01,00,00,\
+  00,01,00,00,00,aa,4f,28,68,48,6a,d0,11,8c,78,00,c0,4f,d9,18,b4,2d,03,00,00,\
+  60,0d,00,00,00,00,00,00,1e,00,00,00,00,00,00,00,00,00,00,00,1e,00,00,00,00,\
+  00,00,00,01,00,00,00,02,00,00,00,8b,8a,0d,54,3f,1c,32,4e,81,32,53,0f,6a,50,\
+  20,90,1d,00,00,00,60,05,00,00,00,00,00,00,1c,00,00,00,00,00,00,00,00,00,00,\
+  00,1c,00,00,00,00,00,00,00,01,00,00,00
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Streams\Desktop]
+"Toolbars"=hex:11,00,00,00,00,00,00,00
+
+;Включить строку состояния в папках
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"StatusBarOther"=dword:00000001
+
+;Выводить полный путь в панели адреса и в панели заголовка
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState]
+"FullPath"=dword:00000001
+"FullPathAddress"=dword:00000001
+
+;Включить отображение всех расширений в Проводнике 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"HideFileExt"=dword:00000000
+
+;Отключить "Мастер очистки рабочего стола" (Desktop Cleanup Wizard) 
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Desktop\CleanupWiz]
+"NoRun"=dword:00000001
+
+;Отoбpaжaть  "Панели управления" в Моём компьютере
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideMyComputerIcons]
+"{21EC2020-3AEA-1069-A2DD-08002B30309D}"=dword:00000000
+
+;Отключить скрытие неиспользуемых значков в трее
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"EnableAutoTray"=dword:00000000
+
+;Отключить "Ярлык для" при создании новых ярлыков
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"link"=hex:00,00,00,00
+
+;Расширенная настройка помошника поиска
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"link"=hex:00,00,00,00
+"SearchSystemDirs"=dword:00000001
+"SearchHidden"=dword:00000001
+"IncludeSubFolders"=dword:00000001
+"CaseSensitive"=dword:00000000
+"SearchSlowFiles"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Search Assistant]
+"UseAdvancedSearchAlways"=dword:00000001
+
+;Открывать NFO-файлы при помощи Блокнота :
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo]
+"Application"="NOTEPAD.EXE"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo\OpenWithList]
+"a"="Explorer.exe"
+"MRUList"="ba"
+"b"="NOTEPAD.EXE"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.nfo\OpenWithProgids]
+"MSInfo.Document"=hex(0)
+
+;Показывать все иконки на рабочем столе при старом и новом виде меню
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel]
+"{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000000
+"{450D8FBA-AD25-11D0-98A8-0800361B1103}"=dword:00000000
+"{208D2C60-3AEA-1069-A2D7-08002B30309D}"=dword:00000000
+"{871C5380-42A0-1069-A2EA-08002B30309D}"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartmenu]
+"{20D04FE0-3AEA-1069-A2D8-08002B30309D}"=dword:00000000
+"{450D8FBA-AD25-11D0-98A8-0800361B1103}"=dword:00000000
+"{208D2C60-3AEA-1069-A2D7-08002B30309D}"=dword:00000000
+"{871C5380-42A0-1069-A2EA-08002B30309D}"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"StartMenuInit"=dword:00000001
+"Start_LargeMFUIcons"=dword:00000001
+"Start_MinMFU"=dword:00000003
+"Start_NotifyNewApps"=dword:00000000
+
+;Не запрашивать пароль при выходе из ждущего режима
+[HKEY_CURRENT_USER\Control Panel\PowerCfg\GlobalPowerPolicy]
+"Policies"=hex:01,00,00,00,00,00,00,00,03,00,00,00,10,00,00,00,00,00,00,00,03,\
+  00,00,00,10,00,00,00,02,00,00,00,03,00,00,00,00,00,00,00,02,00,00,00,03,00,\
+  00,00,00,00,00,00,02,00,00,00,01,00,00,00,00,00,00,00,02,00,00,00,01,00,00,\
+  00,00,00,00,00,01,00,00,00,03,00,00,00,02,00,00,00,04,00,00,c0,01,00,00,00,\
+  04,00,00,00,01,00,00,00,0a,00,00,00,00,00,00,00,03,00,00,00,01,00,01,00,01,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,02,00,00,00,\
+  00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,03,00,00,00,00,\
+  00,12,00,00,00
+
+;Отключить предупреждение при открытии файлов, загруженных из Интернета
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Download]
+"CheckExeSignatures"="no"
+"RunInvalidSignatures"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Attachments]
+"SaveZoneInformation"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Associations]
+"LowRiskFileTypes"=".zip;.rar;.nfo;.txt;.exe;.bat;.com;.cmd;.reg;.msi;.htm;.html;.gif;.bmp;.jpg;.avi;.mpg;.mpeg;.mov;.mp3;.m3u;.wav;"
+
+;Параметры подписывания драйверов: не запрашивать утверждения
+[HKEY_CURRENT_USER\Software\Microsoft\Driver Signing]
+"Policy"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Policy"=dword:00000000
+
+;Отключить кэшиpoвaниe эcкизoв изoбpaжeний (файлы Thumbs.db)
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"DisableThumbnailCache"=dword:00000001
+
+;Растянуть обои на рабочем столе
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"TileWallpaper"="0"
+"WallpaperStyle"="2"
+
+;Отключить залипание клавиш
+[HKEY_CURRENT_USER\Control Panel\Accessibility\HighContrast]
+"Flags"="122"
+[HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
+"Flags"="122"
+[HKEY_CURRENT_USER\Control Panel\Accessibility\MouseKeys]
+"Flags"="58"
+[HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys]
+"Flags"="506"
+[HKEY_CURRENT_USER\Control Panel\Accessibility\ToggleKeys]
+"Flags"="58"
+
+; Настройка "Блокнота"
+[HKEY_CURRENT_USER\Software\Microsoft\Notepad]
+"fSavePageSettings"=dword:00000001
+"fSaveWindowPositions"=dword:00000001
+
+;Tahoma font as default
+"lfFaceName"="Tahoma"
+
+;Enable word wrap
+"fWrap"=dword:00000001
+
+;------------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------------
+;Настройки мультимедиа
+;------------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------------
+
+;Отключить лицензионное соглашение в Windows Media Player
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsMediaPlayer]
+"GroupPrivacyAcceptance"=dword:00000001
+
+;Не выводить лицензионное соглашение Windows Media Player :
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"SilentAcquisition"=dword:00000000
+
+;Отключить идентификацию Windows Media Player на интернет-сайтах :
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"SendUserGUID"=dword:00000000
+
+;Отключить автоматическое скачивние кодеков Windows Media Player
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"UpgradeCodecPrompt"=dword:00000000
+
+;Отключить обновление Windows Media Player через Интернет :
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"UpgradeCheckFrequency"=dword:00000007
+
+;Отключить обновление Windows Media Player через Интернет :
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"AskMeAgain"="No"
+
+;Не отправлять отчеты о работе Windows Media Player в Microsoft :
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"UsageTracking"=dword:00000000
+
+;Не использовать Windows Media Player в on-line справочниках :
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Preferences]
+"StartInMediaGuide"=dword:00000000
+
+;Убрать ярлыки на рабочем столе и в QuickLaunch-е
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Setup\UserOptions]
+"DesktopShortcut"="no"
+"QuickLaunchShortcut"="no"
+
+;Включение доступа к настройкам DVD в Windows Media Player
+[HKEY_CURRENT_USER\Software\Microsoft\MediaPlayer\Player\Settings]
+"EnableDVDUI"="yes"
+
+;------------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------------
+;Настройки Internet Explorer и Outlook Express
+;------------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------------
+
+;При первом запуске, IE не будет ломиться на сайт microsoft
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"RunOnceComplete"=dword:00000001
+"RunOnceHasShown"=dword:00000001
+
+;Отключение сообщения о завершении закачки
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"NotifyDownloadComplete"="no"
+
+;Запретить отладку сценариев
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Disable Script Debugger"="yes"
+"DisableScriptDebuggerIE"="yes"
+
+;Пустая домашняя страница
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"IE8RunOnceLastShown"=dword:00000001
+"IE8RunOnceCompleted"=dword:00000001
+"Start Page"="http://xtreme.ws/"
+
+;Добавление поисковиков в IE7, google по умолчанию
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes]
+"DefaultScope"="{B2A025AA-2242-4E2F-8FC6-6DC64A736A80}"
+"Version"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{058C66B2-4CB7-4EFD-BC18-D2ACA9E04F73}]
+"DisplayName"="Wikipedia"
+"URL"="http://ru.wikipedia.org/wiki/{searchTerms}"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{0633EE93-D776-472f-A0FF-E1416B8B2E3A}]
+@="Live Search"
+"DisplayName"="@ieframe.dll,-12512"
+"URL"="http://search.live.com/results.aspx?q={searchTerms}&src={referrer:source?}"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{399C4D3F-AB20-4D91-A26A-06F47F9EA438}]
+"DisplayName"="Rambler"
+"URL"="http://www.rambler.ru/srch?set=www&words={searchTerms}&btnG=%CD%E0%E9%F2%E8%21"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{95F663C0-C370-4955-8B39-63069DB1F6C0}]
+"DisplayName"="Яndex"
+"URL"="http://www.yandex.ru/yandsearch?stype=&nl=0&text={searchTerms}"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{B2A025AA-2242-4E2F-8FC6-6DC64A736A80}]
+"DisplayName"="Google"
+"URL"="http://www.google.ru/search?hl=ru&q={searchTerms}&btnG=%D0%9F%D0%BE%D0%B8%D1%81%D0%BA+%D0%B2+Google&lr="
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\SearchScopes\{FA6CC280-3AEA-4DC3-9C5B-9B729779EC31}]
+"DisplayName"="Microsoft"
+"URL"="http://search.microsoft.com/results.aspx?mkt=ru-RU&setlang=ru-RU&q={searchTerms}"
+
+;Отключает сообщения "Открыта новая вкладка" и "Хотите закрыть все эти вкладки?"
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\TabbedBrowsing]
+"WarnOnClose"=dword:00000000
+"ShowTabsWelcome"=dword:00000000
+
+;Открывать всплывающие окна в новой вкладке
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\TabbedBrowsing]
+"PopupsUseNewWindow"=dword:00000002
+
+;Отключение фишинг фильтра
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\PhishingFilter]
+"Enabled"=dword:00000000
+
+;При заходе на FTP, отключает сообщение "Чтобы просмотреть этот FTP-узел в Проводнике Windows, щелкните Страница, а затем..." (FTP в виде папок в IE7 не работает! - все вопросы к Microsoft)
+[HKEY_CURRENT_USER\Software\Microsoft\FTP]
+"Use Web Based FTP"="yes"
+
+;Minimize Outlook to the System Tray
+[HKEY_Current_User\Software\Microsoft\Office\10.0\Outlook\Preferences]
+"MinToTray"=dword:00000001
+
+;skips the Internet Connection Wizard (which comes the first time you start IE6)
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Connection Wizard]
+"Completed"=hex:01,00,00,00
+"DesktopChanged"=dword:00000001
+
+; Don't let Windows Messenger load involuntarily at every boot-up
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Messenger\Client]
+"PreventAutoRun"=dword:00000001
+
+; Prevent new ads being downloaded every 6 minutes in windows messenger
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MessengerService\Policies]
+"DisableCrossPromo"=hex:80
+
+;Unbundle Windows Messenger from Outlook Express
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Outlook Express]
+"Hide Messenger"=dword:00000002
+
+;Unbundle Windows Messenger from Outlook 2003
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\11.0\Outlook\InstantMessaging]
+"ForceDisableIM"=dword:00000001
+
+;Автоматическая подстановка доменов зоны RU в IE
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main\UrlTemplate]
+"5"="www.%s.ru"
+"6"="www.%s.ua"
+"7"="www.%s.ws"

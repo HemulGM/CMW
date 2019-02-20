@@ -1,0 +1,208 @@
+ќбщие каталоги:
+ - C:\Windows\Temp
+ - C:\Windows\*.log\*.tmp
+ - C:\Users\AppData\Local\Temp
+ - C:\Users\<User>\AppData\Local\Microsoft\Windows\Temporary Internet Files\
+ - C:\D&S\<User>\Local Settings\Temp
+ - C:\D&S\<User>\Local Settings\Temporary Internet Files\
+ - C:\Windows\Prefetch\*.pf
+
+C:Windows\Software\Distribution
+В папке хранятся папки и файлы, закачанные с помощью автоматического обновления.
+ 
+ -----------------------------------------------------------------
+ 
+ uses Windows, SysUtils;
+
+type // тип - список известных мне тегов информации о версии файла (MSDN 6.0)
+  TFviTags = (
+    fviComments,
+    fviCompanyName,
+    fviFileDescription,
+    fviFileVersion,
+    fviInternalName,
+    fviLegalCopyright,
+    fviLegalTrademarks,
+    fviOriginalFilename,
+    fviPrivateBuild,
+    fviProductName,
+    fviProductVersion,
+    fviSpecialBuild
+  );
+
+const // Имена полей (тегов) по-английски:
+  cFviFieldsDef : array[TFviTags] of String = (
+    'Comments',
+    'CompanyName',
+    'FileDescription',
+    'FileVersion',
+    'InternalName',
+    'LegalCopyright',
+    'LegalTrademarks',
+    'OriginalFilename',
+    'PrivateBuild',
+    'ProductName',
+    'ProductVersion',
+    'SpecialBuild'
+  );
+
+const // Имена полей (тегов) по-русски:
+  cFviFieldsRus : array[TFviTags] of String = (
+    'Комментарий',
+    'Производитель',
+    'Описание',
+    'Версия файла',
+    'Внутреннее имя',
+    'Авторские права',
+    'Торговые знаки',
+    'Исходное имя файла',
+    'Приватная версия',
+    'Название продукта',
+    'Версия продукта',
+    'Особая версия'
+  );
+
+const
+  RusLangID = $0419;
+
+type
+  TFileVersionInfoRecord = record
+    LangID:     Word;  // Windows language identifier
+    LangCP:     Word;  // Code page for the language
+    LangName:   array[0..255] of Char;  // Отображаемое Windows имя языка
+    FieldDef:   array[TFviTags] of String; // имя параметра по-английски
+    FieldRus:   array[TFviTags] of String; // имя параметра по-русски
+    Value:      array[TFviTags] of String; // значение параметра
+    FileVer:    String; // языко-независимое значение версии файла
+    ProductVer: String; // языко-независимое значение версии продукта
+    BuildType:  String; // языко-независимое - тип сборки
+    FileType:   String; // языко-независимое - тип продукта
+  end;
+
+procedure
+ GetFileVersionInfoRecord(
+  const FileName: String;
+  out InfoRecord: TFileVersionInfoRecord;
+  out FieldsCount: Integer
+);
+
+var
+  AppFileInfo: TFileVersionInfoRecord;
+  AppInfoFound: Boolean;
+
+////////////////////////////////////////////////////////////////////////////////
+implementation
+
+procedure
+ GetFileVersionInfoRecord(
+  const FileName: String;
+  out InfoRecord: TFileVersionInfoRecord;
+  out FieldsCount: Integer
+);
+type
+  TLangRec = array[0..1] of Word;
+var
+  InfoSize, zero: Cardinal;
+  pbuff: Pointer;
+  pk: Pointer;
+  nk: Cardinal;
+  pffi: ^VS_FIXEDFILEINFO;
+  lang_hex_str: String;
+  i: TFviTags;
+begin
+  FieldsCount := 0;
+  pbuff := Nil;
+  InfoSize := GetFileVersionInfoSize(PChar(FileName),zero);
+  if InfoSize<>0 then
+  try
+    GetMem(pbuff,InfoSize);
+    if GetFileVersionInfo(PChar(FileName),0,InfoSize,pbuff) then
+    begin
+      // root information - языко-независимая информация:
+      if VerQueryValue(pbuff,'\',Pointer(pffi),nk) then
+      with InfoRecord do begin
+        // язык - неизвестный:
+        LangID := 0;
+        INC(FieldsCount);
+        LangCP := 0;
+        INC(FieldsCount);
+        VerLanguageName(LangID,@LangName,256);
+        INC(FieldsCount);
+        // языко-независимое - версия файла:
+        FileVer :=
+          IntToStr(pffi^.dwFileVersionMS shr 16) + '.' +
+          IntToStr(pffi^.dwFileVersionMS shl 16 shr 16) + '.' +
+          IntToStr(pffi^.dwFileVersionLS shr 16) + '.' +
+          IntToStr(pffi^.dwFileVersionLS shl 16 shr 16);
+        INC(FieldsCount);
+        // языко-независимое - версия продукта:
+        ProductVer :=
+          IntToStr(pffi^.dwProductVersionMS shr 16) + '.' +
+          IntToStr(pffi^.dwProductVersionMS shl 16 shr 16) + '.' +
+          IntToStr(pffi^.dwProductVersionLS shr 16) + '.' +
+          IntToStr(pffi^.dwProductVersionLS shl 16 shr 16);
+        INC(FieldsCount);
+        // языко-независимое - тип сборки:
+        if (pffi^.dwFileFlags and VS_FF_DEBUG)<>0 then
+          BuildType := BuildType + 'debug, ';
+        if (pffi^.dwFileFlags and VS_FF_INFOINFERRED)<>0 then
+          BuildType := BuildType + 'info inferred, ';
+        if (pffi^.dwFileFlags and VS_FF_PATCHED)<>0 then
+          BuildType := BuildType + 'patched, ';
+        if (pffi^.dwFileFlags and VS_FF_PRERELEASE)<>0 then
+          BuildType := BuildType + 'prerelease, ';
+        if (pffi^.dwFileFlags and VS_FF_PRIVATEBUILD)<>0 then
+          BuildType := BuildType + 'private build, ';
+        if (pffi^.dwFileFlags and VS_FF_SPECIALBUILD)<>0 then
+          BuildType := BuildType + 'special build, ';
+        if BuildType<>EmptyStr then
+          Delete(BuildType,Length(BuildType)-1,2);
+        INC(FieldsCount);
+        // языко-независимое - тип исполнимого файла:
+        if (pffi^.dwFileType and VFT_UNKNOWN)<>0 then
+          FileType := 'unknown'
+        else if (pffi^.dwFileType and VFT_APP)<>0 then
+          FileType := 'application'
+        else if (pffi^.dwFileType and VFT_DLL)<>0 then
+          FileType := 'DLL'
+        else if (pffi^.dwFileType and VFT_DRV)<>0 then
+          FileType := 'driver'
+        else if (pffi^.dwFileType and VFT_FONT)<>0 then
+          FileType := 'font'
+        else if (pffi^.dwFileType and VFT_VXD)<>0 then
+          FileType := 'VXD'
+        else if (pffi^.dwFileType and VFT_STATIC_LIB)<>0 then
+          FileType := 'static lib';
+        INC(FieldsCount);
+      end;
+      // string and var information - locale depended:
+      if VerQueryValue(pbuff,'\VarFileInfo\Translation',pk,nk) then
+      with InfoRecord do begin
+        // language and codepage information:
+        LangID := TLangRec(pk^)[0];
+        INC(FieldsCount);
+        LangCP := TLangRec(pk^)[1];
+        INC(FieldsCount);
+        VerLanguageName(LangID,@LangName,256);
+        INC(FieldsCount);
+        lang_hex_str := Format('%.4x',[LangID]) + Format('%.4x',[LangCP]);
+        // string information - зависимая от языка информация:
+        for i := Low(TFviTags) to High(TFviTags) do
+          if VerQueryValue(pbuff,PChar('\\StringFileInfo\\'+lang_hex_str+'\\'+
+            cFviFieldsDef[i]),pk,nk) then
+          begin
+            FieldDef[i] := cFviFieldsDef[i];
+            if LangId = RusLangID then
+              FieldRus[i] := cFviFieldsRus[i]
+            else
+              FieldRus[i] := '';
+            Value[i] := String(PChar(pk));
+            INC(FieldsCount);
+          end;
+      end;
+    end;
+  finally
+    if pbuff<>Nil then
+      FreeMem(pbuff);
+  end
+end;

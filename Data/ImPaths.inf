@@ -1,0 +1,12 @@
+#Важные каталоги, для открытия из приложения
+#Отображаемое имя пути=путь
+#Переменные:
+# %USER% - текущий пользователь
+# %SYS32% - "C:\Windows\System32\"
+# %SYS64% - "C:\Windows\SysWOW64\"
+# %APPDATA% - "C:\Users\%USER%\AppData\Roaming\" или "C:\Documents and Settings\%USER%\Local Settings\"
+# %TASKS% - "C:\Windows\Tasks\"
+[Paths]
+AppData=%APPDATA%\Temp
+Windows Tasks=%APPDATA%\%TASKS%\%TASKS%
+User Doc=C:\Users\%USER%\Documents

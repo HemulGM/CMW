@@ -1,0 +1,20 @@
+#Описание: Файл конфигурации анализа журнала событий Windows
+[Presets]
+#Timeslot - временной интервал (в днях), 14 (две недели) - нормально
+Timeslot=14
+
+[EventSource]
+#Перечисление источников событий Windows
+#Disk - события жестких и оптических дисков
+#atapi - события контроллера atapi
+#cdrom - события контреллера cdrom
+#EventLog - события ОС
+#Microsoft-Windows-Kernel-General - критические ошибки Windows
+#Microsoft-Windows-Kernel-Power - ошибки Windows
+#Microsoft-Windows-WER-SystemErrorReporting - ошибки Windows
+#Ntfs - ошибки файловой системы NTFS
+#volsnap - ошибки теневого копирования томов
+Disk
+Microsoft-Windows-Kernel-General
+Microsoft-Windows-Kernel-Power
+Microsoft-Windows-WER-SystemErrorReporting
