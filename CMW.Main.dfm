@@ -41,13 +41,11 @@ object FormMain: TFormMain
     TabOrder = 0
     TabWidth = 60
     OnChange = PageControlMainChange
+    ExplicitLeft = 8
+    ExplicitTop = 125
     object TabSheetAutoruns: TTabSheet
       Caption = 'Autoruns'
       ImageIndex = 4
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel3: TPanel
         Left = 0
         Top = 404
@@ -133,10 +131,6 @@ object FormMain: TFormMain
     object TabSheetExeing: TTabSheet
       Caption = 'Exeing'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewImPaths: TListView
         Left = 0
         Top = 0
@@ -169,10 +163,6 @@ object FormMain: TFormMain
     object TabSheetResult: TTabSheet
       Caption = 'ClrResult'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GridPanel2: TGridPanel
         Left = 0
         Top = 0
@@ -340,10 +330,6 @@ object FormMain: TFormMain
       Font.Quality = fqClearType
       ImageIndex = 7
       ParentFont = False
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       DesignSize = (
         1017
         459)
@@ -509,10 +495,6 @@ object FormMain: TFormMain
     object TabSheetEvents: TTabSheet
       Caption = 'Events'
       ImageIndex = 5
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewEvents: TListView
         Left = 0
         Top = 0
@@ -616,10 +598,6 @@ object FormMain: TFormMain
     object TabSheetSheduler: TTabSheet
       Caption = 'Sheduler'
       ImageIndex = 6
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewSchedule: TListView
         Left = 0
         Top = 0
@@ -906,7 +884,7 @@ object FormMain: TFormMain
         TabOrder = 1
         ColWidths = (
           150
-          691)
+          837)
         RowHeights = (
           18)
       end
@@ -1094,10 +1072,6 @@ object FormMain: TFormMain
     object TabSheetTweaks: TTabSheet
       Caption = 'Tweaks'
       ImageIndex = 10
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewTweaks: TListView
         Left = 0
         Top = 0
@@ -1161,10 +1135,6 @@ object FormMain: TFormMain
     object TabSheetProc: TTabSheet
       Caption = #1055#1088#1086#1094#1077#1089#1089#1099
       ImageIndex = 10
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel4: TPanel
         Left = 0
         Top = 404
@@ -1427,10 +1397,6 @@ object FormMain: TFormMain
     object TabSheetServices: TTabSheet
       Caption = #1057#1083#1091#1078#1073#1099
       ImageIndex = 11
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewSrvs: TListView
         Left = 0
         Top = 0
@@ -1529,10 +1495,6 @@ object FormMain: TFormMain
     object TabSheetPorts: TTabSheet
       Caption = #1055#1086#1088#1090#1099
       ImageIndex = 12
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewPorts: TListView
         Left = 0
         Top = 0
@@ -1609,10 +1571,6 @@ object FormMain: TFormMain
     object TabSheetHDD: TTabSheet
       Caption = 'HDD'
       ImageIndex = 13
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewHDD: TListView
         Left = 0
         Top = 0
@@ -1688,10 +1646,6 @@ object FormMain: TFormMain
     object TabSheetHelper: TTabSheet
       Caption = 'TabSheetHelper'
       ImageIndex = 14
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GridPanel3: TGridPanel
         Left = 0
         Top = 0
@@ -1751,10 +1705,6 @@ object FormMain: TFormMain
     object TabSheetFireWall: TTabSheet
       Caption = #1041#1088#1072#1085#1076#1084#1072#1091#1101#1088
       ImageIndex = 15
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel9: TPanel
         Left = 0
         Top = 404
@@ -1853,10 +1803,6 @@ object FormMain: TFormMain
     object TabSheetShellExplorer: TTabSheet
       Caption = 'ShellExplorer'
       ImageIndex = 16
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PanelShellCtrl: TPanel
         Left = 0
         Top = 0
@@ -1958,10 +1904,6 @@ object FormMain: TFormMain
     object TabSheetRegedit: TTabSheet
       Caption = #1056#1077#1077#1089#1090#1088
       ImageIndex = 17
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Splitter2: TSplitter
         Left = 257
         Top = 0
@@ -2076,10 +2018,6 @@ object FormMain: TFormMain
     object TabSheetDebug: TTabSheet
       Caption = 'TabSheetDebug'
       ImageIndex = 18
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object MemoDebug: TMemo
         Left = 0
         Top = 0
@@ -2096,15 +2034,12 @@ object FormMain: TFormMain
         ParentFont = False
         ScrollBars = ssBoth
         TabOrder = 0
+        ExplicitTop = 3
       end
     end
     object TabSheetContextMenu: TTabSheet
       Caption = #1050#1086#1085#1090#1077#1082#1089#1090#1085#1086#1077' '#1084#1077#1085#1102
       ImageIndex = 19
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewContext: TListView
         Left = 0
         Top = 0
@@ -2192,10 +2127,6 @@ object FormMain: TFormMain
     object TabSheetCMD: TTabSheet
       Caption = 'TabSheetCMD'
       ImageIndex = 20
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object MemoCMD: TMemo
         Left = 11
         Top = 9
@@ -2410,6 +2341,8 @@ object FormMain: TFormMain
         SubTextFont.Height = -13
         SubTextFont.Name = 'Tahoma'
         SubTextFont.Style = []
+        ExplicitLeft = 225
+        ExplicitTop = 1
       end
       object ButtonFlatMenuMon: TButtonFlat
         Left = 123
@@ -2600,22 +2533,17 @@ object FormMain: TFormMain
         Top = 1
         Width = 1025
         Height = 95
-        ActivePage = TabSheetMenuStart
+        ActivePage = TabSheetMenuModules
         Align = alClient
         Style = tsFlatButtons
         TabOrder = 0
-        OnChange = PageControlMenuChange
         object TabSheetMenuStart: TTabSheet
           Caption = #1071#1097#1080#1082
           ImageIndex = 1
           TabVisible = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Shape9: TShape
             AlignWithMargins = True
-            Left = 903
+            Left = 1011
             Top = 0
             Width = 1
             Height = 85
@@ -2626,8 +2554,8 @@ object FormMain: TFormMain
             Align = alLeft
             Brush.Color = 15000546
             Pen.Color = 15000546
-            ExplicitLeft = 973
-            ExplicitTop = 2
+            ExplicitLeft = 1017
+            ExplicitTop = -3
           end
           object Shape28: TShape
             AlignWithMargins = True
@@ -2700,6 +2628,7 @@ object FormMain: TFormMain
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 0
             object Panel43: TPanel
@@ -2719,7 +2648,6 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
-              ExplicitWidth = 353
             end
             object Panel44: TPanel
               Left = 0
@@ -2727,6 +2655,7 @@ object FormMain: TFormMain
               Width = 153
               Height = 72
               Align = alLeft
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
               object SpeedButtonMenuBoxData: TsSpeedButton
@@ -2762,9 +2691,11 @@ object FormMain: TFormMain
               Width = 144
               Height = 72
               Align = alClient
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 2
-              ExplicitWidth = 200
+              ExplicitLeft = 150
+              ExplicitTop = -1
               object SpeedButtonMenuLoadLast: TsSpeedButton
                 AlignWithMargins = True
                 Left = 3
@@ -2811,7 +2742,7 @@ object FormMain: TFormMain
           object Panel12: TPanel
             Left = 596
             Top = 0
-            Width = 302
+            Width = 410
             Height = 85
             Margins.Left = 2
             Margins.Top = 2
@@ -2820,23 +2751,21 @@ object FormMain: TFormMain
             Align = alLeft
             BevelOuter = bvNone
             TabOrder = 1
-            ExplicitLeft = 619
+            ExplicitWidth = 333
             object ImageCPUGraph: TImage
               Left = 0
               Top = 0
-              Width = 302
+              Width = 410
               Height = 72
               Align = alClient
               Center = True
-              ExplicitLeft = 12
-              ExplicitTop = 11
-              ExplicitWidth = 273
-              ExplicitHeight = 65
+              ExplicitLeft = -3
+              ExplicitTop = -1
             end
             object Panel13: TPanel
               Left = 0
               Top = 72
-              Width = 302
+              Width = 410
               Height = 13
               Align = alBottom
               BevelOuter = bvNone
@@ -2850,6 +2779,7 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
+              ExplicitWidth = 302
             end
           end
           object Panel14: TPanel
@@ -2864,7 +2794,6 @@ object FormMain: TFormMain
             Align = alLeft
             BevelOuter = bvNone
             TabOrder = 2
-            ExplicitLeft = 534
             object ImageDrvC: TImage
               Left = 0
               Top = 0
@@ -3023,7 +2952,6 @@ object FormMain: TFormMain
             Align = alLeft
             BevelOuter = bvNone
             TabOrder = 3
-            ExplicitLeft = 449
             object ImageMem: TImage
               Left = 0
               Top = 0
@@ -3184,7 +3112,6 @@ object FormMain: TFormMain
             Align = alLeft
             BevelOuter = bvNone
             TabOrder = 4
-            ExplicitLeft = 364
             object ImageCPU: TImage
               Left = 0
               Top = 0
@@ -3336,13 +3263,9 @@ object FormMain: TFormMain
           Caption = #1063#1077#1088#1090#1105#1078
           ImageIndex = 2
           TabVisible = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Shape12: TShape
             AlignWithMargins = True
-            Left = 876
+            Left = 894
             Top = 0
             Width = 1
             Height = 85
@@ -3397,6 +3320,7 @@ object FormMain: TFormMain
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 0
             object Shape15: TShape
@@ -3448,6 +3372,8 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
+              ExplicitLeft = -3
+              ExplicitTop = 71
             end
             object Panel26: TPanel
               Left = 71
@@ -3455,6 +3381,7 @@ object FormMain: TFormMain
               Width = 60
               Height = 72
               Align = alLeft
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
               object SpeedButtonMenuPrint: TsSpeedButton
@@ -3478,6 +3405,7 @@ object FormMain: TFormMain
               Width = 158
               Height = 72
               Align = alLeft
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 2
               object SpeedButtonProcStopSel: TsSpeedButton
@@ -3527,9 +3455,10 @@ object FormMain: TFormMain
             object Panel48: TPanel
               Left = 300
               Top = 0
-              Width = 226
+              Width = 218
               Height = 72
               Align = alLeft
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 3
               object Panel21: TPanel
@@ -3538,6 +3467,7 @@ object FormMain: TFormMain
                 Width = 60
                 Height = 72
                 Align = alLeft
+                AutoSize = True
                 BevelOuter = bvNone
                 TabOrder = 0
                 object SpeedButtonPorts: TsSpeedButton
@@ -3561,6 +3491,7 @@ object FormMain: TFormMain
                 Width = 158
                 Height = 72
                 Align = alLeft
+                AutoSize = True
                 BevelOuter = bvNone
                 TabOrder = 1
                 object SpeedButtonPortAdr: TsSpeedButton
@@ -3592,6 +3523,7 @@ object FormMain: TFormMain
               Width = 60
               Height = 72
               Align = alLeft
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 4
               object sSpeedButton1: TsSpeedButton
@@ -3610,7 +3542,7 @@ object FormMain: TFormMain
               end
             end
           end
-          object PanelBarExport: TPanel
+          object PanelBarCtrl: TPanel
             Left = 0
             Top = 0
             Width = 98
@@ -3646,6 +3578,7 @@ object FormMain: TFormMain
               Width = 98
               Height = 72
               Align = alClient
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
               object SpeedButtonMonStart: TsSpeedButton
@@ -3699,19 +3632,20 @@ object FormMain: TFormMain
           object Panel23: TPanel
             Left = 648
             Top = 0
-            Width = 223
+            Width = 241
             Height = 85
             Margins.Left = 2
             Margins.Top = 2
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 2
             object Panel27: TPanel
               Left = 0
               Top = 72
-              Width = 223
+              Width = 241
               Height = 13
               Align = alBottom
               BevelOuter = bvNone
@@ -3725,20 +3659,22 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
+              ExplicitWidth = 223
             end
             object Panel31: TPanel
               Left = 60
               Top = 0
-              Width = 158
+              Width = 173
               Height = 72
               Align = alLeft
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
               object SpeedButtonFirewallRules: TsSpeedButton
                 AlignWithMargins = True
                 Left = 3
                 Top = 46
-                Width = 152
+                Width = 167
                 Height = 23
                 Margins.Top = 0
                 Margins.Bottom = 0
@@ -3759,7 +3695,7 @@ object FormMain: TFormMain
                 AlignWithMargins = True
                 Left = 3
                 Top = 23
-                Width = 152
+                Width = 167
                 Height = 23
                 Margins.Top = 0
                 Margins.Bottom = 0
@@ -3774,12 +3710,13 @@ object FormMain: TFormMain
                 ImageIndex = 15
                 ExplicitLeft = 6
                 ExplicitTop = 8
+                ExplicitWidth = 152
               end
               object SpeedButtonFWInfo: TsSpeedButton
                 AlignWithMargins = True
                 Left = 3
                 Top = 0
-                Width = 152
+                Width = 167
                 Height = 23
                 Margins.Top = 0
                 Margins.Bottom = 0
@@ -3794,6 +3731,7 @@ object FormMain: TFormMain
                 ImageIndex = 1
                 ExplicitLeft = 6
                 ExplicitTop = 8
+                ExplicitWidth = 152
               end
             end
             object Panel35: TPanel
@@ -3802,6 +3740,7 @@ object FormMain: TFormMain
               Width = 60
               Height = 72
               Align = alLeft
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 2
               object SpeedButtonSwitchFW: TsSpeedButton
@@ -3826,13 +3765,9 @@ object FormMain: TFormMain
           Caption = #1041#1072#1079#1072' '#1076#1072#1085#1085#1099#1093
           ImageIndex = 3
           TabVisible = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Shape16: TShape
             AlignWithMargins = True
-            Left = 270
+            Left = 252
             Top = 0
             Width = 1
             Height = 85
@@ -3847,7 +3782,7 @@ object FormMain: TFormMain
           end
           object Shape6: TShape
             AlignWithMargins = True
-            Left = 470
+            Left = 452
             Top = 0
             Width = 1
             Height = 85
@@ -3863,7 +3798,7 @@ object FormMain: TFormMain
           end
           object Shape3: TShape
             AlignWithMargins = True
-            Left = 806
+            Left = 788
             Top = 0
             Width = 1
             Height = 85
@@ -3880,13 +3815,14 @@ object FormMain: TFormMain
           object PanelBarDBControl: TPanel
             Left = 0
             Top = 0
-            Width = 265
+            Width = 247
             Height = 85
             Margins.Left = 2
             Margins.Top = 2
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 0
             object SpeedButtonClearFind: TsSpeedButton
@@ -3900,6 +3836,8 @@ object FormMain: TFormMain
               Layout = blGlyphTop
               Images = ImageListToolBar
               ImageIndex = 18
+              ExplicitLeft = -3
+              ExplicitTop = -1
             end
             object SpeedButtonClearPerform: TsSpeedButton
               Left = 61
@@ -3927,8 +3865,8 @@ object FormMain: TFormMain
               Align = alLeft
               Brush.Color = 15000546
               Pen.Color = 15000546
-              ExplicitLeft = 114
-              ExplicitHeight = 70
+              ExplicitLeft = 101
+              ExplicitTop = -3
             end
             object Shape18: TShape
               AlignWithMargins = True
@@ -3949,7 +3887,7 @@ object FormMain: TFormMain
             object Panel53: TPanel
               Left = 0
               Top = 72
-              Width = 265
+              Width = 247
               Height = 13
               Align = alBottom
               BevelOuter = bvNone
@@ -3963,20 +3901,23 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
+              ExplicitWidth = 265
             end
             object Panel55: TPanel
               Left = 118
               Top = 0
-              Width = 147
+              Width = 123
               Height = 72
-              Align = alClient
+              Align = alLeft
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
+              ExplicitLeft = 215
               object SpeedButtonMD5: TsSpeedButton
                 AlignWithMargins = True
                 Left = 3
                 Top = 0
-                Width = 141
+                Width = 117
                 Height = 23
                 Margins.Top = 0
                 Margins.Bottom = 0
@@ -3997,17 +3938,18 @@ object FormMain: TFormMain
                 AlignWithMargins = True
                 Left = 3
                 Top = 26
-                Width = 141
+                Width = 117
                 Height = 17
                 Action = ActionAutoCheck
                 Align = alTop
                 State = cbChecked
                 TabOrder = 0
+                ExplicitWidth = 141
               end
             end
           end
           object Panel28: TPanel
-            Left = 276
+            Left = 258
             Top = 0
             Width = 189
             Height = 85
@@ -4016,8 +3958,10 @@ object FormMain: TFormMain
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 1
+            ExplicitLeft = 276
             object SpeedButtonHDD: TsSpeedButton
               Left = 0
               Top = 0
@@ -4054,6 +3998,7 @@ object FormMain: TFormMain
               Width = 140
               Height = 72
               Align = alClient
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
               object CheckBoxSetHDDAttr: TCheckBox
@@ -4081,7 +4026,7 @@ object FormMain: TFormMain
             end
           end
           object Panel34: TPanel
-            Left = 476
+            Left = 458
             Top = 0
             Width = 325
             Height = 85
@@ -4090,8 +4035,10 @@ object FormMain: TFormMain
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 2
+            ExplicitLeft = 476
             object SpeedButtonContextMenuGet: TsSpeedButton
               Left = 0
               Top = 0
@@ -4175,6 +4122,7 @@ object FormMain: TFormMain
               Width = 117
               Height = 72
               Align = alLeft
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
               object ComboBoxCMElem: TComboBox
@@ -4202,6 +4150,7 @@ object FormMain: TFormMain
               Width = 63
               Height = 72
               Align = alLeft
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 2
               object SpeedButtonClassGetNext: TsSpeedButton
@@ -4251,10 +4200,7 @@ object FormMain: TFormMain
           Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
           ImageIndex = 4
           TabVisible = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
+          ExplicitTop = 5
           object Shape23: TShape
             AlignWithMargins = True
             Left = 473
@@ -4305,7 +4251,7 @@ object FormMain: TFormMain
           end
           object Shape58: TShape
             AlignWithMargins = True
-            Left = 670
+            Left = 672
             Top = 0
             Width = 1
             Height = 85
@@ -4316,6 +4262,7 @@ object FormMain: TFormMain
             Align = alLeft
             Brush.Color = 15000546
             Pen.Color = 15000546
+            ExplicitLeft = 670
             ExplicitTop = 16
           end
           object Panel3DPref: TPanel
@@ -4328,6 +4275,7 @@ object FormMain: TFormMain
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 0
             object SpeedButtonMSConfig: TsSpeedButton
@@ -4387,6 +4335,7 @@ object FormMain: TFormMain
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 1
             object SpeedButtonMenuSetPrint: TsSpeedButton
@@ -4404,7 +4353,6 @@ object FormMain: TFormMain
               ImageIndex = 5
               ExplicitLeft = -3
               ExplicitTop = -1
-              ExplicitWidth = 53
             end
             object Panel59: TPanel
               Left = 0
@@ -4461,6 +4409,7 @@ object FormMain: TFormMain
               Width = 398
               Height = 72
               Align = alClient
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
               object ButtonedEditRun: TButtonedEdit
@@ -4503,13 +4452,14 @@ object FormMain: TFormMain
           object PanelBarPath: TPanel
             Left = 610
             Top = 0
-            Width = 55
+            Width = 57
             Height = 85
             Margins.Left = 2
             Margins.Top = 2
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 3
             object SpeedButtonCmdRun: TsSpeedButton
@@ -4529,7 +4479,7 @@ object FormMain: TFormMain
             object Panel39: TPanel
               Left = 0
               Top = 72
-              Width = 55
+              Width = 57
               Height = 13
               Align = alBottom
               BevelOuter = bvNone
@@ -4543,6 +4493,7 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
+              ExplicitWidth = 55
             end
           end
         end
@@ -4550,13 +4501,9 @@ object FormMain: TFormMain
           Caption = #1057#1087#1088#1072#1074#1082#1072
           ImageIndex = 5
           TabVisible = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Shape24: TShape
             AlignWithMargins = True
-            Left = 662
+            Left = 675
             Top = 0
             Width = 1
             Height = 85
@@ -4572,7 +4519,7 @@ object FormMain: TFormMain
           end
           object Shape10: TShape
             AlignWithMargins = True
-            Left = 432
+            Left = 439
             Top = 0
             Width = 1
             Height = 85
@@ -4619,21 +4566,22 @@ object FormMain: TFormMain
             ExplicitHeight = 83
           end
           object PanelBarHelp: TPanel
-            Left = 438
+            Left = 445
             Top = 0
-            Width = 219
+            Width = 225
             Height = 85
             Margins.Left = 2
             Margins.Top = 2
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 0
             object SpeedButtonMenuInfo: TsSpeedButton
               Left = 0
               Top = 0
-              Width = 72
+              Width = 80
               Height = 72
               Action = ActionSchedule
               Align = alLeft
@@ -4641,11 +4589,10 @@ object FormMain: TFormMain
               Layout = blGlyphTop
               Images = ImageListToolBar
               ImageIndex = 7
-              ExplicitHeight = 70
             end
             object Shape20: TShape
               AlignWithMargins = True
-              Left = 77
+              Left = 85
               Top = 0
               Width = 1
               Height = 72
@@ -4662,7 +4609,7 @@ object FormMain: TFormMain
             object Panel62: TPanel
               Left = 0
               Top = 72
-              Width = 219
+              Width = 225
               Height = 13
               Align = alBottom
               BevelOuter = bvNone
@@ -4676,43 +4623,49 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
+              ExplicitWidth = 219
             end
             object Panel63: TPanel
-              Left = 83
+              Left = 91
               Top = 0
-              Width = 136
+              Width = 134
               Height = 72
               Align = alClient
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
+              ExplicitLeft = 83
+              ExplicitWidth = 136
               object CheckBoxAllTasks: TCheckBox
                 AlignWithMargins = True
                 Left = 3
                 Top = 3
-                Width = 130
+                Width = 128
                 Height = 17
                 Action = ActionAllTasks
                 Align = alTop
                 TabOrder = 0
+                ExplicitWidth = 130
               end
             end
           end
           object Panel41: TPanel
             Left = 182
             Top = 0
-            Width = 245
+            Width = 252
             Height = 85
             Margins.Left = 2
             Margins.Top = 2
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 1
             object SpeedButtonEvents: TsSpeedButton
               Left = 0
               Top = 0
-              Width = 49
+              Width = 57
               Height = 72
               Action = ActionEvents
               Align = alLeft
@@ -4723,7 +4676,7 @@ object FormMain: TFormMain
             end
             object Shape8: TShape
               AlignWithMargins = True
-              Left = 87
+              Left = 95
               Top = 0
               Width = 1
               Height = 72
@@ -4740,7 +4693,7 @@ object FormMain: TFormMain
             object Panel42: TPanel
               Left = 0
               Top = 72
-              Width = 245
+              Width = 252
               Height = 13
               Align = alBottom
               BevelOuter = bvNone
@@ -4754,15 +4707,18 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
+              ExplicitWidth = 245
             end
             object Panel46: TPanel
-              Left = 49
+              Left = 57
               Top = 0
               Width = 33
               Height = 72
               Align = alLeft
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
+              ExplicitLeft = 49
               object SpeedButtonWillGetBackupEvents: TsSpeedButton
                 AlignWithMargins = True
                 Left = 3
@@ -4811,13 +4767,16 @@ object FormMain: TFormMain
               end
             end
             object Panel54: TPanel
-              Left = 93
+              Left = 101
               Top = 0
-              Width = 152
+              Width = 151
               Height = 72
               Align = alClient
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 2
+              ExplicitLeft = 98
+              ExplicitTop = -1
               object Label44: TLabel
                 Left = 2
                 Top = 3
@@ -4895,12 +4854,13 @@ object FormMain: TFormMain
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 2
             object SpeedButtonAutorun: TsSpeedButton
               Left = 0
               Top = 0
-              Width = 72
+              Width = 80
               Height = 72
               Action = ActionWinApps
               Align = alLeft
@@ -4908,7 +4868,6 @@ object FormMain: TFormMain
               Layout = blGlyphTop
               Images = ImageListToolBar
               ImageIndex = 8
-              ExplicitHeight = 70
             end
             object Panel50: TPanel
               Left = 0
@@ -4939,6 +4898,7 @@ object FormMain: TFormMain
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 3
             object sSpeedButton5: TsSpeedButton
@@ -4971,6 +4931,7 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
+              ExplicitWidth = 82
             end
           end
         end
@@ -4978,13 +4939,9 @@ object FormMain: TFormMain
           Caption = 'TabSheetMenuTools'
           ImageIndex = 5
           TabVisible = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Shape25: TShape
             AlignWithMargins = True
-            Left = 409
+            Left = 432
             Top = 0
             Width = 1
             Height = 85
@@ -5015,19 +4972,20 @@ object FormMain: TFormMain
           object Panel57: TPanel
             Left = 239
             Top = 0
-            Width = 165
+            Width = 188
             Height = 85
             Margins.Left = 2
             Margins.Top = 2
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 0
             object SpeedButtonRegeditor: TsSpeedButton
               Left = 0
               Top = 0
-              Width = 50
+              Width = 57
               Height = 72
               Action = ActionRegeditor
               Align = alLeft
@@ -5039,7 +4997,7 @@ object FormMain: TFormMain
             object Panel58: TPanel
               Left = 0
               Top = 72
-              Width = 165
+              Width = 188
               Height = 13
               Align = alBottom
               BevelOuter = bvNone
@@ -5053,20 +5011,22 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
+              ExplicitWidth = 165
             end
             object Panel60: TPanel
-              Left = 50
+              Left = 57
               Top = 0
-              Width = 115
+              Width = 131
               Height = 72
               Align = alClient
+              AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
               object SpeedButtonRegLoad: TsSpeedButton
                 AlignWithMargins = True
                 Left = 3
                 Top = 23
-                Width = 109
+                Width = 106
                 Height = 23
                 Margins.Top = 0
                 Margins.Bottom = 0
@@ -5087,7 +5047,7 @@ object FormMain: TFormMain
                 AlignWithMargins = True
                 Left = 3
                 Top = 0
-                Width = 109
+                Width = 106
                 Height = 23
                 Margins.Top = 0
                 Margins.Bottom = 0
@@ -5116,8 +5076,11 @@ object FormMain: TFormMain
             Margins.Right = 2
             Margins.Bottom = 2
             Align = alLeft
+            AutoSize = True
             BevelOuter = bvNone
             TabOrder = 1
+            ExplicitLeft = -2
+            ExplicitTop = -1
             object SpeedButtonUtils: TsSpeedButton
               Left = 0
               Top = 0
@@ -5129,11 +5092,12 @@ object FormMain: TFormMain
               Layout = blGlyphTop
               Images = ImageListToolBar
               ImageIndex = 9
+              ExplicitLeft = 53
             end
             object SpeedButtonOpenHostsFile: TsSpeedButton
               Left = 161
               Top = 0
-              Width = 72
+              Width = 52
               Height = 72
               Align = alLeft
               Caption = #1054#1090#1082#1088#1099#1090#1100' hosts'
@@ -5141,7 +5105,8 @@ object FormMain: TFormMain
               Layout = blGlyphTop
               OnClick = ActionOpenHostsFileExecute
               Images = ImageListToolBar
-              ExplicitLeft = 153
+              ExplicitLeft = 197
+              ExplicitTop = -6
             end
             object SpeedButtonTweaks: TsSpeedButton
               Left = 77
@@ -5180,13 +5145,9 @@ object FormMain: TFormMain
           Caption = 'TabSheetMenuHelp'
           ImageIndex = 6
           TabVisible = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Shape21: TShape
             AlignWithMargins = True
-            Left = 358
+            Left = 406
             Top = 0
             Width = 1
             Height = 85
@@ -5217,7 +5178,7 @@ object FormMain: TFormMain
           object Panel65: TPanel
             Left = 215
             Top = 0
-            Width = 138
+            Width = 186
             Height = 85
             Margins.Left = 2
             Margins.Top = 2
@@ -5229,7 +5190,7 @@ object FormMain: TFormMain
             object SpeedButtonHelper: TsSpeedButton
               Left = 0
               Top = 0
-              Width = 50
+              Width = 73
               Height = 72
               Action = ActionHelper
               Align = alLeft
@@ -5241,7 +5202,7 @@ object FormMain: TFormMain
             object Panel66: TPanel
               Left = 0
               Top = 72
-              Width = 138
+              Width = 186
               Height = 13
               Align = alBottom
               BevelOuter = bvNone
@@ -5255,20 +5216,23 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
+              ExplicitWidth = 138
             end
             object Panel67: TPanel
-              Left = 50
+              Left = 73
               Top = 0
-              Width = 88
+              Width = 113
               Height = 72
               Align = alClient
               BevelOuter = bvNone
               TabOrder = 1
+              ExplicitLeft = 50
+              ExplicitWidth = 88
               object SpeedButtonAbout: TsSpeedButton
                 AlignWithMargins = True
                 Left = 3
                 Top = 0
-                Width = 82
+                Width = 107
                 Height = 23
                 Margins.Top = 0
                 Margins.Bottom = 0

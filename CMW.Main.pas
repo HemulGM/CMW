@@ -363,7 +363,7 @@ type
     Panel29: TPanel;
     SpeedButtonProcStopSel: TsSpeedButton;
     Panel48: TPanel;
-    PanelBarExport: TPanel;
+    PanelBarCtrl: TPanel;
     Panel37: TPanel;
     Panel47: TPanel;
     SpeedButtonMonStart: TsSpeedButton;
@@ -661,7 +661,6 @@ type
     procedure ActionCmdRunExecute(Sender: TObject);
     procedure ActionShowAppInfoExecute(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure PageControlMenuChange(Sender: TObject);
     procedure ButtonFlatMenuStartClick(Sender: TObject);
     procedure ButtonFlatMenuMonClick(Sender: TObject);
     procedure ButtonFlatMenuFSClick(Sender: TObject);
@@ -1400,11 +1399,6 @@ begin                       {
  if PageControlMain.ActivePage =  TabSheetEvents then SmartHandler.EventsUnit.SetStateToPB; }
 end;
 
-procedure TFormMain.PageControlMenuChange(Sender: TObject);
-begin
-  if PageControlMenu.ActivePageIndex = 2 then OpenResult;
-end;
-
 procedure TFormMain.ActionEndStopExecute(Sender: TObject);
 begin
  Application.ProcessMessages;
@@ -2093,8 +2087,25 @@ begin
 end;
 
 procedure TFormMain.OpenMenuTab(Tab:TTabSheet);
+
+procedure SetMenuButtonActive(Button:TButtonFlat; Value:Boolean);
+begin
+ case Value of
+  True:Button.ColorNormal:=$00F7F6F5;
+  False:Button.ColorNormal:=clWhite;
+ end;
+end;
+
 begin
  PageControlMenu.ActivePage:=Tab;
+ SetMenuButtonActive(ButtonFlatMenuStart, PageControlMenu.ActivePage = TabSheetMenuStart);
+ SetMenuButtonActive(ButtonFlatMenuModules, PageControlMenu.ActivePage = TabSheetMenuModules);
+ SetMenuButtonActive(ButtonFlatMenuHelp, PageControlMenu.ActivePage = TabSheetMenuHelp);
+ SetMenuButtonActive(ButtonFlatMenuNav, PageControlMenu.ActivePage = TabSheetMenuNavigation);
+ SetMenuButtonActive(ButtonFlatMenuMon, PageControlMenu.ActivePage = TabSheetMenuMonitor);
+ SetMenuButtonActive(ButtonFlatMenuFS, PageControlMenu.ActivePage = TabSheetMenuFS);
+ SetMenuButtonActive(ButtonFlatMenuTools, PageControlMenu.ActivePage = TabSheetMenuTools);
+ if Tab = TabSheetMenuFS then OpenResult;
 end;
 
 procedure TFormMain.ButtonFlatMenuFSClick(Sender: TObject);
