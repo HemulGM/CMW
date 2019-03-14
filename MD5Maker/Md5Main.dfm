@@ -116,6 +116,9 @@ object FormMain: TFormMain
       ParentFont = False
       TabOrder = 0
       OnClick = ListBox1Click
+      OnMouseDown = ListBox1MouseDown
+      ExplicitLeft = -5
+      ExplicitTop = -5
     end
     object ListBox2: TListBox
       Left = 281
@@ -133,6 +136,7 @@ object FormMain: TFormMain
       ParentFont = False
       TabOrder = 1
       OnClick = ListBox2Click
+      OnMouseDown = ListBox2MouseDown
     end
     object Edit1: TEdit
       Left = 1
@@ -449,7 +453,7 @@ object FormMain: TFormMain
     Left = 512
     Top = 32
     Bitmap = {
-      494C010106000800300010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010106000800340010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000000000000000000001000000080000
       0010000000170000001A0000001A0000001A0000001A0000001A000000170000

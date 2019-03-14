@@ -5,7 +5,7 @@ interface
 uses Winapi.Windows, System.Classes, Vcl.Graphics, Vcl.Forms, Vcl.Controls,
   Vcl.Menus, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, Vcl.ComCtrls,
   Vcl.ImgList, Vcl.StdActns, Vcl.ActnList, Vcl.ToolWin, System.Actions, System.SysUtils,
-  NameDialog;
+  NameDialog, System.ImageList;
 
 type
   TFormMain = class(TForm)
@@ -61,7 +61,6 @@ type
     procedure FileOpen1Execute(Sender: TObject);
     procedure FileSave1Execute(Sender: TObject);
     procedure FileExit1Execute(Sender: TObject);
-    procedure ListBox1Click(Sender: TObject);
     procedure ListBox2Click(Sender: TObject);
     procedure ActionAddExecute(Sender: TObject);
     procedure ActionDeleteExecute(Sender: TObject);
@@ -73,6 +72,11 @@ type
     procedure ActionDelMirExecute(Sender: TObject);
     procedure ActionSort2Execute(Sender: TObject);
     procedure ActionMergerExecute(Sender: TObject);
+    procedure ListBox1MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure ListBox1Click(Sender: TObject);
+    procedure ListBox2MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
     { Private declarations }
   public
@@ -161,8 +165,15 @@ begin
   begin
    ListBox2.Items.Add('');
   end;
+ ListBox2.TopIndex:=ListBox1.TopIndex;
  ListBox2.ItemIndex:=Sel;
  Edit2.Text:=ListBox2.Items[Sel];
+end;
+
+procedure TFormMain.ListBox1MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+ ListBox1Click(nil);
 end;
 
 procedure TFormMain.ListBox2Click(Sender: TObject);
@@ -175,8 +186,16 @@ begin
   begin
    ListBox1.Items.Add('');
   end;
+
+ ListBox1.TopIndex:=ListBox2.TopIndex;
  ListBox1.ItemIndex:=Sel;
  Edit1.Text:=ListBox1.Items[Sel];
+end;
+
+procedure TFormMain.ListBox2MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+ ListBox2Click(nil);
 end;
 
 procedure TFormMain.ActionAddExecute(Sender: TObject);

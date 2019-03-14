@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D0C44593-DDBA-4D25-B814-CEF7C9EB9BAB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CMW.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UAC.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="MD5Maker\MD5Maker.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CMW">
+        <MSBuild Projects="CMW.dproj"/>
+    </Target>
+    <Target Name="CMW:Clean">
+        <MSBuild Projects="CMW.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CMW:Make">
+        <MSBuild Projects="CMW.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UAC">
+        <MSBuild Projects="UAC.dproj"/>
+    </Target>
+    <Target Name="UAC:Clean">
+        <MSBuild Projects="UAC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UAC:Make">
+        <MSBuild Projects="UAC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="MD5Maker">
+        <MSBuild Projects="MD5Maker\MD5Maker.dproj"/>
+    </Target>
+    <Target Name="MD5Maker:Clean">
+        <MSBuild Projects="MD5Maker\MD5Maker.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="MD5Maker:Make">
+        <MSBuild Projects="MD5Maker\MD5Maker.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CMW;UAC;MD5Maker"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CMW:Clean;UAC:Clean;MD5Maker:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CMW:Make;UAC:Make;MD5Maker:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

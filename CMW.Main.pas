@@ -439,7 +439,6 @@ type
     Panel33: TPanel;
     CheckBoxSetHDDAttr: TCheckBox;
     Shape6: TShape;
-    SpinEditDrv: TlkSpinEdit;
     Panel34: TPanel;
     SpeedButtonContextMenuGet: TsSpeedButton;
     Panel36: TPanel;
@@ -517,6 +516,9 @@ type
     Shape32: TShape;
     ActionWillGetBackupEvents: TAction;
     ActionWillGetSysEvents: TAction;
+    Panel15: TPanel;
+    ComboBoxStorageList: TComboBox;
+    SpeedButtonUpdateStotageList: TsSpeedButton;
     procedure FormCreate(Sender: TObject);
     procedure TimerCurElemTimer(Sender: TObject);
     procedure ListViewARDblClick(Sender: TObject);
@@ -668,6 +670,8 @@ type
     procedure ButtonFlatMenuModulesClick(Sender: TObject);
     procedure ButtonFlatMenuToolsClick(Sender: TObject);
     procedure ButtonFlatMenuHelpClick(Sender: TObject);
+    procedure ComboBoxStorageListChange(Sender: TObject);
+    procedure SpeedButtonUpdateStotageListClick(Sender: TObject);
   private
     procedure OpenMenuTab(Tab: TTabSheet);
   public
@@ -871,6 +875,8 @@ begin
 
    SmartHandler.AccessState(ListViewAccess);
 
+   SpeedButtonUpdateStotageListClick(nil);
+
    TimerTick.Enabled := True;
   end;
 end;
@@ -1010,6 +1016,12 @@ begin
  Result:=True;
 end;
 
+procedure TFormMain.SpeedButtonUpdateStotageListClick(Sender: TObject);
+begin
+ SmartHandler.HDDUnit.FillComboBox(ComboBoxStorageList);
+ if ComboBoxStorageList.Items.Count > 0 then ComboBoxStorageList.ItemIndex:=0;
+end;
+
 procedure Quit;
 begin
  if Application.Terminated then Exit;
@@ -1049,6 +1061,11 @@ procedure TFormMain.ComboBoxRootChange(Sender: TObject);
 begin
  if not Assigned(ShellExplorer) then Exit;
  ShellExplorer.Root:=ComboBoxRoot.Text;
+end;
+
+procedure TFormMain.ComboBoxStorageListChange(Sender: TObject);
+begin
+ //
 end;
 
 procedure TFormMain.TreeViewPIDClick(Sender: TObject);
@@ -1534,13 +1551,13 @@ begin
    Application.ProcessMessages;
    if SmartHandler.HDDUnit.State <> gsFinished then
     begin
-     SmartHandler.HDDUnit.Get(SpinEditDrv.Value);
+     SmartHandler.HDDUnit.Get(ComboBoxStorageList.ItemIndex);
     end;
   end
  else
   begin
    Application.ProcessMessages;
-   SmartHandler.HDDUnit.Get(SpinEditDrv.Value);
+   SmartHandler.HDDUnit.Get(ComboBoxStorageList.ItemIndex);
   end;
 end;
 
@@ -2019,10 +2036,14 @@ begin
  if FileOpenDialog.Execute then
   begin
    SmartHandler.EventsUnit.BackupFile:=FileOpenDialog.FileName;
+   ActionWillGetBackupEvents.Checked:=True;
+   ActionWillGetSysEvents.Checked:=False;
   end
- else Exit;
- ActionWillGetBackupEvents.Checked:=True;
- ActionWillGetSysEvents.Checked:=False;
+ else
+  begin
+   ActionWillGetSysEvents.Checked:=True;
+   ActionWillGetBackupEvents.Checked:=False;
+  end;
 end;
 
 procedure TFormMain.ActionWillGetSysEventsExecute(Sender: TObject);

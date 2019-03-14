@@ -20,7 +20,6 @@ object FormMain: TFormMain
   PrintScale = poNone
   Scaled = False
   ShowHint = True
-  Visible = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnKeyUp = FormKeyUp
@@ -41,8 +40,6 @@ object FormMain: TFormMain
     TabOrder = 0
     TabWidth = 60
     OnChange = PageControlMainChange
-    ExplicitLeft = 8
-    ExplicitTop = 125
     object TabSheetAutoruns: TTabSheet
       Caption = 'Autoruns'
       ImageIndex = 4
@@ -2034,7 +2031,6 @@ object FormMain: TFormMain
         ParentFont = False
         ScrollBars = ssBoth
         TabOrder = 0
-        ExplicitTop = 3
       end
     end
     object TabSheetContextMenu: TTabSheet
@@ -2341,8 +2337,6 @@ object FormMain: TFormMain
         SubTextFont.Height = -13
         SubTextFont.Name = 'Tahoma'
         SubTextFont.Style = []
-        ExplicitLeft = 225
-        ExplicitTop = 1
       end
       object ButtonFlatMenuMon: TButtonFlat
         Left = 123
@@ -2533,7 +2527,7 @@ object FormMain: TFormMain
         Top = 1
         Width = 1025
         Height = 95
-        ActivePage = TabSheetMenuModules
+        ActivePage = TabSheetMenuFS
         Align = alClient
         Style = tsFlatButtons
         TabOrder = 0
@@ -2694,8 +2688,6 @@ object FormMain: TFormMain
               AutoSize = True
               BevelOuter = bvNone
               TabOrder = 2
-              ExplicitLeft = 150
-              ExplicitTop = -1
               object SpeedButtonMenuLoadLast: TsSpeedButton
                 AlignWithMargins = True
                 Left = 3
@@ -2751,7 +2743,6 @@ object FormMain: TFormMain
             Align = alLeft
             BevelOuter = bvNone
             TabOrder = 1
-            ExplicitWidth = 333
             object ImageCPUGraph: TImage
               Left = 0
               Top = 0
@@ -2779,7 +2770,6 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
-              ExplicitWidth = 302
             end
           end
           object Panel14: TPanel
@@ -3372,8 +3362,6 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
-              ExplicitLeft = -3
-              ExplicitTop = 71
             end
             object Panel26: TPanel
               Left = 71
@@ -3659,7 +3647,6 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
-              ExplicitWidth = 223
             end
             object Panel31: TPanel
               Left = 60
@@ -3901,7 +3888,6 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
-              ExplicitWidth = 265
             end
             object Panel55: TPanel
               Left = 118
@@ -3912,7 +3898,6 @@ object FormMain: TFormMain
               AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
-              ExplicitLeft = 215
               object SpeedButtonMD5: TsSpeedButton
                 AlignWithMargins = True
                 Left = 3
@@ -3944,7 +3929,6 @@ object FormMain: TFormMain
                 Align = alTop
                 State = cbChecked
                 TabOrder = 0
-                ExplicitWidth = 141
               end
             end
           end
@@ -3961,7 +3945,6 @@ object FormMain: TFormMain
             AutoSize = True
             BevelOuter = bvNone
             TabOrder = 1
-            ExplicitLeft = 276
             object SpeedButtonHDD: TsSpeedButton
               Left = 0
               Top = 0
@@ -4012,16 +3995,50 @@ object FormMain: TFormMain
                 State = cbChecked
                 TabOrder = 0
               end
-              object SpinEditDrv: TlkSpinEdit
+              object Panel15: TPanel
                 Left = 0
                 Top = 0
                 Width = 140
                 Height = 21
                 Align = alTop
-                MaxValue = 0
-                MinValue = 0
+                BevelOuter = bvNone
                 TabOrder = 1
-                Value = 0
+                object SpeedButtonUpdateStotageList: TsSpeedButton
+                  AlignWithMargins = True
+                  Left = 116
+                  Top = 0
+                  Width = 21
+                  Height = 21
+                  Hint = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
+                  Margins.Top = 0
+                  Margins.Bottom = 0
+                  Align = alRight
+                  Flat = True
+                  Layout = blGlyphTop
+                  Margin = 2
+                  OnClick = SpeedButtonUpdateStotageListClick
+                  Alignment = taLeftJustify
+                  Images = ImageList5
+                  ImageIndex = 10
+                  ExplicitLeft = 114
+                end
+                object ComboBoxStorageList: TComboBox
+                  Left = 0
+                  Top = 0
+                  Width = 113
+                  Height = 21
+                  Align = alClient
+                  Style = csDropDownList
+                  TabOrder = 0
+                  OnChange = ComboBoxStorageListChange
+                  Items.Strings = (
+                    'Success'
+                    'Error'
+                    'Warning'
+                    'Information'
+                    'AuditSuccess'
+                    'AuditFailed')
+                end
               end
             end
           end
@@ -4038,7 +4055,6 @@ object FormMain: TFormMain
             AutoSize = True
             BevelOuter = bvNone
             TabOrder = 2
-            ExplicitLeft = 476
             object SpeedButtonContextMenuGet: TsSpeedButton
               Left = 0
               Top = 0
@@ -4200,7 +4216,6 @@ object FormMain: TFormMain
           Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
           ImageIndex = 4
           TabVisible = False
-          ExplicitTop = 5
           object Shape23: TShape
             AlignWithMargins = True
             Left = 473
@@ -4493,7 +4508,6 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
-              ExplicitWidth = 55
             end
           end
         end
@@ -4623,7 +4637,6 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
-              ExplicitWidth = 219
             end
             object Panel63: TPanel
               Left = 91
@@ -4634,8 +4647,6 @@ object FormMain: TFormMain
               AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
-              ExplicitLeft = 83
-              ExplicitWidth = 136
               object CheckBoxAllTasks: TCheckBox
                 AlignWithMargins = True
                 Left = 3
@@ -4645,7 +4656,6 @@ object FormMain: TFormMain
                 Action = ActionAllTasks
                 Align = alTop
                 TabOrder = 0
-                ExplicitWidth = 130
               end
             end
           end
@@ -4707,7 +4717,6 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
-              ExplicitWidth = 245
             end
             object Panel46: TPanel
               Left = 57
@@ -4718,7 +4727,6 @@ object FormMain: TFormMain
               AutoSize = True
               BevelOuter = bvNone
               TabOrder = 1
-              ExplicitLeft = 49
               object SpeedButtonWillGetBackupEvents: TsSpeedButton
                 AlignWithMargins = True
                 Left = 3
@@ -4729,6 +4737,7 @@ object FormMain: TFormMain
                 Margins.Top = 0
                 Margins.Bottom = 0
                 Align = alTop
+                GroupIndex = 1
                 Caption = #1056#1077#1079#1077#1088#1074#1085#1072#1103' '#1082#1086#1087#1080#1103' '#1078#1091#1088#1085#1072#1083#1072
                 Flat = True
                 Margin = 2
@@ -4752,6 +4761,8 @@ object FormMain: TFormMain
                 Margins.Top = 0
                 Margins.Bottom = 0
                 Align = alTop
+                GroupIndex = 1
+                Down = True
                 Caption = #1051#1086#1082#1072#1083#1100#1085#1099#1081' '#1078#1091#1088#1085#1072#1083' '#1089#1086#1073#1099#1090#1080#1081
                 Flat = True
                 Margin = 2
@@ -4775,8 +4786,6 @@ object FormMain: TFormMain
               AutoSize = True
               BevelOuter = bvNone
               TabOrder = 2
-              ExplicitLeft = 98
-              ExplicitTop = -1
               object Label44: TLabel
                 Left = 2
                 Top = 3
@@ -4931,7 +4940,6 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
-              ExplicitWidth = 82
             end
           end
         end
@@ -5011,7 +5019,6 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
-              ExplicitWidth = 165
             end
             object Panel60: TPanel
               Left = 57
@@ -5026,7 +5033,7 @@ object FormMain: TFormMain
                 AlignWithMargins = True
                 Left = 3
                 Top = 23
-                Width = 106
+                Width = 125
                 Height = 23
                 Margins.Top = 0
                 Margins.Bottom = 0
@@ -5047,7 +5054,7 @@ object FormMain: TFormMain
                 AlignWithMargins = True
                 Left = 3
                 Top = 0
-                Width = 106
+                Width = 125
                 Height = 23
                 Margins.Top = 0
                 Margins.Bottom = 0
@@ -5079,8 +5086,6 @@ object FormMain: TFormMain
             AutoSize = True
             BevelOuter = bvNone
             TabOrder = 1
-            ExplicitLeft = -2
-            ExplicitTop = -1
             object SpeedButtonUtils: TsSpeedButton
               Left = 0
               Top = 0
@@ -5216,7 +5221,6 @@ object FormMain: TFormMain
               Font.Quality = fqClearType
               ParentFont = False
               TabOrder = 0
-              ExplicitWidth = 138
             end
             object Panel67: TPanel
               Left = 73
@@ -5226,8 +5230,6 @@ object FormMain: TFormMain
               Align = alClient
               BevelOuter = bvNone
               TabOrder = 1
-              ExplicitLeft = 50
-              ExplicitWidth = 88
               object SpeedButtonAbout: TsSpeedButton
                 AlignWithMargins = True
                 Left = 3
@@ -5383,7 +5385,7 @@ object FormMain: TFormMain
     Left = 373
     Top = 327
     Bitmap = {
-      494C01012900D000700520002000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
+      494C01012900D000740520002000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
       00000000000036000000280000008000000060010000010020000000000000C0
       020000000000000000000000000000000000008500FF008300FF008100FF0070
       00FF006D00FF006B00FF006B00FF006900FF005F00FF005E00FF005D00FF005B
@@ -11030,7 +11032,7 @@ object FormMain: TFormMain
     Left = 742
     Top = 287
     Bitmap = {
-      494C01012700B800080510001000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
+      494C01012700B8000C0510001000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000040000000A0000000010020000000000000A0
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -12940,7 +12942,7 @@ object FormMain: TFormMain
     Left = 371
     Top = 247
     Bitmap = {
-      494C010111001800880230003000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C0101110018008C0230003000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C0000000F0000000010020000000000000D0
       0200000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -18894,7 +18896,7 @@ object FormMain: TFormMain
     Left = 791
     Top = 238
     Bitmap = {
-      494C01011A002800880220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011A0028008C0220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000E0000000010020000000000000C0
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -22613,7 +22615,7 @@ object FormMain: TFormMain
     Left = 644
     Top = 287
     Bitmap = {
-      494C01010C007802240510001000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
+      494C01010C007802280510001000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -23159,7 +23161,7 @@ object FormMain: TFormMain
     Left = 742
     Top = 238
     Bitmap = {
-      494C010110001800380232003200FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C0101100018003C0232003200FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C8000000FA0000000100200000000000400D
       0300000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -29639,7 +29641,7 @@ object FormMain: TFormMain
     Left = 791
     Top = 287
     Bitmap = {
-      494C010105000800340210001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010105000800380210001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000002D2A2A60625B5BCE797171FF7971
       71FF797171FF797171FF797171FF797171FF797171FF797171FF797171FF7971
@@ -29931,7 +29933,7 @@ object FormMain: TFormMain
     Left = 505
     Top = 239
     Bitmap = {
-      494C0101010018005C0110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010101001800600110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -30075,7 +30077,7 @@ object FormMain: TFormMain
     Left = 501
     Top = 327
     Bitmap = {
-      494C010129008801500110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010129008801540110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000040000000B0000000010020000000000000B0
       000000000000000000000000000000000000009700FF00A300FF008900FF009C
       00FF009600FF007D00FF009100FF007600FF0026009E00000020000000090000

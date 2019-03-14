@@ -31,6 +31,7 @@ type
     procedure ShowAttribute(Num:string);
     procedure Stop; override;
     procedure Get(DNum:Word); overload;
+    function FillComboBox(CB:TComboBox):Boolean;
     property GetAttrNames:Boolean read FGetAttrNames write FGetAttrNames;
   end;
 
@@ -88,6 +89,22 @@ begin
  Ini.Free;
 end;
 
+function THDDUnit.FillComboBox(CB: TComboBox): Boolean;
+var i:Integer;
+    DriveResult:TDriveResult;
+    SmartResult:TSmartResult;
+begin
+ CB.Items.BeginUpdate;
+ CB.Items.Clear;
+ for i:= 0 to 254 do
+  begin
+   if MagWmiSmartDiskFail(i, DriveResult, SmartResult) then
+    CB.Items.Add(DriveResult.ModelNumber)
+   else Break;
+  end;
+ CB.Items.EndUpdate;
+end;
+
 procedure THDDUnit.Get(DNum:Word);
 begin
  DriveNum:=DNum;
@@ -106,8 +123,8 @@ begin
 end;
 
 function THDDUnit.FGet:TGlobalState;
-var DriveResult:TDriveResult ;
-    SmartResult:TSmartResult ;
+var DriveResult:TDriveResult;
+    SmartResult:TSmartResult;
     i, G1, G2:integer ;
 begin
  Inform(LangText(-1, 'Получение информации о диске \\.\PhysicalDrive'+IntToStr(DriveNum)+'.'));
@@ -239,8 +256,8 @@ begin
     end;
    with ListView.Items.Add do
     begin
-     Caption:='Время работы';
-     SubItems.Add(IntToStr(SmartResult.HoursRunning));
+     Caption:='Время работы (дней)';
+     SubItems.Add(IntToStr(SmartResult.HoursRunning div 24));
      GroupID:=G1;
      ImageIndex:=3;
     end;

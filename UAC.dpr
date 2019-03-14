@@ -2,15 +2,9 @@ program UAC;
 
 {$APPTYPE CONSOLE}
 
-{$R *.res}
-
 uses
-  System.SysUtils, Winapi.Windows, Vcl.Dialogs;
+  Winapi.Windows;
 
 begin
- try
-  WinExec(PAnsiChar(AnsiString(ParamStr(1))), SW_NORMAL);
- except
-  on E: Exception do Writeln(E.ClassName, ': ', E.Message);
- end;
+ WinExec(PAnsiChar(AnsiString(ParamStr(1))), SW_NORMAL);
 end.
