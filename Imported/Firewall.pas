@@ -94,7 +94,7 @@ Const
   Procedure SetFirewall;
 
 implementation
- uses WinServices;
+ uses Module.WinServices;
 
 Function IsFirewallEnabled:boolean;
 Var

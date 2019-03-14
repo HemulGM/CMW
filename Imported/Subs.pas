@@ -12,7 +12,7 @@ interface
 
 uses
   Sysutils, Windows, Messages, Classes, ShellAPI, nb30, Registry, StrUtils,
-  DateUtils {$IFDEF CPUX64}, WideStrUtils {$ENDIF}, OSInfo;
+  DateUtils {$IFDEF CPUX64}, WideStrUtils {$ENDIF}, CMW.OSInfo;
 
 {$R-} { no range checking, otherwise DWORD=Integer fails with some Windows APIs }
 

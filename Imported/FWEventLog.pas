@@ -260,7 +260,7 @@ const
   RegEventSources: array [TFWEventSources] of String = ('', 'Application', 'Security', 'System', '');
 
 implementation
- uses Main, COCUtils;
+ uses CMW.Main, CMW.Utils;
 
 const
   // Константы из WINNT.H

@@ -659,3 +659,197 @@
 11.12.2018 15:06:53: Лишний файл в каталоге АЗ, пропущен C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\desktop.ini 18 
 11.12.2018 15:13:28: Каталог пользователей C:\Users 
 11.12.2018 15:13:34: mon init 
+14.03.2019 8:10:36: Каталог пользователей C:\Users 
+14.03.2019 8:10:40: mon init 
+14.03.2019 8:13:25: Каталог пользователей C:\Users 
+14.03.2019 8:13:29: mon init 
+14.03.2019 8:15:09: Каталог пользователей C:\Users 
+14.03.2019 8:15:12: mon init 
+14.03.2019 8:16:00: Каталог пользователей C:\Users 
+14.03.2019 8:16:03: mon init 
+14.03.2019 8:21:29: Каталог пользователей C:\Users 
+14.03.2019 8:22:26: Каталог пользователей C:\Users 
+14.03.2019 8:25:50: mon init 
+14.03.2019 8:30:48: Каталог пользователей C:\Users 
+14.03.2019 8:30:52: mon init 
+14.03.2019 8:32:22: Каталог пользователей C:\Users 
+14.03.2019 8:32:25: mon init 
+14.03.2019 8:32:43: 0 
+14.03.2019 8:32:43: 1 
+14.03.2019 8:34:06: Не смог открыть ключ: SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx Операция успешно завершена 
+14.03.2019 8:34:06: Не смог открыть ключ: SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx Операция успешно завершена 
+14.03.2019 8:34:06: Лишний файл в каталоге АЗ, пропущен C:\Users\Геннадий\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\desktop.ini 18 
+14.03.2019 8:34:06: Лишний файл в каталоге АЗ, пропущен C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\desktop.ini 18 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:02: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1192 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1188 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1188 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1188 
+14.03.2019 8:35:03: Step 0: NtQueryInformationProcess(ProcHND, 0, @PBI, SizeOf(PBI), nil) is fail 1188 
+14.03.2019 8:36:22: Каталог пользователей C:\Users 
+14.03.2019 8:36:26: mon init 
+14.03.2019 12:31:54: Каталог пользователей C:\Users 
+14.03.2019 12:32:36: Каталог пользователей C:\Users 
+14.03.2019 12:33:03: Каталог пользователей C:\Users 
+14.03.2019 12:33:06: mon init 
+14.03.2019 12:33:27: Каталог пользователей C:\Users 
+14.03.2019 12:33:30: mon init 
+14.03.2019 12:36:17: Каталог пользователей C:\Users 
+14.03.2019 12:36:21: mon init 
+14.03.2019 12:36:43: Каталог пользователей C:\Users 
+14.03.2019 12:36:47: mon init 
+14.03.2019 12:37:07: Каталог пользователей C:\Users 
+14.03.2019 12:37:11: mon init 
+14.03.2019 12:37:29: Каталог пользователей C:\Users 
+14.03.2019 12:37:33: mon init 
+14.03.2019 12:41:14: Каталог пользователей C:\Users 
+14.03.2019 12:41:49: mon init 
+14.03.2019 12:42:32: Каталог пользователей C:\Users 
+14.03.2019 12:42:35: mon init 
+14.03.2019 12:44:37: Каталог пользователей C:\Users 
+14.03.2019 12:44:41: mon init 
+14.03.2019 12:44:51: Каталог пользователей C:\Users 
+14.03.2019 12:44:55: mon init 
+14.03.2019 12:45:27: Каталог пользователей C:\Users 
+14.03.2019 12:45:31: mon init 
+14.03.2019 12:45:56: Каталог пользователей C:\Users 
+14.03.2019 12:45:59: mon init 
+14.03.2019 12:46:25: Каталог пользователей C:\Users 
+14.03.2019 12:46:28: mon init 
+14.03.2019 12:46:43: Каталог пользователей C:\Users 
+14.03.2019 12:46:47: mon init 
+14.03.2019 12:46:58: Каталог пользователей C:\Users 
+14.03.2019 12:47:01: mon init 
+14.03.2019 12:49:30: Каталог пользователей C:\Users 
+14.03.2019 12:49:34: mon init 
+14.03.2019 12:49:56: Не могу получить информацию о хосте: 110.249.212.46 Запрошенное имя верно, но данные запрошенного типа не найдены 
+14.03.2019 12:50:07: Не могу получить информацию о хосте: 104.16.60.37 Запрошенное имя верно, но данные запрошенного типа не найдены 
+14.03.2019 12:50:12: Не могу получить информацию о хосте: 40.90.190.179 Запрошенное имя верно, но данные запрошенного типа не найдены 
+14.03.2019 13:17:28: Каталог пользователей C:\Users 
+14.03.2019 13:17:32: mon init 
+14.03.2019 13:17:41: Не смог открыть ключ: SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx Операция успешно завершена 
+14.03.2019 13:17:41: Не смог открыть ключ: SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx Операция успешно завершена 
+14.03.2019 13:17:41: Лишний файл в каталоге АЗ, пропущен C:\Users\Геннадий\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\desktop.ini 18 
+14.03.2019 13:17:41: Лишний файл в каталоге АЗ, пропущен C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\desktop.ini 18 

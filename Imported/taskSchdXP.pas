@@ -790,7 +790,7 @@ type
 implementation
 
 uses
-  System.Win.ComObj, Winapi.CommCtrl, COCUtils, Utils;
+  System.Win.ComObj, Winapi.CommCtrl, CMW.Utils;
 
 const
   TaskFlagMapping: array [TScheduledTaskFlag] of DWORD =

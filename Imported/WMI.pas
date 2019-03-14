@@ -181,7 +181,7 @@ type
 
 implementation
 
-uses ActiveX, ComObj, Variants, COCUtils;
+uses ActiveX, ComObj, Variants, CMW.Utils;
 
 (* ************************************************************************* *)
 
