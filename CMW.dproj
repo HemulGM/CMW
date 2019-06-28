@@ -6,7 +6,7 @@
         <MainSource>CMW.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -108,15 +108,15 @@
         <DCC_DcuOutput>.\$(Platform)\$(Config)\Units</DCC_DcuOutput>
         <Manifest_File>Win32\CWM.manifest</Manifest_File>
         <VerInfo_Release>3</VerInfo_Release>
-        <VerInfo_Build>762</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=Домашний пользователь;FileDescription=Комплекс обслуживания рабочих станций;FileVersion=0.0.3.762;InternalName=Complex maintenance of workstations;LegalCopyright=;LegalTrademarks=FreeWare;OriginalFilename=Complex maintenance of workstations;ProductName=Комплекс обслуживания рабочих станций;ProductVersion=0.0.3;Comments=Комплекс обслуживания рабочих станций;ProgramID=com.embarcadero.$(ModuleName)</VerInfo_Keys>
+        <VerInfo_Build>893</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Домашний пользователь;FileDescription=Комплекс обслуживания рабочих станций;FileVersion=0.0.3.893;InternalName=Complex maintenance of workstations;LegalCopyright=;LegalTrademarks=FreeWare;OriginalFilename=Complex maintenance of workstations;ProductName=Комплекс обслуживания рабочих станций;ProductVersion=0.0.3;Comments=Комплекс обслуживания рабочих станций;ProgramID=com.embarcadero.$(ModuleName)</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <BT_BuildType>Debug</BT_BuildType>
         <DCC_DcuOutput>.\$(Platform)\$(Config)\Units</DCC_DcuOutput>
         <VerInfo_Release>3</VerInfo_Release>
-        <VerInfo_Build>701</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=Домашний пользователь;FileDescription=Комплекс обслуживания рабочих станций;FileVersion=0.0.3.701;InternalName=Complex maintenance of workstations;LegalCopyright=;LegalTrademarks=FreeWare;OriginalFilename=Complex maintenance of workstations;ProductName=Комплекс обслуживания рабочих станций;ProductVersion=0.0.3;Comments=Комплекс обслуживания рабочих станций;ProgramID=com.embarcadero.$(ModuleName)</VerInfo_Keys>
+        <VerInfo_Build>704</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=Домашний пользователь;FileDescription=Комплекс обслуживания рабочих станций;FileVersion=0.0.3.704;InternalName=Complex maintenance of workstations;LegalCopyright=;LegalTrademarks=FreeWare;OriginalFilename=Complex maintenance of workstations;ProductName=Комплекс обслуживания рабочих станций;ProductVersion=0.0.3;Comments=Комплекс обслуживания рабочих станций;ProgramID=com.embarcadero.$(ModuleName)</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Manifest_File>Win64\CWM.manifest</Manifest_File>
@@ -130,19 +130,21 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
         <DCC_DcuOutput>.\$(Platform)\$(Config)\Units</DCC_DcuOutput>
-        <VerInfo_Build>30</VerInfo_Build>
+        <VerInfo_Build>32</VerInfo_Build>
         <Manifest_File>Win32\CWM.manifest</Manifest_File>
         <VerInfo_MinorVer>0</VerInfo_MinorVer>
         <VerInfo_Release>0</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=Домашний пользователь;FileDescription=Комплекс обслуживания рабочих станций;FileVersion=1.0.0.30;InternalName=Complex maintenance of workstations;LegalCopyright=;LegalTrademarks=FreeWare;OriginalFilename=Complex maintenance of workstations;ProductName=Комплекс обслуживания рабочих станций;ProductVersion=1.0.0;Comments=Комплекс обслуживания рабочих станций;ProgramID=com.embarcadero.$(ModuleName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Домашний пользователь;FileDescription=Комплекс обслуживания рабочих станций;FileVersion=1.0.0.32;InternalName=Complex maintenance of workstations;LegalCopyright=;LegalTrademarks=FreeWare;OriginalFilename=Complex maintenance of workstations;ProductName=Комплекс обслуживания рабочих станций;ProductVersion=1.0.0;Comments=Комплекс обслуживания рабочих станций;ProgramID=com.embarcadero.$(ModuleName)</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
         <DCC_DcuOutput>.\$(Platform)\$(Config)\Units</DCC_DcuOutput>
-        <VerInfo_Build>31</VerInfo_Build>
+        <VerInfo_Build>32</VerInfo_Build>
         <VerInfo_MinorVer>0</VerInfo_MinorVer>
         <VerInfo_Release>0</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=Домашний пользователь;FileDescription=Комплекс обслуживания рабочих станций;FileVersion=1.0.0.31;InternalName=Complex maintenance of workstations;LegalCopyright=;LegalTrademarks=FreeWare;OriginalFilename=Complex maintenance of workstations;ProductName=Комплекс обслуживания рабочих станций;ProductVersion=1.0.0;Comments=Комплекс обслуживания рабочих станций;ProgramID=com.embarcadero.$(ModuleName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Домашний пользователь;FileDescription=Комплекс обслуживания рабочих станций;FileVersion=1.0.0.32;InternalName=Complex maintenance of workstations;LegalCopyright=;LegalTrademarks=FreeWare;OriginalFilename=Complex maintenance of workstations;ProductName=Комплекс обслуживания рабочих станций;ProductVersion=1.0.0;Comments=Комплекс обслуживания рабочих станций;ProgramID=com.embarcadero.$(ModuleName)</VerInfo_Keys>
     </PropertyGroup>
     <Import Project="C:\Users\Геннадий\Desktop\Deff.optset" Condition="'$(Base)'!='' And Exists('C:\Users\Геннадий\Desktop\Deff.optset')"/>
     <ItemGroup>
@@ -310,26 +312,20 @@
                 </RDP_Source_Files>
             </Delphi.Personality>
             <Deployment Version="3">
-                <DeployFile LocalName="Win64\Debug\CWM.rsm" Configuration="Debug" Class="DebugSymbols">
-                    <Platform Name="Win64">
-                        <RemoteName>CWM.rsm</RemoteName>
+                <DeployFile LocalName="Win32\Debug\CMW.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>CMW.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win64\Debug\CMW.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win64\Release\CMW.exe" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win64">
                         <RemoteName>CMW.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win32\Debug\CMW.rsm" Configuration="Debug" Class="DebugSymbols">
-                    <Platform Name="Win32">
-                        <RemoteName>CMW.rsm</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Win32\Debug\CMW.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
+                <DeployFile LocalName="Win64\Debug\CMW.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
                         <RemoteName>CMW.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>

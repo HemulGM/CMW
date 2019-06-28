@@ -20,6 +20,7 @@ object FormMain: TFormMain
   PrintScale = poNone
   Scaled = False
   ShowHint = True
+  OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnKeyUp = FormKeyUp
@@ -30,8 +31,8 @@ object FormMain: TFormMain
     Left = 0
     Top = 120
     Width = 1025
-    Height = 489
-    ActivePage = TabSheetAutoruns
+    Height = 470
+    ActivePage = TabSheetBSOD
     Align = alClient
     ParentShowHint = False
     ShowHint = False
@@ -43,64 +44,70 @@ object FormMain: TFormMain
     object TabSheetAutoruns: TTabSheet
       Caption = 'Autoruns'
       ImageIndex = 4
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel3: TPanel
         Left = 0
-        Top = 404
+        Top = 385
         Width = 1017
         Height = 55
         Align = alBottom
+        BevelEdges = [beTop]
+        BevelKind = bkFlat
         BevelOuter = bvNone
         TabOrder = 0
-        object Bevel7: TBevel
+        object Panel19: TPanel
           Left = 0
           Top = 0
-          Width = 1017
-          Height = 9
-          Align = alTop
-          Shape = bsTopLine
-          ExplicitWidth = 795
-        end
-        object LabelAutorun1: TLabel
-          Left = 8
-          Top = 8
-          Width = 61
-          Height = 13
-          Caption = #1069#1083#1077#1084#1077#1085#1090#1086#1074':'
-        end
-        object LabelCountAutorun: TLabel
-          Left = 72
-          Top = 8
-          Width = 132
-          Height = 13
-          AutoSize = False
-          Caption = '0'
-        end
-        object Label21: TLabel
-          Left = 8
-          Top = 21
-          Width = 111
-          Height = 13
-          Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
-          OnClick = Label21Click
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
-        object Label22: TLabel
-          Left = 8
-          Top = 36
-          Width = 94
-          Height = 13
-          Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
-          OnClick = ActionAutorunExecute
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
+          Width = 185
+          Height = 53
+          Align = alLeft
+          BevelOuter = bvNone
+          TabOrder = 0
+          object Label21: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 22
+            Width = 111
+            Height = 13
+            Align = alTop
+            Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
+            OnClick = Label21Click
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
+          object Label22: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 41
+            Width = 94
+            Height = 13
+            Align = alTop
+            Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
+            OnClick = ActionAutorunExecute
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
+          object LabelCountAutorun: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 3
+            Width = 179
+            Height = 13
+            Align = alTop
+            AutoSize = False
+            Caption = '0'
+            ExplicitTop = -3
+          end
         end
       end
       object ListViewAR: TListView
         Left = 0
         Top = 0
         Width = 1017
-        Height = 404
+        Height = 385
         Align = alClient
         Anchors = []
         BorderStyle = bsNone
@@ -128,11 +135,15 @@ object FormMain: TFormMain
     object TabSheetExeing: TTabSheet
       Caption = 'Exeing'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ListViewImPaths: TListView
         Left = 0
         Top = 0
         Width = 1017
-        Height = 459
+        Height = 440
         Align = alClient
         BorderStyle = bsNone
         Columns = <
@@ -160,11 +171,15 @@ object FormMain: TFormMain
     object TabSheetResult: TTabSheet
       Caption = 'ClrResult'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GridPanel2: TGridPanel
         Left = 0
         Top = 0
         Width = 1017
-        Height = 459
+        Height = 440
         Align = alClient
         Caption = 'GridPanel2'
         ColumnCollection = <
@@ -205,7 +220,7 @@ object FormMain: TFormMain
           Left = 251
           Top = 1
           Width = 765
-          Height = 457
+          Height = 438
           Align = alClient
           Anchors = []
           BorderStyle = bsNone
@@ -240,7 +255,7 @@ object FormMain: TFormMain
           Left = 1
           Top = 1
           Width = 250
-          Height = 397
+          Height = 378
           Align = alClient
           BevelEdges = [beRight]
           BevelOuter = bvNone
@@ -264,51 +279,46 @@ object FormMain: TFormMain
         end
         object Panel8: TPanel
           Left = 1
-          Top = 398
+          Top = 379
           Width = 250
           Height = 60
           Align = alClient
+          BevelEdges = [beTop]
+          BevelKind = bkFlat
           BevelOuter = bvNone
           TabOrder = 2
-          object Bevel12: TBevel
-            Left = 0
-            Top = 0
-            Width = 250
-            Height = 9
-            Align = alTop
-            Shape = bsTopLine
-            ExplicitWidth = 795
-          end
-          object Label17: TLabel
-            Left = 8
-            Top = 8
-            Width = 61
-            Height = 13
-            Caption = #1069#1083#1077#1084#1077#1085#1090#1086#1074':'
-          end
           object LabelCountClr: TLabel
-            Left = 72
-            Top = 8
-            Width = 132
+            AlignWithMargins = True
+            Left = 3
+            Top = 3
+            Width = 244
             Height = 13
+            Align = alTop
             AutoSize = False
             Caption = '0'
+            ExplicitLeft = 72
+            ExplicitTop = 8
+            ExplicitWidth = 132
           end
           object Label20: TLabel
-            Left = 8
-            Top = 36
+            AlignWithMargins = True
+            Left = 3
+            Top = 41
             Width = 94
             Height = 13
+            Align = alTop
             Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
             OnClick = ActionClearFindExecute
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
           end
           object Label35: TLabel
-            Left = 8
+            AlignWithMargins = True
+            Left = 3
             Top = 22
             Width = 111
             Height = 13
+            Align = alTop
             Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
             OnClick = ActionClearPerformExecute
             OnMouseEnter = LabelMouseEnter
@@ -329,7 +339,7 @@ object FormMain: TFormMain
       ParentFont = False
       DesignSize = (
         1017
-        459)
+        440)
       object Bevel8: TBevel
         Left = 379
         Top = 24
@@ -459,8 +469,9 @@ object FormMain: TFormMain
         Left = 11
         Top = 9
         Width = 997
-        Height = 441
+        Height = 422
         Anchors = [akLeft, akTop, akRight, akBottom]
+        BorderStyle = bsNone
         Columns = <
           item
             AutoSize = True
@@ -492,11 +503,15 @@ object FormMain: TFormMain
     object TabSheetEvents: TTabSheet
       Caption = 'Events'
       ImageIndex = 5
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ListViewEvents: TListView
         Left = 0
         Top = 0
         Width = 1017
-        Height = 404
+        Height = 385
         Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -539,67 +554,62 @@ object FormMain: TFormMain
       end
       object Panel6: TPanel
         Left = 0
-        Top = 404
+        Top = 385
         Width = 1017
         Height = 55
         Align = alBottom
+        BevelEdges = [beTop]
+        BevelKind = bkFlat
         BevelOuter = bvNone
         TabOrder = 1
-        object Bevel11: TBevel
+        object Panel71: TPanel
           Left = 0
           Top = 0
-          Width = 1017
-          Height = 9
-          Align = alTop
-          Shape = bsTopLine
-          ExplicitWidth = 795
-        end
-        object LabelEvt: TLabel
-          Left = 8
-          Top = 8
-          Width = 61
-          Height = 13
-          Caption = #1069#1083#1077#1084#1077#1085#1090#1086#1074':'
-        end
-        object LabelCountEvent: TLabel
-          Left = 72
-          Top = 8
-          Width = 132
-          Height = 13
-          AutoSize = False
-          Caption = '0'
-        end
-        object Label34: TLabel
-          Left = 8
-          Top = 36
-          Width = 94
-          Height = 13
-          Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
-          OnClick = ActionEventsExecute
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
-        object Label33: TLabel
-          Left = 8
-          Top = 22
-          Width = 111
-          Height = 13
-          Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
-          Enabled = False
-          OnClick = Label21Click
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
+          Width = 185
+          Height = 53
+          Align = alLeft
+          BevelOuter = bvNone
+          TabOrder = 0
+          object Label34: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 22
+            Width = 94
+            Height = 13
+            Align = alTop
+            Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
+            OnClick = ActionEventsExecute
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
+          object LabelCountEvent: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 3
+            Width = 179
+            Height = 13
+            Align = alTop
+            AutoSize = False
+            Caption = '0'
+            ExplicitLeft = 53
+            ExplicitTop = 8
+            ExplicitWidth = 132
+          end
         end
       end
     end
     object TabSheetSheduler: TTabSheet
       Caption = 'Sheduler'
       ImageIndex = 6
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ListViewSchedule: TListView
         Left = 0
         Top = 0
         Width = 1017
-        Height = 404
+        Height = 385
         Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -634,55 +644,59 @@ object FormMain: TFormMain
       end
       object Panel1: TPanel
         Left = 0
-        Top = 404
+        Top = 385
         Width = 1017
         Height = 55
         Align = alBottom
+        BevelEdges = [beTop]
+        BevelKind = bkFlat
         BevelOuter = bvNone
         TabOrder = 1
-        object Bevel3: TBevel
+        object Panel72: TPanel
           Left = 0
           Top = 0
-          Width = 1017
-          Height = 9
-          Align = alTop
-          Shape = bsTopLine
-          ExplicitWidth = 795
-        end
-        object LabelTsk: TLabel
-          Left = 8
-          Top = 8
-          Width = 61
-          Height = 13
-          Caption = #1069#1083#1077#1084#1077#1085#1090#1086#1074':'
-        end
-        object LabelCountTask: TLabel
-          Left = 72
-          Top = 8
-          Width = 132
-          Height = 13
-          AutoSize = False
-          Caption = '0'
-        end
-        object LabelOffAllSch: TLabel
-          Left = 8
-          Top = 22
-          Width = 129
-          Height = 13
-          Caption = #1054#1090#1082#1083#1102#1095#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
-          OnClick = LabelOffAllSchClick
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
-        object Label15: TLabel
-          Left = 8
-          Top = 36
-          Width = 94
-          Height = 13
-          Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
-          OnClick = ActionScheduleExecute
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
+          Width = 185
+          Height = 53
+          Align = alLeft
+          BevelOuter = bvNone
+          TabOrder = 0
+          object Label15: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 41
+            Width = 94
+            Height = 13
+            Align = alTop
+            Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
+            OnClick = ActionScheduleExecute
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
+          object LabelCountTask: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 3
+            Width = 179
+            Height = 13
+            Align = alTop
+            AutoSize = False
+            Caption = '0'
+            ExplicitLeft = 53
+            ExplicitTop = 8
+            ExplicitWidth = 132
+          end
+          object LabelOffAllSch: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 22
+            Width = 129
+            Height = 13
+            Align = alTop
+            Caption = #1054#1090#1082#1083#1102#1095#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
+            OnClick = LabelOffAllSchClick
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
         end
       end
     end
@@ -691,7 +705,7 @@ object FormMain: TFormMain
       ImageIndex = 8
       DesignSize = (
         1017
-        459)
+        440)
       object Label1: TLabel
         Left = 16
         Top = 208
@@ -836,7 +850,7 @@ object FormMain: TFormMain
         Left = 16
         Top = 235
         Width = 980
-        Height = 212
+        Height = 193
         Anchors = [akLeft, akTop, akRight, akBottom]
         BorderStyle = bsNone
         Columns = <
@@ -889,90 +903,38 @@ object FormMain: TFormMain
     object TabSheetWinApps: TTabSheet
       Caption = 'Apps'
       ImageIndex = 3
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PanelCtrlApps: TPanel
         Left = 0
-        Top = 404
+        Top = 385
         Width = 1017
         Height = 55
         Align = alBottom
+        BevelEdges = [beTop]
+        BevelKind = bkFlat
         BevelOuter = bvNone
         TabOrder = 0
-        DesignSize = (
-          1017
-          55)
-        object Bevel1: TBevel
-          Left = 0
-          Top = 0
-          Width = 1017
-          Height = 9
-          Align = alTop
-          Shape = bsTopLine
-          ExplicitWidth = 795
-        end
-        object LabelAppElements: TLabel
-          Left = 8
-          Top = 6
-          Width = 61
-          Height = 13
-          Caption = #1069#1083#1077#1084#1077#1085#1090#1086#1074':'
-        end
-        object LabelCountInstall: TLabel
-          Left = 75
-          Top = 6
-          Width = 78
-          Height = 13
-          AutoSize = False
-          Caption = '0'
-        end
-        object LabelDelSelect: TLabel
-          Left = 7
-          Top = 21
-          Width = 111
-          Height = 13
-          Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
-          Enabled = False
-          OnClick = LabelDelSelectClick
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
-        object LabelRefreshWinApps: TLabel
-          Left = 8
-          Top = 36
-          Width = 94
-          Height = 13
-          Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
         object PanelAwating: TPanel
-          Left = 461
-          Top = 15
+          Left = 463
+          Top = 0
           Width = 554
-          Height = 38
-          Anchors = [akTop, akRight]
+          Height = 53
+          Align = alRight
           BevelOuter = bvNone
           TabOrder = 0
-          object Bevel4: TBevel
-            Left = 0
-            Top = 0
-            Width = 554
-            Height = 11
-            Align = alTop
-            Shape = bsTopLine
-            ExplicitLeft = -15
-            ExplicitTop = 7
-            ExplicitWidth = 530
-          end
           object Label4: TLabel
             Left = 247
-            Top = 13
+            Top = 20
             Width = 190
             Height = 13
             Caption = #1054#1078#1080#1076#1072#1085#1080#1077' '#1091#1076#1072#1083#1077#1085#1080#1103' '#1087#1088#1080#1083#1086#1078#1077#1085#1080#1103'...'
           end
           object ProgressBar1: TProgressBar
             Left = 1
-            Top = 8
+            Top = 15
             Width = 240
             Height = 23
             DoubleBuffered = False
@@ -982,13 +944,59 @@ object FormMain: TFormMain
             TabOrder = 0
           end
           object ButtonIgnoreDelApp: TButton
-            Left = 472
-            Top = 9
-            Width = 75
+            Left = 443
+            Top = 14
+            Width = 104
             Height = 25
             Caption = #1055#1088#1086#1087#1091#1089#1090#1080#1090#1100
             TabOrder = 1
             OnClick = ButtonIgnoreDelAppClick
+          end
+        end
+        object Panel73: TPanel
+          Left = 0
+          Top = 0
+          Width = 185
+          Height = 53
+          Align = alLeft
+          BevelOuter = bvNone
+          TabOrder = 1
+          object LabelCountInstall: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 3
+            Width = 179
+            Height = 13
+            Align = alTop
+            AutoSize = False
+            Caption = '0'
+            ExplicitLeft = 75
+            ExplicitTop = 6
+            ExplicitWidth = 78
+          end
+          object LabelDelSelect: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 22
+            Width = 111
+            Height = 13
+            Align = alTop
+            Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
+            OnClick = LabelDelSelectClick
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
+          object LabelRefreshWinApps: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 41
+            Width = 94
+            Height = 13
+            Align = alTop
+            Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
+            OnClick = ActionWinAppsExecute
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
           end
         end
       end
@@ -996,7 +1004,7 @@ object FormMain: TFormMain
         Left = 0
         Top = 0
         Width = 1017
-        Height = 404
+        Height = 385
         Align = alClient
         BorderStyle = bsNone
         Checkboxes = True
@@ -1069,11 +1077,15 @@ object FormMain: TFormMain
     object TabSheetTweaks: TTabSheet
       Caption = 'Tweaks'
       ImageIndex = 10
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ListViewTweaks: TListView
         Left = 0
         Top = 0
         Width = 1017
-        Height = 382
+        Height = 363
         Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -1099,7 +1111,7 @@ object FormMain: TFormMain
       end
       object ListViewTweakLog: TListView
         Left = 0
-        Top = 382
+        Top = 363
         Width = 1017
         Height = 77
         Align = alBottom
@@ -1134,98 +1146,79 @@ object FormMain: TFormMain
       ImageIndex = 10
       object Panel4: TPanel
         Left = 0
-        Top = 404
+        Top = 385
         Width = 1017
         Height = 55
         Align = alBottom
+        BevelEdges = [beTop]
+        BevelKind = bkFlat
         BevelOuter = bvNone
         TabOrder = 0
-        DesignSize = (
-          1017
-          55)
-        object Bevel9: TBevel
+        object Panel74: TPanel
           Left = 0
           Top = 0
-          Width = 1017
-          Height = 9
-          Align = alTop
-          Shape = bsTopLine
-          Visible = False
-          ExplicitWidth = 795
-        end
-        object Label25: TLabel
-          Left = 8
-          Top = 8
-          Width = 61
-          Height = 13
-          Caption = #1069#1083#1077#1084#1077#1085#1090#1086#1074':'
-        end
-        object LabelCountProc: TLabel
-          Left = 72
-          Top = 8
-          Width = 132
-          Height = 13
-          AutoSize = False
-          Caption = '0'
-        end
-        object Label27: TLabel
-          Left = 8
-          Top = 22
-          Width = 127
-          Height = 13
-          Caption = #1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
-        object Label28: TLabel
-          Left = 8
-          Top = 36
-          Width = 94
-          Height = 13
-          Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
-          OnClick = ActionProcessesExecute
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
-        object Memo1: TMemo
-          Left = 714
-          Top = 6
-          Width = 301
-          Height = 47
-          Anchors = [akTop, akRight, akBottom]
-          Lines.Strings = (
-            'Memo1')
+          Width = 185
+          Height = 53
+          Align = alLeft
+          BevelOuter = bvNone
           TabOrder = 0
+          object Label27: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 22
+            Width = 127
+            Height = 13
+            Align = alTop
+            Caption = #1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
+            OnClick = ActionProcStopSelExecute
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
+          object Label28: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 41
+            Width = 94
+            Height = 13
+            Align = alTop
+            Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
+            OnClick = ActionProcessesExecute
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
+          object LabelCountProc: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 3
+            Width = 179
+            Height = 13
+            Align = alTop
+            AutoSize = False
+            Caption = '0'
+            ExplicitLeft = 53
+            ExplicitTop = 6
+            ExplicitWidth = 132
+          end
         end
       end
       object GridPanel1: TGridPanel
         Left = 0
         Top = 0
         Width = 1017
-        Height = 404
+        Height = 385
         Align = alClient
-        Caption = 'GridPanel1'
         ColumnCollection = <
           item
             Value = 25.083913420785090000
           end
           item
             SizeStyle = ssAbsolute
-            Value = 1.000000000000000000
+            Value = 2.000000000000000000
           end
           item
             Value = 74.916086579214910000
-          end
-          item
-            SizeStyle = ssAuto
           end>
         ControlCollection = <
-          item
-            Column = 1
-            Control = Splitter1
-            Row = 0
-            RowSpan = 3
-          end
           item
             Column = 0
             Control = ListViewWindows
@@ -1246,6 +1239,12 @@ object FormMain: TFormMain
             Control = ListViewProc
             Row = 0
             RowSpan = 3
+          end
+          item
+            Column = 1
+            Control = Splitter3
+            Row = 0
+            RowSpan = 3
           end>
         ExpandStyle = emAddColumns
         RowCollection = <
@@ -1261,21 +1260,11 @@ object FormMain: TFormMain
           end>
         ShowCaption = False
         TabOrder = 1
-        object Splitter1: TSplitter
-          Left = 255
-          Top = 1
-          Width = 1
-          Height = 402
-          ExplicitLeft = 430
-          ExplicitTop = 6
-          ExplicitWidth = 3
-          ExplicitHeight = 248
-        end
         object ListViewWindows: TListView
           Left = 1
-          Top = 203
+          Top = 193
           Width = 254
-          Height = 200
+          Height = 191
           Align = alClient
           Anchors = []
           BorderStyle = bsNone
@@ -1302,7 +1291,7 @@ object FormMain: TFormMain
           Left = 1
           Top = 1
           Width = 254
-          Height = 200
+          Height = 190
           Align = alClient
           Anchors = []
           BevelEdges = []
@@ -1319,7 +1308,7 @@ object FormMain: TFormMain
         end
         object Bevel6: TBevel
           Left = 1
-          Top = 201
+          Top = 191
           Width = 254
           Height = 2
           Align = alClient
@@ -1329,10 +1318,10 @@ object FormMain: TFormMain
           ExplicitHeight = 123
         end
         object ListViewProc: TListView
-          Left = 256
+          Left = 257
           Top = 1
           Width = 759
-          Height = 402
+          Height = 383
           Align = alClient
           BevelEdges = [beLeft]
           BevelInner = bvNone
@@ -1389,16 +1378,26 @@ object FormMain: TFormMain
           OnKeyDown = ListViewProcKeyDown
           OnMouseDown = ListViewProcMouseDown
         end
+        object Splitter3: TSplitter
+          Left = 255
+          Top = 1
+          Height = 383
+          ExplicitLeft = 70
+        end
       end
     end
     object TabSheetServices: TTabSheet
       Caption = #1057#1083#1091#1078#1073#1099
       ImageIndex = 11
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ListViewSrvs: TListView
         Left = 0
         Top = 0
         Width = 1017
-        Height = 404
+        Height = 385
         Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -1438,65 +1437,62 @@ object FormMain: TFormMain
       end
       object Panel5: TPanel
         Left = 0
-        Top = 404
+        Top = 385
         Width = 1017
         Height = 55
         Align = alBottom
+        BevelEdges = [beTop]
+        BevelKind = bkFlat
         BevelOuter = bvNone
         TabOrder = 1
-        object Bevel10: TBevel
+        object Panel75: TPanel
           Left = 0
           Top = 0
-          Width = 1017
-          Height = 9
-          Align = alTop
-          Shape = bsTopLine
-          ExplicitWidth = 795
-        end
-        object Label26: TLabel
-          Left = 8
-          Top = 8
-          Width = 61
-          Height = 13
-          Caption = #1069#1083#1077#1084#1077#1085#1090#1086#1074':'
-        end
-        object LabelCountService: TLabel
-          Left = 75
-          Top = 6
-          Width = 132
-          Height = 13
-          AutoSize = False
-          Caption = '0'
-        end
-        object Label30: TLabel
-          Left = 8
-          Top = 22
-          Width = 129
-          Height = 13
-          Caption = #1054#1090#1082#1083#1102#1095#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
-        object Label31: TLabel
-          Left = 8
-          Top = 36
-          Width = 94
-          Height = 13
-          Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
-          OnClick = ActionSrvsExecute
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
+          Width = 185
+          Height = 53
+          Align = alLeft
+          BevelOuter = bvNone
+          TabOrder = 0
+          object Label31: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 22
+            Width = 94
+            Height = 13
+            Align = alTop
+            Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
+            OnClick = ActionSrvsExecute
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
+          object LabelCountService: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 3
+            Width = 179
+            Height = 13
+            Align = alTop
+            AutoSize = False
+            Caption = '0'
+            ExplicitLeft = 53
+            ExplicitTop = 6
+            ExplicitWidth = 132
+          end
         end
       end
     end
     object TabSheetPorts: TTabSheet
       Caption = #1055#1086#1088#1090#1099
       ImageIndex = 12
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ListViewPorts: TListView
         Left = 0
         Top = 0
         Width = 1017
-        Height = 430
+        Height = 411
         Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -1533,46 +1529,42 @@ object FormMain: TFormMain
       end
       object Panel2: TPanel
         Left = 0
-        Top = 430
+        Top = 411
         Width = 1017
         Height = 29
         Align = alBottom
+        BevelEdges = [beTop]
+        BevelKind = bkFlat
         BevelOuter = bvNone
         TabOrder = 1
-        object Bevel5: TBevel
-          Left = 0
-          Top = 0
-          Width = 1017
-          Height = 9
-          Align = alTop
-          Shape = bsTopLine
-          ExplicitWidth = 795
-        end
-        object Label12: TLabel
-          Left = 8
-          Top = 8
-          Width = 61
-          Height = 13
-          Caption = #1069#1083#1077#1084#1077#1085#1090#1086#1074':'
-        end
         object LabelCountPorts: TLabel
-          Left = 72
-          Top = 8
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
           Width = 132
-          Height = 13
+          Height = 21
+          Align = alLeft
           AutoSize = False
           Caption = '0'
+          Layout = tlCenter
+          ExplicitLeft = 72
+          ExplicitTop = 8
+          ExplicitHeight = 13
         end
       end
     end
     object TabSheetHDD: TTabSheet
       Caption = 'HDD'
       ImageIndex = 13
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ListViewHDD: TListView
         Left = 0
         Top = 0
         Width = 1017
-        Height = 404
+        Height = 385
         Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
@@ -1589,65 +1581,62 @@ object FormMain: TFormMain
       end
       object Panel7: TPanel
         Left = 0
-        Top = 404
+        Top = 385
         Width = 1017
         Height = 55
         Align = alBottom
+        BevelEdges = [beTop]
+        BevelKind = bkFlat
         BevelOuter = bvNone
         TabOrder = 1
-        object Bevel2: TBevel
+        object Panel17: TPanel
           Left = 0
           Top = 0
-          Width = 1017
-          Height = 9
-          Align = alTop
-          Shape = bsTopLine
-          ExplicitWidth = 795
-        end
-        object Label19: TLabel
-          Left = 8
-          Top = 8
-          Width = 61
-          Height = 13
-          Caption = #1069#1083#1077#1084#1077#1085#1090#1086#1074':'
-        end
-        object LabelCountHDD: TLabel
-          Left = 72
-          Top = 8
-          Width = 132
-          Height = 13
-          AutoSize = False
-          Caption = '0'
-        end
-        object Label29: TLabel
-          Left = 8
-          Top = 36
-          Width = 94
-          Height = 13
-          Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
-        object Label32: TLabel
-          Left = 8
-          Top = 22
-          Width = 132
-          Height = 13
-          Caption = #1054#1087#1088#1077#1076#1077#1083#1080#1090#1100' '#1085#1072#1079#1085#1072#1095#1077#1085#1080#1077
-          Enabled = False
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
+          Width = 185
+          Height = 53
+          Align = alLeft
+          BevelOuter = bvNone
+          TabOrder = 0
+          object LabelCountHDD: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 3
+            Width = 179
+            Height = 13
+            Align = alTop
+            AutoSize = False
+            Caption = '0'
+            ExplicitLeft = 13
+            ExplicitTop = 14
+            ExplicitWidth = 172
+          end
+          object Label29: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 22
+            Width = 94
+            Height = 13
+            Align = alTop
+            Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
+            OnClick = ActionHDDExecute
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
         end
       end
     end
     object TabSheetHelper: TTabSheet
-      Caption = 'TabSheetHelper'
+      Caption = 'Helper'
       ImageIndex = 14
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GridPanel3: TGridPanel
         Left = 0
         Top = 0
         Width = 1017
-        Height = 459
+        Height = 440
         Align = alClient
         Caption = 'GridPanel3'
         ColumnCollection = <
@@ -1678,7 +1667,7 @@ object FormMain: TFormMain
           Left = 1
           Top = 1
           Width = 250
-          Height = 457
+          Height = 438
           Align = alClient
           BevelEdges = [beRight]
           BevelInner = bvNone
@@ -1692,7 +1681,7 @@ object FormMain: TFormMain
           Left = 251
           Top = 1
           Width = 765
-          Height = 457
+          Height = 438
           Align = alClient
           BorderStyle = bsNone
           TabOrder = 1
@@ -1702,64 +1691,72 @@ object FormMain: TFormMain
     object TabSheetFireWall: TTabSheet
       Caption = #1041#1088#1072#1085#1076#1084#1072#1091#1101#1088
       ImageIndex = 15
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Panel9: TPanel
         Left = 0
-        Top = 404
+        Top = 385
         Width = 1017
         Height = 55
         Align = alBottom
+        BevelEdges = [beTop]
+        BevelKind = bkFlat
         BevelOuter = bvNone
         TabOrder = 0
-        object Bevel13: TBevel
+        object Panel76: TPanel
           Left = 0
           Top = 0
-          Width = 1017
-          Height = 9
-          Align = alTop
-          Shape = bsTopLine
-          ExplicitWidth = 795
-        end
-        object Label18: TLabel
-          Left = 8
-          Top = 8
-          Width = 61
-          Height = 13
-          Caption = #1069#1083#1077#1084#1077#1085#1090#1086#1074':'
-        end
-        object Label36: TLabel
-          Left = 72
-          Top = 8
-          Width = 132
-          Height = 13
-          AutoSize = False
-          Caption = '0'
-        end
-        object Label37: TLabel
-          Left = 8
-          Top = 21
-          Width = 111
-          Height = 13
-          Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
-          OnClick = Label21Click
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
-        object Label38: TLabel
-          Left = 8
-          Top = 36
-          Width = 94
-          Height = 13
-          Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
-          OnClick = ActionAutorunExecute
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
+          Width = 185
+          Height = 53
+          Align = alLeft
+          BevelOuter = bvNone
+          TabOrder = 0
+          object Label36: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 3
+            Width = 179
+            Height = 13
+            Align = alTop
+            AutoSize = False
+            Caption = '0'
+            ExplicitLeft = 53
+            ExplicitTop = 8
+            ExplicitWidth = 132
+          end
+          object Label37: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 22
+            Width = 111
+            Height = 13
+            Align = alTop
+            Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
+            Enabled = False
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
+          object Label38: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 41
+            Width = 94
+            Height = 13
+            Align = alTop
+            Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
+            OnClick = ActionFirewallRulesExecute
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
         end
       end
       object ListViewFW: TListView
         Left = 0
         Top = 0
         Width = 1017
-        Height = 404
+        Height = 385
         Align = alClient
         Anchors = []
         BorderStyle = bsNone
@@ -1891,7 +1888,7 @@ object FormMain: TFormMain
         Left = 0
         Top = 26
         Width = 1017
-        Height = 433
+        Height = 414
         Align = alClient
         BevelEdges = []
         BevelOuter = bvNone
@@ -1905,68 +1902,27 @@ object FormMain: TFormMain
         Left = 257
         Top = 0
         Width = 2
-        Height = 404
+        Height = 385
         ResizeStyle = rsUpdate
         ExplicitHeight = 326
       end
       object Panel10: TPanel
         Left = 0
-        Top = 404
+        Top = 385
         Width = 1017
         Height = 55
         Align = alBottom
+        BevelEdges = [beTop]
+        BevelKind = bkFlat
         BevelOuter = bvNone
         TabOrder = 0
-        object Bevel14: TBevel
-          Left = 0
-          Top = 0
-          Width = 1017
-          Height = 9
-          Align = alTop
-          Shape = bsTopLine
-          ExplicitWidth = 795
-        end
-        object Label13: TLabel
-          Left = 8
-          Top = 8
-          Width = 61
-          Height = 13
-          Caption = #1069#1083#1077#1084#1077#1085#1090#1086#1074':'
-        end
-        object Label14: TLabel
-          Left = 72
-          Top = 8
-          Width = 132
-          Height = 13
-          AutoSize = False
-          Caption = '0'
-        end
-        object Label16: TLabel
-          Left = 8
-          Top = 21
-          Width = 127
-          Height = 13
-          Caption = #1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
-          Enabled = False
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
-        object Label39: TLabel
-          Left = 8
-          Top = 36
-          Width = 94
-          Height = 13
-          Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
-          OnClick = ActionProcessesExecute
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
+        Visible = False
       end
       object ListViewReg: TListView
         Left = 259
         Top = 0
         Width = 758
-        Height = 404
+        Height = 385
         Align = alClient
         BevelEdges = [beLeft]
         BevelInner = bvNone
@@ -1997,7 +1953,7 @@ object FormMain: TFormMain
         Left = 0
         Top = 0
         Width = 257
-        Height = 404
+        Height = 385
         Align = alLeft
         BevelEdges = []
         BorderStyle = bsNone
@@ -2013,13 +1969,17 @@ object FormMain: TFormMain
       end
     end
     object TabSheetDebug: TTabSheet
-      Caption = 'TabSheetDebug'
+      Caption = 'Debug'
       ImageIndex = 18
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object MemoDebug: TMemo
         Left = 0
         Top = 0
         Width = 1017
-        Height = 459
+        Height = 440
         Align = alClient
         BorderStyle = bsNone
         Font.Charset = DEFAULT_CHARSET
@@ -2036,11 +1996,15 @@ object FormMain: TFormMain
     object TabSheetContextMenu: TTabSheet
       Caption = #1050#1086#1085#1090#1077#1082#1089#1090#1085#1086#1077' '#1084#1077#1085#1102
       ImageIndex = 19
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ListViewContext: TListView
         Left = 0
         Top = 0
         Width = 1017
-        Height = 404
+        Height = 385
         Align = alClient
         Anchors = []
         BorderStyle = bsNone
@@ -2068,103 +2032,60 @@ object FormMain: TFormMain
       end
       object Panel11: TPanel
         Left = 0
-        Top = 404
+        Top = 385
         Width = 1017
         Height = 55
         Align = alBottom
         BevelOuter = bvNone
         TabOrder = 1
-        object Bevel15: TBevel
+        object Panel77: TPanel
           Left = 0
           Top = 0
-          Width = 1017
-          Height = 9
-          Align = alTop
-          Shape = bsTopLine
-          ExplicitWidth = 795
-        end
-        object Label40: TLabel
-          Left = 8
-          Top = 8
-          Width = 61
-          Height = 13
-          Caption = #1069#1083#1077#1084#1077#1085#1090#1086#1074':'
-        end
-        object Label41: TLabel
-          Left = 72
-          Top = 8
-          Width = 132
-          Height = 13
-          AutoSize = False
-          Caption = '0'
-        end
-        object Label42: TLabel
-          Left = 8
-          Top = 21
-          Width = 111
-          Height = 13
-          Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
-          OnClick = Label21Click
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
-        end
-        object Label43: TLabel
-          Left = 8
-          Top = 36
-          Width = 94
-          Height = 13
-          Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
-          OnClick = ActionAutorunExecute
-          OnMouseEnter = LabelMouseEnter
-          OnMouseLeave = LabelMouseLeave
+          Width = 185
+          Height = 55
+          Align = alLeft
+          BevelOuter = bvNone
+          TabOrder = 0
+          object LabelContextCount: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 3
+            Width = 6
+            Height = 13
+            Align = alTop
+            Caption = '0'
+          end
+          object Label42: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 22
+            Width = 111
+            Height = 13
+            Align = alTop
+            Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
+            Enabled = False
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
+          object Label43: TLabel
+            AlignWithMargins = True
+            Left = 3
+            Top = 41
+            Width = 94
+            Height = 13
+            Align = alTop
+            Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
+            OnClick = ActionContextMenuGetExecute
+            OnMouseEnter = LabelMouseEnter
+            OnMouseLeave = LabelMouseLeave
+          end
         end
       end
     end
-    object TabSheetCMD: TTabSheet
-      Caption = 'TabSheetCMD'
+    object TabSheetBSOD: TTabSheet
+      Caption = 'BSOD'
       ImageIndex = 20
-      object MemoCMD: TMemo
-        Left = 11
-        Top = 9
-        Width = 992
-        Height = 446
-        Margins.Top = 10
-        Align = alCustom
-        Anchors = [akLeft, akTop, akRight, akBottom]
-        Color = clBackground
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -16
-        Font.Name = 'Courier New'
-        Font.Style = []
-        Font.Quality = fqClearType
-        ParentFont = False
-        ScrollBars = ssBoth
-        TabOrder = 0
-      end
     end
-  end
-  object ProgressBarState: TProgressBar
-    Left = 0
-    Top = 609
-    Width = 1025
-    Height = 5
-    Align = alBottom
-    DoubleBuffered = False
-    ParentDoubleBuffered = False
-    Smooth = True
-    MarqueeInterval = 20
-    TabOrder = 1
-  end
-  object ListBoxState: TListBox
-    Left = 0
-    Top = 614
-    Width = 1025
-    Height = 35
-    Align = alBottom
-    BorderStyle = bsNone
-    ItemHeight = 13
-    TabOrder = 2
   end
   object PanelMenu: TPanel
     Left = 0
@@ -2175,7 +2096,7 @@ object FormMain: TFormMain
     BevelOuter = bvNone
     Color = 16250613
     ParentBackground = False
-    TabOrder = 3
+    TabOrder = 1
     object PanelMenuNavigate: TPanel
       Left = 0
       Top = 0
@@ -2186,6 +2107,66 @@ object FormMain: TFormMain
       Color = clWhite
       ParentBackground = False
       TabOrder = 0
+      object SpeedButtonStop: TsSpeedButton
+        Left = 975
+        Top = 0
+        Width = 25
+        Height = 23
+        Hint = 
+          #1054#1089#1090#1072#1085#1086#1074#1080#1090#1100' '#1074#1089#1077' '#1087#1088#1086#1094#1077#1089#1089#1099' '#1087#1088#1086#1075#1088#1072#1084#1084#1099'. '#1048#1085#1092#1086#1088#1084#1072#1094#1080#1103' '#1084#1086#1076#1091#1083#1077#1081' '#1084#1086#1078#1077#1090' '#1073#1099#1090#1100 +
+          ' '#1087#1086#1083#1091#1095#1077#1085#1086#1081' '#1085#1077' '#1074' '#1087#1086#1083#1085#1086#1081' '#1084#1077#1088#1077'.'
+        Margins.Top = 0
+        Margins.Bottom = 0
+        Align = alRight
+        Caption = #1054#1089#1090#1072#1085#1086#1074#1080#1090#1100
+        Flat = True
+        Margin = 2
+        OnClick = ActionStopExecute
+        Alignment = taLeftJustify
+        Images = ImageList5
+        TextAlignment = taLeftJustify
+        ImageIndex = 11
+        ShowCaption = False
+      end
+      object SpeedButtonEndStop: TsSpeedButton
+        Left = 950
+        Top = 0
+        Width = 25
+        Height = 23
+        Margins.Top = 0
+        Margins.Bottom = 0
+        Align = alRight
+        Caption = #1042#1086#1079#1086#1073#1085#1086#1074#1080#1090#1100
+        Flat = True
+        Margin = 2
+        OnClick = ActionEndStopExecute
+        Alignment = taLeftJustify
+        Images = ImageList5
+        TextAlignment = taLeftJustify
+        ImageIndex = 12
+        ShowCaption = False
+        ExplicitLeft = 944
+      end
+      object SpeedButtonUpdate: TsSpeedButton
+        Left = 1000
+        Top = 0
+        Width = 25
+        Height = 23
+        Hint = #1054#1073#1085#1086#1074#1080#1090#1100' '#1076#1072#1085#1085#1099#1077' '#1090#1077#1082#1091#1097#1077#1075#1086' '#1086#1082#1085#1072
+        Margins.Top = 0
+        Margins.Bottom = 0
+        Align = alRight
+        Caption = #1054#1073#1085#1086#1074#1080#1090#1100
+        Flat = True
+        Margin = 2
+        OnClick = ActionUpdateExecute
+        Alignment = taLeftJustify
+        Images = ImageList5
+        TextAlignment = taLeftJustify
+        ImageIndex = 10
+        ShowCaption = False
+        ExplicitLeft = 1006
+      end
       object ButtonFlatMenuNav: TButtonFlat
         Left = 343
         Top = 0
@@ -2217,6 +2198,7 @@ object FormMain: TFormMain
         RoundRectParam = 0
         ShowFocusRect = False
         TabOrder = 0
+        TabStop = True
         TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
         SubTextFont.Charset = DEFAULT_CHARSET
         SubTextFont.Color = clWhite
@@ -2255,6 +2237,7 @@ object FormMain: TFormMain
         RoundRectParam = 0
         ShowFocusRect = False
         TabOrder = 1
+        TabStop = True
         TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
         SubTextFont.Charset = DEFAULT_CHARSET
         SubTextFont.Color = clWhite
@@ -2293,6 +2276,7 @@ object FormMain: TFormMain
         RoundRectParam = 0
         ShowFocusRect = False
         TabOrder = 2
+        TabStop = True
         TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
         SubTextFont.Charset = DEFAULT_CHARSET
         SubTextFont.Color = clWhite
@@ -2331,6 +2315,7 @@ object FormMain: TFormMain
         RoundRectParam = 0
         ShowFocusRect = False
         TabOrder = 3
+        TabStop = True
         TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
         SubTextFont.Charset = DEFAULT_CHARSET
         SubTextFont.Color = clWhite
@@ -2369,6 +2354,7 @@ object FormMain: TFormMain
         RoundRectParam = 0
         ShowFocusRect = False
         TabOrder = 4
+        TabStop = True
         TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
         SubTextFont.Charset = DEFAULT_CHARSET
         SubTextFont.Color = clWhite
@@ -2407,6 +2393,7 @@ object FormMain: TFormMain
         RoundRectParam = 0
         ShowFocusRect = False
         TabOrder = 5
+        TabStop = True
         TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
         SubTextFont.Charset = DEFAULT_CHARSET
         SubTextFont.Color = clWhite
@@ -2444,6 +2431,7 @@ object FormMain: TFormMain
         RoundRectParam = 0
         ShowFocusRect = False
         TabOrder = 6
+        TabStop = True
         TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
         SubTextFont.Charset = DEFAULT_CHARSET
         SubTextFont.Color = clWhite
@@ -2482,6 +2470,7 @@ object FormMain: TFormMain
         RoundRectParam = 0
         ShowFocusRect = False
         TabOrder = 7
+        TabStop = True
         TextFormat = [tfCenter, tfSingleLine, tfVerticalCenter]
         SubTextFont.Charset = DEFAULT_CHARSET
         SubTextFont.Color = clWhite
@@ -2527,7 +2516,7 @@ object FormMain: TFormMain
         Top = 1
         Width = 1025
         Height = 95
-        ActivePage = TabSheetMenuFS
+        ActivePage = TabSheetMenuTools
         Align = alClient
         Style = tsFlatButtons
         TabOrder = 0
@@ -2535,6 +2524,10 @@ object FormMain: TFormMain
           Caption = #1071#1097#1080#1082
           ImageIndex = 1
           TabVisible = False
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object Shape9: TShape
             AlignWithMargins = True
             Left = 1011
@@ -3253,6 +3246,10 @@ object FormMain: TFormMain
           Caption = #1063#1077#1088#1090#1105#1078
           ImageIndex = 2
           TabVisible = False
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object Shape12: TShape
             AlignWithMargins = True
             Left = 894
@@ -3405,7 +3402,7 @@ object FormMain: TFormMain
                 Margins.Top = 0
                 Margins.Bottom = 0
                 Align = alTop
-                Caption = #1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
+                Caption = #1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1073#1088#1072#1085#1085#1099#1077
                 Flat = True
                 Margin = 2
                 OnClick = ActionProcStopSelExecute
@@ -3419,10 +3416,11 @@ object FormMain: TFormMain
               end
               object CheckBoxOnlyVisableWnd: TCheckBox
                 AlignWithMargins = True
-                Left = 3
+                Left = 8
                 Top = 3
-                Width = 152
+                Width = 147
                 Height = 17
+                Margins.Left = 8
                 Action = ActionOnlyVisableWnd
                 Align = alTop
                 State = cbChecked
@@ -3430,10 +3428,11 @@ object FormMain: TFormMain
               end
               object CheckBoxOnlyMainWnd: TCheckBox
                 AlignWithMargins = True
-                Left = 3
+                Left = 8
                 Top = 26
-                Width = 152
+                Width = 147
                 Height = 17
+                Margins.Left = 8
                 Action = ActionOnlyMainWnd
                 Align = alTop
                 State = cbChecked
@@ -3581,6 +3580,7 @@ object FormMain: TFormMain
                 Margins.Top = 0
                 Margins.Bottom = 0
                 Align = alTop
+                GroupIndex = 1
                 Caption = #1055#1091#1089#1082
                 Flat = True
                 Margin = 2
@@ -3603,6 +3603,8 @@ object FormMain: TFormMain
                 Margins.Top = 0
                 Margins.Bottom = 0
                 Align = alTop
+                GroupIndex = 1
+                Down = True
                 Caption = #1054#1089#1090#1072#1085#1086#1074#1080#1090#1100
                 Flat = True
                 Margin = 2
@@ -4216,6 +4218,10 @@ object FormMain: TFormMain
           Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
           ImageIndex = 4
           TabVisible = False
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object Shape23: TShape
             AlignWithMargins = True
             Left = 473
@@ -4298,10 +4304,11 @@ object FormMain: TFormMain
               Top = 0
               Width = 57
               Height = 72
-              Action = ActionMSConfig
               Align = alLeft
+              Caption = 'MSConfig'
               Flat = True
               Layout = blGlyphTop
+              OnClick = ActionMSConfigExecute
               Images = ImageListToolBar
               ImageIndex = 25
               ExplicitLeft = 16
@@ -5150,6 +5157,10 @@ object FormMain: TFormMain
           Caption = 'TabSheetMenuHelp'
           ImageIndex = 6
           TabVisible = False
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object Shape21: TShape
             AlignWithMargins = True
             Left = 406
@@ -5379,13 +5390,44 @@ object FormMain: TFormMain
       end
     end
   end
+  object PanelStateBar: TPanel
+    Left = 0
+    Top = 590
+    Width = 1025
+    Height = 59
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 2
+    object ListBoxState: TListBox
+      Left = 0
+      Top = 5
+      Width = 1025
+      Height = 54
+      Align = alClient
+      BorderStyle = bsNone
+      ItemHeight = 13
+      TabOrder = 0
+    end
+    object ProgressBarState: TProgressBar
+      Left = 0
+      Top = 0
+      Width = 1025
+      Height = 5
+      Align = alTop
+      DoubleBuffered = False
+      ParentDoubleBuffered = False
+      Smooth = True
+      MarqueeInterval = 20
+      TabOrder = 1
+    end
+  end
   object ImageListToolBar: TImageList
     Height = 32
     Width = 32
     Left = 373
     Top = 327
     Bitmap = {
-      494C01012900D000740520002000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
+      494C01012900D000880520002000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
       00000000000036000000280000008000000060010000010020000000000000C0
       020000000000000000000000000000000000008500FF008300FF008100FF0070
       00FF006D00FF006B00FF006B00FF006900FF005F00FF005E00FF005D00FF005B
@@ -11032,7 +11074,7 @@ object FormMain: TFormMain
     Left = 742
     Top = 287
     Bitmap = {
-      494C01012700B8000C0510001000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
+      494C01012700B800200510001000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000040000000A0000000010020000000000000A0
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -12638,6 +12680,7 @@ object FormMain: TFormMain
       Category = 'Links'
       Caption = 'MSConfig'
       ImageIndex = 25
+      OnExecute = ActionMSConfigExecute
     end
     object ActionFirewallRules: TAction
       Category = 'Firewall'
@@ -12756,7 +12799,6 @@ object FormMain: TFormMain
       Category = 'ShellExplorer'
       Caption = 'Run'
       ImageIndex = 5
-      OnExecute = ActionCmdRunExecute
     end
     object ActionWillGetSysEvents: TAction
       Category = 'Events'
@@ -12942,7 +12984,7 @@ object FormMain: TFormMain
     Left = 371
     Top = 247
     Bitmap = {
-      494C0101110018008C0230003000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010111001800A00230003000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C0000000F0000000010020000000000000D0
       0200000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -18896,7 +18938,7 @@ object FormMain: TFormMain
     Left = 791
     Top = 238
     Bitmap = {
-      494C01011A0028008C0220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011A002800A00220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000E0000000010020000000000000C0
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -22615,7 +22657,7 @@ object FormMain: TFormMain
     Left = 644
     Top = 287
     Bitmap = {
-      494C01010C007802280510001000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
+      494C01010C0078023C0510001000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -23161,7 +23203,7 @@ object FormMain: TFormMain
     Left = 742
     Top = 238
     Bitmap = {
-      494C0101100018003C0232003200FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010110001800500232003200FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C8000000FA0000000100200000000000400D
       0300000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -29641,7 +29683,7 @@ object FormMain: TFormMain
     Left = 791
     Top = 287
     Bitmap = {
-      494C010105000800380210001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C0101050008004C0210001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000002D2A2A60625B5BCE797171FF7971
       71FF797171FF797171FF797171FF797171FF797171FF797171FF797171FF7971
@@ -29933,7 +29975,7 @@ object FormMain: TFormMain
     Left = 505
     Top = 239
     Bitmap = {
-      494C010101001800600110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010101001800740110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -30077,7 +30119,7 @@ object FormMain: TFormMain
     Left = 501
     Top = 327
     Bitmap = {
-      494C010129008801540110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010129008801680110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000040000000B0000000010020000000000000B0
       000000000000000000000000000000000000009700FF00A300FF008900FF009C
       00FF009600FF007D00FF009100FF007600FF0026009E00000020000000090000

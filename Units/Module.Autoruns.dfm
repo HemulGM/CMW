@@ -19,16 +19,15 @@ object FormAutorun: TFormAutorun
   Scaled = False
   ShowHint = True
   OnKeyUp = FormKeyUp
-  DesignSize = (
-    491
-    343)
   PixelsPerInch = 96
   TextHeight = 13
   object EditDisplayName: TEdit
-    Left = 8
-    Top = 8
-    Width = 475
+    AlignWithMargins = True
+    Left = 3
+    Top = 3
+    Width = 485
     Height = 29
+    Align = alTop
     AutoSelect = False
     AutoSize = False
     BorderStyle = bsNone
@@ -42,36 +41,30 @@ object FormAutorun: TFormAutorun
     ReadOnly = True
     TabOrder = 0
     Text = 'EditDisplayName'
+    ExplicitLeft = 8
+    ExplicitTop = 8
+    ExplicitWidth = 475
   end
   object Panel1: TPanel
-    Left = -2
-    Top = 299
-    Width = 501
-    Height = 50
-    Anchors = [akLeft, akRight, akBottom]
+    Left = 0
+    Top = 304
+    Width = 491
+    Height = 39
+    Align = alBottom
+    BevelEdges = [beTop]
+    BevelKind = bkFlat
+    BevelOuter = bvNone
     Ctl3D = True
     ParentBackground = False
     ParentCtl3D = False
     TabOrder = 1
-    DesignSize = (
-      501
-      50)
-    object Bevel1: TBevel
-      Left = 1
-      Top = 1
-      Width = 499
-      Height = 10
-      Align = alTop
-      Shape = bsTopLine
-      ExplicitLeft = -10
-      ExplicitTop = 20
-      ExplicitWidth = 485
-    end
     object LabelPermission: TLabel
-      Left = 7
-      Top = 25
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
       Width = 335
-      Height = 14
+      Height = 31
+      Align = alLeft
       AutoSize = False
       Caption = #1053#1077#1090' '#1076#1086#1089#1090#1091#1087#1072' '#1082' '#1074#1077#1090#1082#1077' '#1088#1077#1077#1089#1090#1088#1072' '#1089' '#1086#1087#1080#1089#1072#1085#1080#1077#1084' '#1101#1090#1086#1075#1086' '#1101#1083#1077#1084#1077#1085#1090#1072
       Font.Charset = DEFAULT_CHARSET
@@ -81,13 +74,17 @@ object FormAutorun: TFormAutorun
       Font.Style = []
       ParentFont = False
       Transparent = True
+      Layout = tlCenter
+      ExplicitTop = 17
+      ExplicitHeight = 14
     end
     object ButtonClose: TButton
-      Left = 410
-      Top = 11
-      Width = 75
-      Height = 25
-      Anchors = [akRight, akBottom]
+      AlignWithMargins = True
+      Left = 408
+      Top = 3
+      Width = 80
+      Height = 31
+      Align = alRight
       Caption = #1047#1072#1082#1088#1099#1090#1100
       ModalResult = 8
       TabOrder = 0
@@ -95,11 +92,12 @@ object FormAutorun: TFormAutorun
     end
   end
   object ValueListEditor1: TValueListEditor
-    Left = 8
-    Top = 43
-    Width = 475
-    Height = 248
-    Anchors = [akLeft, akTop, akRight, akBottom]
+    Left = 0
+    Top = 35
+    Width = 491
+    Height = 269
+    Align = alClient
+    BorderStyle = bsNone
     DefaultColWidth = 130
     DisplayOptions = [doAutoColResize, doKeyColFixed]
     DoubleBuffered = True
@@ -112,9 +110,10 @@ object FormAutorun: TFormAutorun
     TitleCaptions.Strings = (
       #1055#1072#1088#1072#1084#1077#1090#1088
       #1047#1085#1072#1095#1077#1085#1080#1077)
+    ExplicitHeight = 258
     ColWidths = (
       130
-      339)
+      359)
     RowHeights = (
       18)
   end

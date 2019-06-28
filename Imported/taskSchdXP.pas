@@ -814,6 +814,7 @@ end;
 
 destructor TTaskScheduleOld.Destroy;
 begin
+  FreeAndNil(FTaskScheduler);
   FreeAndNil(FTasks);
   inherited Destroy;
 end;

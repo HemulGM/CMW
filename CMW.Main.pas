@@ -4,17 +4,16 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, ExtCtrls, ComCtrls, ToolWin, ImgList, StdCtrls,
-  Buttons, ShellCtrls, Vcl.FileCtrl, generics.collections,
-  Vcl.ButtonGroup, Vcl.ActnMan, Vcl.ActnList,
-  Vcl.Imaging.pngimage, System.Actions, Vcl.ActnCtrls,
-  Vcl.Themes, Vcl.Menus, Types,
-  CMW.Utils, FWEventLog, Module.WinProcesses, Module.Autoruns, Module.WinEvents, Module.Ports, Module.ContextMenu,
-  CMW.ModuleStruct, CMW.OSInfo, Module.Applications, Module.Cleaner, Module.Tasks, Module.HDD, Module.WinServices, Module.Executting,
-  CMW.ModuleProp, Subs, Vcl.Grids, Vcl.ValEdit, Module.WinFirewall, Module.SmartHND, Vcl.AppEvnts,
+  Dialogs, ExtCtrls, ComCtrls, ToolWin, ImgList, StdCtrls, Buttons, ShellCtrls,
+  Vcl.FileCtrl, generics.collections, Vcl.ButtonGroup, Vcl.ActnMan, Vcl.ActnList,
+  Vcl.Imaging.pngimage, System.Actions, Vcl.ActnCtrls, Vcl.Themes, Vcl.Menus,
+  Types, CMW.Utils, FWEventLog, Module.WinProcesses, Module.Autoruns,
+  Module.WinEvents, Module.Ports, Module.ContextMenu, CMW.ModuleStruct,
+  CMW.OSInfo, Module.Applications, Module.Cleaner, Module.Tasks, Module.HDD,
+  Module.WinServices, Module.Executting, CMW.ModuleProp, Subs, Vcl.Grids,
+  Vcl.ValEdit, Module.WinFirewall, Module.SmartHND, Vcl.AppEvnts,
   System.Generics.Collections, HGM.Controls.SpinEdit, sSpeedButton, HGM.Button,
   Vcl.PlatformDefaultStyleActnCtrls, System.ImageList;
-
 
 type
   TFormMain = class(TForm)
@@ -33,11 +32,8 @@ type
     ListViewImPaths: TListView;
     ListViewEvents: TListView;
     PanelCtrlApps: TPanel;
-    Bevel1: TBevel;
-    LabelAppElements: TLabel;
     LabelCountInstall: TLabel;
     PanelAwating: TPanel;
-    Bevel4: TBevel;
     ProgressBar1: TProgressBar;
     Label4: TLabel;
     ButtonIgnoreDelApp: TButton;
@@ -93,8 +89,6 @@ type
     Label11: TLabel;
     LabelInfoUpdate: TLabel;
     Panel1: TPanel;
-    Bevel3: TBevel;
-    LabelTsk: TLabel;
     LabelCountTask: TLabel;
     LabelOffAllSch: TLabel;
     Label15: TLabel;
@@ -104,21 +98,13 @@ type
     ListViewTweaks: TListView;
     ListViewTweakLog: TListView;
     Panel3: TPanel;
-    Bevel7: TBevel;
-    LabelAutorun1: TLabel;
-    LabelCountAutorun: TLabel;
-    Label21: TLabel;
-    Label22: TLabel;
     ButtonRepiar: TButton;
     Bevel8: TBevel;
     Label23: TLabel;
     Label24: TLabel;
     ActionUpdate: TAction;
-    ProgressBarState: TProgressBar;
     TabSheetProc: TTabSheet;
     Panel4: TPanel;
-    Bevel9: TBevel;
-    Label25: TLabel;
     LabelCountProc: TLabel;
     Label27: TLabel;
     Label28: TLabel;
@@ -131,18 +117,12 @@ type
     TabSheetServices: TTabSheet;
     ListViewSrvs: TListView;
     Panel5: TPanel;
-    Bevel10: TBevel;
-    Label26: TLabel;
     LabelCountService: TLabel;
-    Label30: TLabel;
     Label31: TLabel;
     ActionSrvs: TAction;
     Panel6: TPanel;
-    Bevel11: TBevel;
-    LabelEvt: TLabel;
     LabelCountEvent: TLabel;
     Label34: TLabel;
-    Label33: TLabel;
     MenuItemGoToSrvFromProc: TMenuItem;
     PopupMenuSrvs: TPopupMenu;
     MenuItemGoToProcFromSrv: TMenuItem;
@@ -152,8 +132,6 @@ type
     TabSheetPorts: TTabSheet;
     ListViewPorts: TListView;
     Panel2: TPanel;
-    Bevel5: TBevel;
-    Label12: TLabel;
     LabelCountPorts: TLabel;
     ActionPorts: TAction;
     ImageList1: TImageList;
@@ -178,11 +156,6 @@ type
     TabSheetHDD: TTabSheet;
     ListViewHDD: TListView;
     Panel7: TPanel;
-    Bevel2: TBevel;
-    Label19: TLabel;
-    LabelCountHDD: TLabel;
-    Label29: TLabel;
-    Label32: TLabel;
     ActionHDD: TAction;
     ImageListGuage: TImageList;
     ImageListHDD: TImageList;
@@ -204,11 +177,8 @@ type
     GridPanel1: TGridPanel;
     TreeViewPID: TTreeView;
     ListViewWindows: TListView;
-    Splitter1: TSplitter;
     Bevel6: TBevel;
     Panel8: TPanel;
-    Bevel12: TBevel;
-    Label17: TLabel;
     LabelCountClr: TLabel;
     Label20: TLabel;
     Label35: TLabel;
@@ -248,8 +218,6 @@ type
     ActionFirewallRules: TAction;
     TabSheetFireWall: TTabSheet;
     Panel9: TPanel;
-    Bevel13: TBevel;
-    Label18: TLabel;
     Label36: TLabel;
     Label37: TLabel;
     Label38: TLabel;
@@ -275,11 +243,6 @@ type
     ImageList5: TImageList;
     TabSheetRegedit: TTabSheet;
     Panel10: TPanel;
-    Bevel14: TBevel;
-    Label13: TLabel;
-    Label14: TLabel;
-    Label16: TLabel;
-    Label39: TLabel;
     ActionRegeditor: TAction;
     ListViewReg: TListView;
     TreeViewReg: TTreeView;
@@ -299,10 +262,8 @@ type
     TabSheetDebug: TTabSheet;
     MemoDebug: TMemo;
     ActionDebug: TAction;
-    Memo1: TMemo;
     ActionLoadLog: TAction;
     ListViewItems: TListView;
-    ListBoxState: TListBox;
     MenuItemFindSrvFile: TMenuItem;
     MenuItemOpenSrvDll: TMenuItem;
     MenuItemARInfo: TMenuItem;
@@ -322,14 +283,11 @@ type
     TabSheetContextMenu: TTabSheet;
     ListViewContext: TListView;
     Panel11: TPanel;
-    Bevel15: TBevel;
-    Label40: TLabel;
-    Label41: TLabel;
+    LabelContextCount: TLabel;
     Label42: TLabel;
     Label43: TLabel;
     ActionCmdRun: TAction;
-    TabSheetCMD: TTabSheet;
-    MemoCMD: TMemo;
+    TabSheetBSOD: TTabSheet;
     PanelMenu: TPanel;
     PanelMenuNavigate: TPanel;
     ButtonFlatMenuNav: TButtonFlat;
@@ -519,6 +477,27 @@ type
     Panel15: TPanel;
     ComboBoxStorageList: TComboBox;
     SpeedButtonUpdateStotageList: TsSpeedButton;
+    PanelStateBar: TPanel;
+    ListBoxState: TListBox;
+    ProgressBarState: TProgressBar;
+    Panel17: TPanel;
+    LabelCountHDD: TLabel;
+    Label29: TLabel;
+    Panel19: TPanel;
+    Label21: TLabel;
+    Label22: TLabel;
+    LabelCountAutorun: TLabel;
+    Panel71: TPanel;
+    Panel72: TPanel;
+    Panel73: TPanel;
+    Panel74: TPanel;
+    Splitter3: TSplitter;
+    Panel75: TPanel;
+    SpeedButtonStop: TsSpeedButton;
+    SpeedButtonEndStop: TsSpeedButton;
+    SpeedButtonUpdate: TsSpeedButton;
+    Panel76: TPanel;
+    Panel77: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure TimerCurElemTimer(Sender: TObject);
     procedure ListViewARDblClick(Sender: TObject);
@@ -536,13 +515,12 @@ type
     procedure ActionQuitExecute(Sender: TObject);
     procedure LabelOffAllSchClick(Sender: TObject);
     procedure ActionTweaksExecute(Sender: TObject);
-    procedure OnChangeCurElement(var Value:string);
+    procedure OnChangeCurElement(var Value: string);
     procedure Label21Click(Sender: TObject);
     procedure ListViewEventsDblClick(Sender: TObject);
     procedure ActionUpdateExecute(Sender: TObject);
     procedure ActionProcessesExecute(Sender: TObject);
-    procedure ListViewProcMouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Integer);
+    procedure ListViewProcMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure MenuItemKillClick(Sender: TObject);
     procedure MenuItemKillHardClick(Sender: TObject);
     procedure MenuItemOpenFilepathClick(Sender: TObject);
@@ -550,24 +528,20 @@ type
     procedure TreeViewPIDClick(Sender: TObject);
     procedure ListViewProcClick(Sender: TObject);
     procedure MenuItemGoToProcFromSrvClick(Sender: TObject);
-    procedure ListViewSrvsMouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Integer);
-    procedure ListViewARMouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Integer);
+    procedure ListViewSrvsMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+    procedure ListViewARMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure ActionPortsExecute(Sender: TObject);
     procedure ListViewPortsDblClick(Sender: TObject);
     procedure MenuItemGoToPortsFromPIDClick(Sender: TObject);
     procedure MenuItemGoToSrvFromPortClick(Sender: TObject);
-    procedure ListViewPortsMouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Integer);
+    procedure ListViewPortsMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure MenuItemGoToProcFromPortsClick(Sender: TObject);
     procedure ActionClearFindExecute(Sender: TObject);
     procedure ActionClearPerformExecute(Sender: TObject);
     procedure ActionLogViewExecute(Sender: TObject);
     procedure TimerTickTimer(Sender: TObject);
     procedure ActionOpenPathInstExecute(Sender: TObject);
-    procedure ListViewWinAppsMouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Integer);
+    procedure ListViewWinAppsMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure ActionOpenFileUnistExecute(Sender: TObject);
     procedure ActionHDDExecute(Sender: TObject);
     procedure ActionSetHDDAttrExecute(Sender: TObject);
@@ -582,8 +556,7 @@ type
     procedure ActionRegeditExecute(Sender: TObject);
     procedure ButtonedEditRunKeyPress(Sender: TObject; var Key: Char);
     procedure ActionOpenCleanerElementExecute(Sender: TObject);
-    procedure ListViewDeleteMouseDown(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y: Integer);
+    procedure ListViewDeleteMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
     procedure ListViewParamDblClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ActionAllTasksExecute(Sender: TObject);
@@ -604,8 +577,7 @@ type
     procedure ActionSrvDeleteExecute(Sender: TObject);
     procedure ActionWOW64ModeExecute(Sender: TObject);
     procedure ActionHelperExecute(Sender: TObject);
-    procedure ListViewProcKeyDown(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
+    procedure ListViewProcKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure ActionFirewallRulesExecute(Sender: TObject);
     procedure ActionFWServExecute(Sender: TObject);
     procedure ActionSwitchFWExecute(Sender: TObject);
@@ -614,8 +586,7 @@ type
     procedure ActionSENextExecute(Sender: TObject);
     procedure ActionSEPrevExecute(Sender: TObject);
     procedure ComboBoxRootChange(Sender: TObject);
-    procedure EditSEPathKeyDown(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
+    procedure EditSEPathKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure ActionOnlyMainWndExecute(Sender: TObject);
     procedure ActionOnlyVisableWndExecute(Sender: TObject);
     procedure ActionOpenMD5MakerExecute(Sender: TObject);
@@ -660,7 +631,6 @@ type
     procedure ActionOpenHostsFileExecute(Sender: TObject);
     procedure ListViewContextDblClick(Sender: TObject);
     procedure ActionAboutExecute(Sender: TObject);
-    procedure ActionCmdRunExecute(Sender: TObject);
     procedure ActionShowAppInfoExecute(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure ButtonFlatMenuStartClick(Sender: TObject);
@@ -672,41 +642,42 @@ type
     procedure ButtonFlatMenuHelpClick(Sender: TObject);
     procedure ComboBoxStorageListChange(Sender: TObject);
     procedure SpeedButtonUpdateStotageListClick(Sender: TObject);
+    procedure ActionMSConfigExecute(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
   private
     procedure OpenMenuTab(Tab: TTabSheet);
   public
-    LPT:Byte;
-    LStep:Byte;
-    Sz:Byte;
-    AvailableInfo:Boolean;
+    LPT: Byte;
+    LStep: Byte;
+    Sz: Byte;
+    AvailableInfo: Boolean;
     //SH:TSmartHandler;
     procedure NoteUnload;
-    procedure OnSEClick(Sender:TObject);
+    procedure OnSEClick(Sender: TObject);
     procedure CreateFaceItems;
-    procedure ExceptionHandler(Sender:TObject; E:Exception);
-    function LoadSettings:Boolean;
-    function SaveSettings:Boolean;
+    procedure ExceptionHandler(Sender: TObject; E: Exception);
+    function LoadSettings: Boolean;
+    function SaveSettings: Boolean;
     procedure OpenTabItems;
-    procedure OpenTabNamed(TabSheet:TTabSheet);
+    procedure OpenTabNamed(TabSheet: TTabSheet);
     procedure CreateInfo;
     procedure UpdateInfo;
     procedure OpenResult;
     procedure CheckTabsPos;
-    procedure NewPointForCPU(PT:Byte);
-    procedure DrawGridPart(DCanvas:TCanvas);
+    procedure NewPointForCPU(PT: Byte);
+    procedure DrawGridPart(DCanvas: TCanvas);
     procedure FillComboBoxES;
     procedure FillComboBoxET;
     procedure FillComboBoxED;
+    procedure Quit;
   end;
-
 
 const
   ConfigFileName = 'Data\Config.inf';
   DebugFileName = 'debug.log';
-  LinkColor:TColor = clHighlight;
-  UnLinkColor:TColor = clBlack;
-  GridSz:Byte = 10;
-
+  LinkColor: TColor = clHighlight;
+  UnLinkColor: TColor = clBlack;
+  GridSz: Byte = 10;
   App32 = 'CWM32.exe';
   App64 = 'CWM64.exe';
   AppNameRu = 'Комплекс обслуживания рабочих станций';
@@ -714,245 +685,266 @@ const
 
 var
   FormMain: TFormMain;
-  SmartHandler:TSmartHandler;
+  SmartHandler: TSmartHandler;
   //ListOfEventType:TStrings;
-  UseEvtInf:Byte = 0;
-  WarningAboutInconsistency:Boolean = False;
-  WarningAboutTrustlevel:Boolean = False;
-  ShellExplorer:TShellListView;
+  UseEvtInf: Byte = 0;
+  WarningAboutInconsistency: Boolean = False;
+  WarningAboutTrustlevel: Boolean = False;
+  ShellExplorer: TShellListView;
   //BMP:TBitmap;
 
   //Малозначимые переменные
-  FlagLoadNote:Boolean = False;
-
+  FlagLoadNote: Boolean = False;
 
 procedure Init;
-function Stopping:Boolean;
-procedure CreateProp(SysUnit:TSystemUnit);
-procedure Quit;
+
+function Stopping: Boolean;
+
+procedure CreateProp(SysUnit: TSystemUnit);
 
 implementation
 
 {$R *.dfm}
 
-uses ShellAPI, Registry, IniFiles, Vcl.Clipbrd, Module.Regeditor, System.UITypes, CMW.About;
+uses
+  ShellAPI, Registry, IniFiles, Vcl.Clipbrd, Module.Regeditor, System.UITypes,
+  CMW.About;
 
-procedure SetActionDataLI(LI:TListItem; Action:Pointer; Group:Integer);
+procedure SetActionDataLI(LI: TListItem; Action: Pointer; Group: Integer);
 begin
- LI.Caption:=TAction(Action^).Caption;
- LI.SubItems.Add('');
- LI.Data:=Action;
- LI.ImageIndex:=TAction(Action^).ImageIndex;
- LI.GroupID:=Group;
+  LI.Caption := TAction(Action^).Caption;
+  LI.SubItems.Add('');
+  LI.Data := Action;
+  LI.ImageIndex := TAction(Action^).ImageIndex;
+  LI.GroupID := Group;
 end;
 
 procedure TFormMain.NoteUnload;
 begin
- FileClose(FileCreate(CurrentDir+DebugFileName));
- Application.ProcessMessages;
- Application.ProcessMessages;
- MemoDebug.Lines.SaveToFile(CurrentDir+DebugFileName);
+  FileClose(FileCreate(CurrentDir + DebugFileName));
+  Application.ProcessMessages;
+  Application.ProcessMessages;
+  MemoDebug.Lines.SaveToFile(CurrentDir + DebugFileName);
 end;
 
-procedure TFormMain.OnSEClick(Sender:TObject);
+procedure TFormMain.OnSEClick(Sender: TObject);
 begin
- if not Assigned(ShellExplorer) then Exit;
- EditSEPath.Text:=ShellExplorer.RootFolder.PathName;
+  if not Assigned(ShellExplorer) then
+    Exit;
+  EditSEPath.Text := ShellExplorer.RootFolder.PathName;
 end;
 
-procedure TFormMain.DrawGridPart(DCanvas:TCanvas);
-var i:Word;
+procedure TFormMain.DrawGridPart(DCanvas: TCanvas);
+var
+  i: Word;
 begin
- Inc(LStep);
- with DCanvas do
+  Inc(LStep);
+  with DCanvas do
   begin
-   Pen.Color:=$00003300;
-   Pen.Width:=1;
+    Pen.Color := $00003300;
+    Pen.Width := 1;
   end;
- if LStep >= GridSz div (Sz) then
+  if LStep >= GridSz div (Sz) then
   begin
-   LStep:=0;
-   with DCanvas do
+    LStep := 0;
+    with DCanvas do
     begin
-     MoveTo(ClipRect.Width-Sz, 0);
-     LineTo(ClipRect.Width-Sz, ClipRect.Height);
+      MoveTo(ClipRect.Width - Sz, 0);
+      LineTo(ClipRect.Width - Sz, ClipRect.Height);
     end;
   end;
- with DCanvas do
+  with DCanvas do
   begin
-   for i:= 1 to ClipRect.Height div GridSz do
+    for i := 1 to ClipRect.Height div GridSz do
     begin
-     MoveTo(ClipRect.Width-Sz, GridSz*i);
-     LineTo(ClipRect.Width+Sz, GridSz*i);
+      MoveTo(ClipRect.Width - Sz, GridSz * i);
+      LineTo(ClipRect.Width + Sz, GridSz * i);
     end;
   end;
 end;
 
-procedure TFormMain.NewPointForCPU(PT:Byte);
-var W, H:Integer;
-    MP:Byte;
-    BMP:TBitmap;
+procedure TFormMain.NewPointForCPU(PT: Byte);
+var
+  W, H: Integer;
+  MP: Byte;
+  BMP: TBitmap;
 begin
- W:=ImageCPUGraph.Picture.Bitmap.Canvas.ClipRect.Width;
- H:=ImageCPUGraph.Picture.Bitmap.Canvas.ClipRect.Height;
- BMP:=TBitmap.Create;
- BMP.Width:=W;
- BMP.Height:=H;
- BMP.PixelFormat:=pf24bit;
- ImageCPUGraph.Canvas.Brush.Color:=clBlack;
- BMP.Canvas.CopyRect(Rect(0, 0, W, H), ImageCPUGraph.Canvas, Rect(0, 0, W, H));
- ImageCPUGraph.Canvas.FillRect(ImageCPUGraph.Canvas.ClipRect);
- ImageCPUGraph.Canvas.CopyRect(Rect(-Sz, 0, W-Sz, H), BMP.Canvas, Rect(0, 0, W, H));
- BMP.Free;
- DrawGridPart(ImageCPUGraph.Canvas);
- MP:=H-Round((H / 100) * PT);
- ImageCPUGraph.Canvas.Pen.Width:=2;
- ImageCPUGraph.Canvas.Pen.Color:=MixColors(clRed, clLime, PT);
- WuLine(ImageCPUGraph.Picture.Bitmap, Point(W-(Sz+1), LPT), Point(W-1, MP), ImageCPUGraph.Canvas.Pen.Color);
- WuLine(ImageCPUGraph.Picture.Bitmap, Point(W-Sz, LPT), Point(W, MP), ImageCPUGraph.Canvas.Pen.Color);
+  W := ImageCPUGraph.Picture.Bitmap.Canvas.ClipRect.Width;
+  H := ImageCPUGraph.Picture.Bitmap.Canvas.ClipRect.Height;
+  BMP := TBitmap.Create;
+  BMP.Width := W;
+  BMP.Height := H;
+  BMP.PixelFormat := pf24bit;
+  ImageCPUGraph.Canvas.Brush.Color := clBlack;
+  BMP.Canvas.CopyRect(Rect(0, 0, W, H), ImageCPUGraph.Canvas, Rect(0, 0, W, H));
+  ImageCPUGraph.Canvas.FillRect(ImageCPUGraph.Canvas.ClipRect);
+  ImageCPUGraph.Canvas.CopyRect(Rect(-Sz, 0, W - Sz, H), BMP.Canvas, Rect(0, 0, W, H));
+  BMP.Free;
+  DrawGridPart(ImageCPUGraph.Canvas);
+  MP := H - Round((H / 100) * PT);
+  ImageCPUGraph.Canvas.Pen.Width := 2;
+  ImageCPUGraph.Canvas.Pen.Color := MixColors(clRed, clLime, PT);
+  WuLine(ImageCPUGraph.Picture.Bitmap, Point(W - (Sz + 1), LPT), Point(W - 1, MP), ImageCPUGraph.Canvas.Pen.Color);
+  WuLine(ImageCPUGraph.Picture.Bitmap, Point(W - Sz, LPT), Point(W, MP), ImageCPUGraph.Canvas.Pen.Color);
 
- LPT:=MP;
- ImageCPUGraph.Repaint;
+  LPT := MP;
+  ImageCPUGraph.Repaint;
 end;
 
-procedure TFormMain.EditSEPathKeyDown(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
+procedure TFormMain.EditSEPathKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
- case Key of
-  VK_RETURN:
-   begin
-    if not Assigned(ShellExplorer) then Exit;
-    ShellExplorer.Root:=EditSEPath.Text;
-   end;
- end;
+  case Key of
+    VK_RETURN:
+      begin
+        if not Assigned(ShellExplorer) then
+          Exit;
+        ShellExplorer.Root := EditSEPath.Text;
+      end;
+  end;
 end;
 
-procedure TFormMain.ExceptionHandler(Sender:TObject; E:Exception);
+procedure TFormMain.ExceptionHandler(Sender: TObject; E: Exception);
 begin
- Log(['Исключение:', E.Message, E.BaseException, E.StackInfo, E.StackTrace, E.InnerException, Sender]);
- if MessageBox(0, PWideChar('Возникло исключение с ошибкой: "'+E.Message+'".'#13#10+'Продолжить работу?'), 'Внимание', MB_ICONERROR or MB_YESNO) = ID_NO then Halt(1);
+  Log(['Исключение:', E.Message, E.BaseException, E.StackInfo, E.StackTrace, E.InnerException, Sender]);
+  if MessageBox(0, PWideChar('Возникло исключение с ошибкой: "' + E.Message + '".'#13#10 + 'Продолжить работу?'), 'Внимание', MB_ICONERROR or MB_YESNO) = ID_NO then
+    Halt(1);
 end;
 
-procedure CreateProp(SysUnit:TSystemUnit);
+procedure CreateProp(SysUnit: TSystemUnit);
 begin
- TFormUnitProperties.Create(@SysUnit).ShowModal;
+  TFormUnitProperties.Create(@SysUnit).ShowModal;
 end;
 
-function BoolToStr(Value:Boolean):string;
+function BoolToStr(Value: Boolean): string;
 begin
- if Value then Result:=LangText(33, 'Да') else Result:=LangText(34, 'Нет');
+  if Value then
+    Result := LangText(33, 'Да')
+  else
+    Result := LangText(34, 'Нет');
 end;
 
-function Stopping:Boolean;
+function Stopping: Boolean;
 begin
- Application.ProcessMessages;
- Result:=SmartHandler.Stop;
+  Application.ProcessMessages;
+  Result := SmartHandler.Stop;
 end;
 
 procedure Init;
 begin
- with FormMain do
+  with FormMain do
   begin
-   DoubleBuffered:=True;
+    DoubleBuffered := True;
    //--------------------------------------
-   try
-    SmartHandler:=TSmartHandler.Create;
-    SmartHandler.ProgressBarState:=ProgressBarState;
-   except
-    begin
-     MessageBox(Application.Handle, PChar(LangText(102, 'Программа не имеет необходимых прав для получения информации о вашем компьютере./nВыполните программу от имени администратора!')), PChar(LangText(103, 'Прошу прощения')), MB_ICONSTOP or MB_OK);
-     Application.Terminate;
+    try
+      SmartHandler := TSmartHandler.Create;
+      SmartHandler.ProgressBarState := ProgressBarState;
+    except
+      begin
+        MessageBox(Application.Handle, PChar(LangText(102, 'Программа не имеет необходимых прав для получения информации о вашем компьютере./nВыполните программу от имени администратора!')), PChar(LangText(103, 'Прошу прощения')), MB_ICONSTOP or MB_OK);
+        Application.Terminate;
+      end;
     end;
-   end;
-   SmartHandler.OnSetCurElement:=OnChangeCurElement;
+    SmartHandler.OnSetCurElement := OnChangeCurElement;
    //---------------------------На страницу "Управление"
    //OpenTabItems;
-   OpenTabNamed(TabSheetInfo);
+    OpenTabNamed(TabSheetInfo);
 
    //ListOfEventType:=TStringList.Create;
    ///ListOfEventType.LoadFromFile(CurrentDir+'Data\EventLog.inf');
-   Caption:=AppNameRu+' '+BitsToStr(AppBits);
+    Caption := AppNameRu + ' ' + BitsToStr(AppBits);
 
-   SmartHandler.AccessState(ListViewAccess);
+    SmartHandler.AccessState(ListViewAccess);
 
-   SpeedButtonUpdateStotageListClick(nil);
+    SpeedButtonUpdateStotageListClick(nil);
 
-   TimerTick.Enabled := True;
+    TimerTick.Enabled := True;
   end;
 end;
 
 procedure RefreshLVs;
 begin
- with FormMain do
+  with FormMain do
   begin
-   ListViewEvents.CustomSort(@CustomDateSortProc, -1);
-    LabelCountEvent.Caption:=IntToStr(ListViewEvents.Items.Count);
-   ListViewSchedule.CustomSort(@CustomStrSortProc, 0);
-    LabelCountTask.Caption:=IntToStr(ListViewSchedule.Items.Count);
-   ListViewImPaths.CustomSort(@CustomStrSortProc, 0);
-   ListViewProc.CustomSort(@CustomStrSortProc, -1);
-    LabelCountProc.Caption:=IntToStr(ListViewProc.Items.Count);
-   ListViewPorts.CustomSort(@CustomIntSortProc, 0);
-    LabelCountPorts.Caption:=IntToStr(ListViewPorts.Items.Count);
+    ListViewEvents.CustomSort(@CustomDateSortProc, -1);
+    LabelCountEvent.Caption := IntToStr(ListViewEvents.Items.Count);
+    ListViewSchedule.CustomSort(@CustomStrSortProc, 0);
+    LabelCountTask.Caption := IntToStr(ListViewSchedule.Items.Count);
+    ListViewImPaths.CustomSort(@CustomStrSortProc, 0);
+    ListViewProc.CustomSort(@CustomStrSortProc, -1);
+    LabelCountProc.Caption := IntToStr(ListViewProc.Items.Count);
+    ListViewPorts.CustomSort(@CustomIntSortProc, 0);
+    LabelCountPorts.Caption := IntToStr(ListViewPorts.Items.Count);
   end;
 end;
 
-procedure TFormMain.OnChangeCurElement(var Value:string);
+procedure TFormMain.OnChangeCurElement(var Value: string);
 begin  //ListBoxState
- ListBoxState.Items.Insert(0, FormatDateTime('HH:MM:SS: ', Now) + Value);
+  ListBoxState.Items.Insert(0, FormatDateTime('HH:MM:SS: ', Now) + Value);
  //ListBoxState.Items.Add();
  //LabelState.Caption:=Value;
- Application.ProcessMessages;
+  Application.ProcessMessages;
 end;
 
-function TFormMain.LoadSettings:Boolean;
-var Ini:TIniFile;
-    SName:string;
-    Crt:Boolean;
-    FC:Integer;
+function TFormMain.LoadSettings: Boolean;
+var
+  Ini: TIniFile;
+  SName: string;
+  Crt: Boolean;
+  FC: Integer;
 begin
- Crt:=True;
- if not DirectoryExists(CurrentDir+'Data') then Crt:=CreateDir(CurrentDir+'Data');
- if not FileExists(CurrentDir+ConfigFileName) then
+  Crt := True;
+  if not DirectoryExists(CurrentDir + 'Data') then
+    Crt := CreateDir(CurrentDir + 'Data');
+  if not FileExists(CurrentDir + ConfigFileName) then
   begin
-   FC:=FileCreate(CurrentDir+ConfigFileName);
-   Crt:=FC <> 0;
-   if Crt then FileClose(FC);
+    FC := FileCreate(CurrentDir + ConfigFileName);
+    Crt := FC <> 0;
+    if Crt then
+      FileClose(FC);
   end;
- Ini:=TIniFile.Create(CurrentDir+ConfigFileName);
- Position:=poDesigned;
- ClientWidth:=Ini.ReadInteger('Config', 'Width', ClientWidth);     //772 462
- ClientHeight:=Ini.ReadInteger('Config', 'Height', ClientHeight);
- SName:=Ini.ReadString('Config', 'StyleName', '');
- if SName <> '' then TStyleManager.TrySetStyle(SName, True);
- Left:=Ini.ReadInteger('Config', 'Left', Left);
- Top:=Ini.ReadInteger('Config', 'Top', Top);
- WindowState:=TWindowState(Ini.ReadInteger('Config', 'WindowState', 0));
- Ini.Free;
- Result:=True;
+  Ini := TIniFile.Create(CurrentDir + ConfigFileName);
+  Position := poDesigned;
+  ClientWidth := Ini.ReadInteger('Config', 'Width', ClientWidth);     //772 462
+  ClientHeight := Ini.ReadInteger('Config', 'Height', ClientHeight);
+  SName := Ini.ReadString('Config', 'StyleName', '');
+  if SName <> '' then
+    TStyleManager.TrySetStyle(SName, True);
+  Left := Ini.ReadInteger('Config', 'Left', Left);
+  Top := Ini.ReadInteger('Config', 'Top', Top);
+  WindowState := TWindowState(Ini.ReadInteger('Config', 'WindowState', 0));
+  Ini.Free;
+  Result := True;
 end;
 
 procedure TFormMain.MenuItemGoToPortsFromPIDClick(Sender: TObject);
-var PID:Integer;
+var
+  PID: Integer;
 begin
- if ListViewProc.Selected = nil then Exit;
- if not TryStrToInt(ListViewProc.Selected.SubItems[0], PID) then Exit;
- if SmartHandler.PortsUnit.State <> gsFinished then ActionPorts.Execute;
- SelectPortsByPID(ListViewPorts, PID);
- OpenTabNamed(TabSheetPorts);
+  if ListViewProc.Selected = nil then
+    Exit;
+  if not TryStrToInt(ListViewProc.Selected.SubItems[0], PID) then
+    Exit;
+  if SmartHandler.PortsUnit.State <> gsFinished then
+    ActionPorts.Execute;
+  SelectPortsByPID(ListViewPorts, PID);
+  OpenTabNamed(TabSheetPorts);
 end;
 
 procedure TFormMain.MenuItemGoToProcFromPortsClick(Sender: TObject);
-var DT:TCOMMONROW;
+var
+  DT: TCOMMONROW;
 begin
- if ListViewPorts.Selected = nil then Exit;
- if ListViewPorts.Selected.Data = nil then Exit;
- DT:=TCommonRow(ListViewPorts.Selected.Data^);
+  if ListViewPorts.Selected = nil then
+    Exit;
+  if ListViewPorts.Selected.Data = nil then
+    Exit;
+  DT := TCommonRow(ListViewPorts.Selected.Data^);
 
- if SmartHandler.ProcessesUnit.State <> gsFinished then ActionProcesses.Execute;
- SelectProcByPID(ListViewProc, DT.dwProcessID);
- OpenTabNamed(TabSheetProc);
- ListViewProcClick(nil);
+  if SmartHandler.ProcessesUnit.State <> gsFinished then
+    ActionProcesses.Execute;
+  SelectProcByPID(ListViewProc, DT.dwProcessID);
+  OpenTabNamed(TabSheetProc);
+  ListViewProcClick(nil);
 end;
 
 procedure TFormMain.MenuItemGoToProcFromSrvClick(Sender: TObject);
@@ -961,96 +953,86 @@ begin
 end;
 
 procedure TFormMain.MenuItemGoToSrvFromPortClick(Sender: TObject);
-var DT:TCOMMONROW;
+var
+  DT: TCOMMONROW;
 begin
- if ListViewPorts.Selected = nil then Exit;
- if ListViewPorts.Selected.Data = nil then Exit;
- DT:=TCommonRow(ListViewPorts.Selected.Data^);
- if SmartHandler.ServicesUnit.State <> gsFinished then ActionSrvs.Execute;
- SmartHandler.ServicesUnit.Select(DT.dwProcessID);
- OpenTabNamed(TabSheetServices);
+  if ListViewPorts.Selected = nil then
+    Exit;
+  if ListViewPorts.Selected.Data = nil then
+    Exit;
+  DT := TCommonRow(ListViewPorts.Selected.Data^);
+  if SmartHandler.ServicesUnit.State <> gsFinished then
+    ActionSrvs.Execute;
+  SmartHandler.ServicesUnit.Select(DT.dwProcessID);
+  OpenTabNamed(TabSheetServices);
 end;
 
 procedure TFormMain.MenuItemKillClick(Sender: TObject);
 begin
- if MessageBox(Application.Handle, PWideChar('Вы действительн хотите завершить этот процесс?'), '', MB_ICONASTERISK or MB_YESNO) <> ID_YES then Exit;
- SmartHandler.ProcessesUnit.DeleteSelected;
+  if MessageBox(Application.Handle, PWideChar('Вы действительн хотите завершить этот процесс?'), '', MB_ICONASTERISK or MB_YESNO) <> ID_YES then
+    Exit;
+  SmartHandler.ProcessesUnit.DeleteSelected;
 end;
 
 procedure TFormMain.MenuItemKillHardClick(Sender: TObject);
 begin
- if MessageBox(Application.Handle, PWideChar('Вы действительно хотите завершить этот процесс?'), '', MB_ICONASTERISK or MB_YESNO) <> ID_YES then Exit;
- SmartHandler.ProcessesUnit.HardDeleteSelected;
+  if MessageBox(Application.Handle, PWideChar('Вы действительно хотите завершить этот процесс?'), '', MB_ICONASTERISK or MB_YESNO) <> ID_YES then
+    Exit;
+  SmartHandler.ProcessesUnit.HardDeleteSelected;
 end;
 
 procedure TFormMain.MenuItemOpenFilepathClick(Sender: TObject);
 begin
- if ListViewProc.Selected = nil then Exit;
- if ListViewProc.Selected.Data = nil then Exit;
- OpenFolderAndSelectFile(TProcessData(ListViewProc.Selected.Data^).ExePath);
+  if ListViewProc.Selected = nil then
+    Exit;
+  if ListViewProc.Selected.Data = nil then
+    Exit;
+  OpenFolderAndSelectFile(TProcessData(ListViewProc.Selected.Data^).ExePath);
 end;
 
-function TFormMain.SaveSettings:Boolean;
-var Ini:TIniFile;
+function TFormMain.SaveSettings: Boolean;
+var
+  Ini: TIniFile;
 begin
- try
-  if not FileExists(CurrentDir+ConfigFileName) then FileClose(FileCreate(CurrentDir+ConfigFileName));
   try
-   Ini:=TIniFile.Create(CurrentDir+ConfigFileName);
+    if not FileExists(CurrentDir + ConfigFileName) then
+      FileClose(FileCreate(CurrentDir + ConfigFileName));
+    try
+      Ini := TIniFile.Create(CurrentDir + ConfigFileName);
    //Ini.WriteString('Config', 'StyleName', TStyleManager.ActiveStyle.Name);
-   if WindowState = wsNormal then
-    begin
-     Ini.WriteInteger('Config', 'Left', Left);
-     Ini.WriteInteger('Config', 'Top', Top);
-     Ini.WriteInteger('Config', 'Width', ClientWidth);
-     Ini.WriteInteger('Config', 'Height', ClientHeight);
-    end;
-   Ini.WriteInteger('Config', 'WindowState', Ord(WindowState));
-  except
+      if WindowState = wsNormal then
+      begin
+        Ini.WriteInteger('Config', 'Left', Left);
+        Ini.WriteInteger('Config', 'Top', Top);
+        Ini.WriteInteger('Config', 'Width', ClientWidth);
+        Ini.WriteInteger('Config', 'Height', ClientHeight);
+      end;
+      Ini.WriteInteger('Config', 'WindowState', Ord(WindowState));
+    except
    //Сохранения не произведены
-   Result:=False;
+      Result := False;
+    end;
+  finally
+    Ini.Free;
   end;
- finally
-  Ini.Free;
- end;
- Result:=True;
+  Result := True;
 end;
 
 procedure TFormMain.SpeedButtonUpdateStotageListClick(Sender: TObject);
 begin
- SmartHandler.HDDUnit.FillComboBox(ComboBoxStorageList);
- if ComboBoxStorageList.Items.Count > 0 then ComboBoxStorageList.ItemIndex:=0;
-end;
-
-procedure Quit;
-begin
- if Application.Terminated then Exit;
- LogList:=nil;
- with FormMain do
-  begin
-   if FlagLoadNote then
-    begin
-     case MessageBox(Application.Handle, 'Были загружение заметки, выгрузить их перед выходом? ', 'Внимание', MB_YESNOCANCEL or MB_ICONINFORMATION) of
-      ID_YES:NoteUnload;
-      ID_CANCEL:Exit;
-     end;
-    end;
-   TimerCurElem.Enabled:=False;
-   TimerTick.Enabled:=False;
-   TimerUpdater.Enabled:=False;
-   SmartHandler.GlobalStop;
-   SaveSettings;
-  end;
- Application.Terminate;
+  SmartHandler.HDDUnit.FillComboBox(ComboBoxStorageList);
+  if ComboBoxStorageList.Items.Count > 0 then
+    ComboBoxStorageList.ItemIndex := 0;
 end;
 
 procedure TFormMain.OpenResult;
 begin
- PageControlMain.ActivePage:=TabSheetResult;
+  PageControlMain.ActivePage := TabSheetResult;
 end;
 
 procedure TFormMain.CheckTabsPos;
-var len:Integer;
+var
+  len: Integer;
 begin
  //len:=PageControlMain.Top - (RibbonPanel.Height - 4);
  //PageControlMain.Top:=RibbonPanel.Height - 4;
@@ -1059,8 +1041,9 @@ end;
 
 procedure TFormMain.ComboBoxRootChange(Sender: TObject);
 begin
- if not Assigned(ShellExplorer) then Exit;
- ShellExplorer.Root:=ComboBoxRoot.Text;
+  if not Assigned(ShellExplorer) then
+    Exit;
+  ShellExplorer.Root := ComboBoxRoot.Text;
 end;
 
 procedure TFormMain.ComboBoxStorageListChange(Sender: TObject);
@@ -1069,34 +1052,37 @@ begin
 end;
 
 procedure TFormMain.TreeViewPIDClick(Sender: TObject);
-var PID:Integer;
+var
+  PID: Integer;
 begin
- if TreeViewPID.Selected = nil then Exit;
- if TreeViewPID.Selected.Data = nil then Exit;
- try
+  if TreeViewPID.Selected = nil then
+    Exit;
+  if TreeViewPID.Selected.Data = nil then
+    Exit;
+  try
   //ListViewProc.Selected:=TListItem(TreeViewPID.Selected.Data^);
-  PID:=TProcessData(TreeViewPID.Selected.Data^).ProcessID;
+    PID := TProcessData(TreeViewPID.Selected.Data^).ProcessID;
 
-  SelectProcByPID(ListViewProc, PID);
-  SelectWndByPID(ListViewWindows, PID);
- except
+    SelectProcByPID(ListViewProc, PID);
+    SelectWndByPID(ListViewWindows, PID);
+  except
 
- end;
+  end;
 end;
 
 procedure TFormMain.ActionAboutExecute(Sender: TObject);
 begin
- FormAbout.ShowModal;
+  FormAbout.ShowModal;
 end;
 
 procedure TFormMain.ActionAllTasksExecute(Sender: TObject);
 begin
- ActionAllTasks.Checked:=not ActionAllTasks.Checked;
+  ActionAllTasks.Checked := not ActionAllTasks.Checked;
 end;
 
 procedure TFormMain.ActionARInfoExecute(Sender: TObject);
 begin
- SmartHandler.AutorunsUnit.ShowInfo;
+  SmartHandler.AutorunsUnit.ShowInfo;
 end;
 
 procedure TFormMain.ActionAutoCheckExecute(Sender: TObject);
@@ -1106,257 +1092,164 @@ end;
 
 procedure TFormMain.ActionAutorunExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetAutoruns then
+  if PageControlMain.ActivePage <> TabSheetAutoruns then
   begin
-   OpenTabNamed(TabSheetAutoruns);
-   Application.ProcessMessages;
-   if SmartHandler.AutorunsUnit.State <> gsFinished then SmartHandler.AutorunsUnit.Get;
+    OpenTabNamed(TabSheetAutoruns);
+    Application.ProcessMessages;
+    if SmartHandler.AutorunsUnit.State <> gsFinished then
+      SmartHandler.AutorunsUnit.Get;
   end
- else
+  else
   begin
-   SmartHandler.AutorunsUnit.Get;
+    SmartHandler.AutorunsUnit.Get;
   end;
 end;
 
 procedure TFormMain.ActionClassesExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetContextMenu then
+  if PageControlMain.ActivePage <> TabSheetContextMenu then
   begin
-   PageControlMain.ActivePage:=TabSheetContextMenu;
-   Application.ProcessMessages;
-   if SmartHandler.ContextMenuUnit.State <> gsFinished then
+    PageControlMain.ActivePage := TabSheetContextMenu;
+    Application.ProcessMessages;
+    if SmartHandler.ContextMenuUnit.State <> gsFinished then
     begin
-     SmartHandler.ContextMenuUnit.Get(gtCLSIDs);
+      SmartHandler.ContextMenuUnit.Get(gtCLSIDs);
     end;
   end
- else
+  else
   begin
-   SmartHandler.ContextMenuUnit.Get(gtCLSIDs);
+    SmartHandler.ContextMenuUnit.Get(gtCLSIDs);
   end;
 end;
 
 procedure TFormMain.ActionClassGetNextExecute(Sender: TObject);
 begin
- SmartHandler.ContextMenuUnit.Next;
+  SmartHandler.ContextMenuUnit.Next;
 end;
 
 procedure TFormMain.ActionClassGetSTopExecute(Sender: TObject);
 begin
- SmartHandler.ContextMenuUnit.Stop;
+  SmartHandler.ContextMenuUnit.Stop;
 end;
 
 procedure TFormMain.ActionClearFindExecute(Sender: TObject);
 begin
- SmartHandler.CleanerUnit.ScanFiles:=ActionAutoCheck.Checked;
- if PageControlMain.ActivePage <> TabSheetResult then
+  SmartHandler.CleanerUnit.ScanFiles := ActionAutoCheck.Checked;
+  if PageControlMain.ActivePage <> TabSheetResult then
   begin
-   PageControlMain.ActivePage:=TabSheetResult;
-   Application.ProcessMessages;
-   if SmartHandler.CleanerUnit.State <> gsFinished then SmartHandler.CleanerUnit.Get;
+    PageControlMain.ActivePage := TabSheetResult;
+    Application.ProcessMessages;
+    if SmartHandler.CleanerUnit.State <> gsFinished then
+      SmartHandler.CleanerUnit.Get;
   end
- else SmartHandler.CleanerUnit.Get;
+  else
+    SmartHandler.CleanerUnit.Get;
 end;
 
 procedure TFormMain.ActionClearPerformExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetResult then
+  if PageControlMain.ActivePage <> TabSheetResult then
   begin
-   PageControlMain.ActivePage:=TabSheetResult;
-   Application.ProcessMessages;
-   if SmartHandler.CleanerUnit.State <> gsFinished then
+    PageControlMain.ActivePage := TabSheetResult;
+    Application.ProcessMessages;
+    if SmartHandler.CleanerUnit.State <> gsFinished then
     begin
-     SmartHandler.CleanerUnit.Get;
-     if MessageBox(Application.Handle, 'Вы уверены, что хотите удалить все отмеченные элементы?', 'Внимание', MB_ICONINFORMATION or MB_YESNO) <> ID_YES then Exit;
-     if SmartHandler.CleanerUnit.PerformRemoval then ShowMessage('Удаление завершено успешно.');
+      SmartHandler.CleanerUnit.Get;
+      if MessageBox(Application.Handle, 'Вы уверены, что хотите удалить все отмеченные элементы?', 'Внимание', MB_ICONINFORMATION or MB_YESNO) <> ID_YES then
+        Exit;
+      if SmartHandler.CleanerUnit.PerformRemoval then
+        ShowMessage('Удаление завершено успешно.');
     end;
   end
- else
+  else
   begin
-   if SmartHandler.CleanerUnit.State <> gsFinished then SmartHandler.CleanerUnit.Get;
-   if MessageBox(Application.Handle, 'Вы уверены, что хотите удалить все отмеченные элементы?', 'Внимание', MB_ICONINFORMATION or MB_YESNO) <> ID_YES then Exit;
-   if SmartHandler.CleanerUnit.PerformRemoval then ShowMessage('Удаление завершено успешно.');
+    if SmartHandler.CleanerUnit.State <> gsFinished then
+      SmartHandler.CleanerUnit.Get;
+    if MessageBox(Application.Handle, 'Вы уверены, что хотите удалить все отмеченные элементы?', 'Внимание', MB_ICONINFORMATION or MB_YESNO) <> ID_YES then
+      Exit;
+    if SmartHandler.CleanerUnit.PerformRemoval then
+      ShowMessage('Удаление завершено успешно.');
   end;
-end;
-
-function GetDosOutput(CommandLine: string; Work: string = 'C:\'): string;  { Run a DOS program and retrieve its output dynamically while it is running. }
-var
-  SecAtrrs: TSecurityAttributes;
-  StartupInfo: TStartupInfo;
-  ProcessInfo: TProcessInformation;
-  StdOutPipeRead, StdOutPipeWrite: THandle;
-  WasOK: Boolean;
-  pCommandLine: array[0..255] of AnsiChar;
-  BytesRead: Cardinal;
-  WorkDir: string;
-  Handle: Boolean;
-begin
-  Result := '';
-  with SecAtrrs do begin
-    nLength := SizeOf(SecAtrrs);
-    bInheritHandle := True;
-    lpSecurityDescriptor := nil;
-  end;
-  CreatePipe(StdOutPipeRead, StdOutPipeWrite, @SecAtrrs, 0);
-  try
-    with StartupInfo do
-    begin
-      FillChar(StartupInfo, SizeOf(StartupInfo), 0);
-      cb := SizeOf(StartupInfo);
-      dwFlags := STARTF_USESHOWWINDOW or STARTF_USESTDHANDLES;
-      wShowWindow := SW_HIDE;
-      hStdInput := GetStdHandle(STD_INPUT_HANDLE); // don't redirect stdin
-      hStdOutput := StdOutPipeWrite;
-      hStdError := StdOutPipeWrite;
-    end;
-    WorkDir := Work;
-    Handle := CreateProcess(nil, PChar('cmd.exe /C ' + CommandLine),
-                            nil, nil, True, 0, nil,
-                            PChar(WorkDir), StartupInfo, ProcessInfo);
-    CloseHandle(StdOutPipeWrite);
-    if Handle then
-      try
-        repeat
-          WasOK := windows.ReadFile(StdOutPipeRead, pCommandLine, 255, BytesRead, nil);
-          if BytesRead > 0 then
-          begin
-            pCommandLine[BytesRead] := #0;
-            OemToAnsi(pCommandLine, pCommandLine);
-            Result := Result + pCommandLine;
-          end;
-        until not WasOK or (BytesRead = 0);
-        WaitForSingleObject(ProcessInfo.hProcess, INFINITE);
-      finally
-        CloseHandle(ProcessInfo.hThread);
-        CloseHandle(ProcessInfo.hProcess);
-      end;
-  finally
-    CloseHandle(StdOutPipeRead);
-  end;
-end;
-
-procedure CaptureConsoleOutput(const ACommand, AParameters: String; AMemo: TMemo);
- const
-   CReadBuffer = 2400;
- var
-   saSecurity: TSecurityAttributes;
-   hRead: THandle;
-   hWrite: THandle;
-   suiStartup, si: TStartupInfo;
-   piProcess: TProcessInformation;
-   pBuffer: array[0..CReadBuffer] of AnsiChar;
-   dRead: DWord;
-   dRunning: DWord;
- begin
-   saSecurity.nLength := SizeOf(TSecurityAttributes);
-   saSecurity.bInheritHandle := True;
-   saSecurity.lpSecurityDescriptor := nil;
-
-   if CreatePipe(hRead, hWrite, @saSecurity, 0) then
-   begin
-     FillChar(suiStartup, SizeOf(TStartupInfo), #0);
-     suiStartup.cb := SizeOf(TStartupInfo);
-     suiStartup.hStdInput := hRead;
-     suiStartup.hStdOutput := hWrite;
-     suiStartup.hStdError := hWrite;
-     suiStartup.dwFlags := STARTF_USESTDHANDLES or STARTF_USESHOWWINDOW;
-     suiStartup.wShowWindow := SW_SHOWNORMAL;
-     if CreateProcess(nil, PChar(ACommand + ' ' + AParameters), @saSecurity,
-       @saSecurity, True, NORMAL_PRIORITY_CLASS, nil, nil, suiStartup, piProcess)
-     then
-     begin
-       repeat
-         dRunning  := WaitForSingleObject(piProcess.hProcess, 100);
-         Application.ProcessMessages();
-         repeat
-           dRead := 0;
-           ReadFile(hRead, pBuffer[0], CReadBuffer, dRead, nil);
-           pBuffer[dRead] := #0;
-
-           OemToAnsi(pBuffer, pBuffer);
-           AMemo.Lines.Add(String(pBuffer));
-         until (dRead < CReadBuffer);
-       until (dRunning <> WAIT_TIMEOUT);
-       CloseHandle(piProcess.hProcess);
-       CloseHandle(piProcess.hThread);
-     end;
-
-     CloseHandle(hRead);
-     CloseHandle(hWrite);
-   end;
-end;
-
-procedure TFormMain.ActionCmdRunExecute(Sender: TObject);
-begin
- PageControlMain.ActivePage:=TabSheetCMD;
- Application.ProcessMessages;
- MemoCMD.Lines.Text:=GetDosOutput(ButtonedEditRun.Text);
- //CaptureConsoleOutput('C:\Windows\System32\cmd.exe', 'dir C:\', MemoCMD);
 end;
 
 procedure TFormMain.ActionContextMenuGetExecute(Sender: TObject);
-var RegKey:string;
+var
+  RegKey: string;
 begin
- case ComboBoxCMElem.ItemIndex of
+  case ComboBoxCMElem.ItemIndex of
   //-1:RegKey:=ComboBoxCMElem.Text;
-   0:RegKey:='*';
-   1:RegKey:='.exe';
-   2:RegKey:='.dll';
-   3:RegKey:='Directory';
-   4:RegKey:='.docx';
-   5:RegKey:='.xls';
-   6:RegKey:='.xlsx';
-   7:RegKey:='AllFilesystemObjects';
- else
-  RegKey:=ComboBoxCMElem.Text;
- end;
- if PageControlMain.ActivePage <> TabSheetContextMenu then
+    0:
+      RegKey := '*';
+    1:
+      RegKey := '.exe';
+    2:
+      RegKey := '.dll';
+    3:
+      RegKey := 'Directory';
+    4:
+      RegKey := '.docx';
+    5:
+      RegKey := '.xls';
+    6:
+      RegKey := '.xlsx';
+    7:
+      RegKey := 'AllFilesystemObjects';
+  else
+    RegKey := ComboBoxCMElem.Text;
+  end;
+  if PageControlMain.ActivePage <> TabSheetContextMenu then
   begin
-   PageControlMain.ActivePage:=TabSheetContextMenu;
-   Application.ProcessMessages;
-   if SmartHandler.ContextMenuUnit.State <> gsFinished then
+    PageControlMain.ActivePage := TabSheetContextMenu;
+    Application.ProcessMessages;
+    if SmartHandler.ContextMenuUnit.State <> gsFinished then
     begin
-     SmartHandler.ContextMenuUnit.RegKey:=RegKey;
-     SmartHandler.ContextMenuUnit.Get(gtContext);
+      SmartHandler.ContextMenuUnit.RegKey := RegKey;
+      SmartHandler.ContextMenuUnit.Get(gtContext);
     end;
   end
- else
+  else
   begin
-   SmartHandler.ContextMenuUnit.RegKey:=RegKey;
-   SmartHandler.ContextMenuUnit.Get(gtContext);
+    SmartHandler.ContextMenuUnit.RegKey := RegKey;
+    SmartHandler.ContextMenuUnit.Get(gtContext);
   end;
 end;
 
 procedure TFormMain.ActionDebugExecute(Sender: TObject);
 begin
- OpenTabNamed(TabSheetDebug);
- if not FlagLoadNote then ActionNoteLoad.Execute;
+  OpenTabNamed(TabSheetDebug);
+  if not FlagLoadNote then
+    ActionNoteLoad.Execute;
 end;
 
 procedure TFormMain.ActionDeleteAppExecute(Sender: TObject);
 begin
- if ProcessMonitor.Executing then
+  if ProcessMonitor.Executing then
   begin
-   if MessageBox(Application.Handle, PChar(LangText(40, 'Уже идёт удаление другого приложения! Продолжить?')), PChar(LangText(41, 'Внимание')), MB_ICONINFORMATION or MB_YESNO) = ID_YES then
-    ProcessMonitor.Stop
-   else Exit;
+    if MessageBox(Application.Handle, PChar(LangText(40, 'Уже идёт удаление другого приложения! Продолжить?')), PChar(LangText(41, 'Внимание')), MB_ICONINFORMATION or MB_YESNO) = ID_YES then
+      ProcessMonitor.Stop
+    else
+      Exit;
   end;
- if MessageBox(Application.Handle, 'Удалить программу?', 'Вопрос', MB_ICONINFORMATION or MB_YESNO) <> ID_YES then Exit;
- if not SmartHandler.ApplicationsUnit.DeleteSelected then ShowMessage('Не удалено!');
+  if MessageBox(Application.Handle, 'Удалить программу?', 'Вопрос', MB_ICONINFORMATION or MB_YESNO) <> ID_YES then
+    Exit;
+  if not SmartHandler.ApplicationsUnit.DeleteSelected then
+    ShowMessage('Не удалено!');
 end;
 
 procedure TFormMain.ActionDeleteAppRKEYExecute(Sender: TObject);
 begin
- if MessageBox(Application.Handle, 'Вы уверены, что хотите удалить элемент из списка?', 'Внимание', MB_ICONINFORMATION or MB_YESNO) <> ID_YES then Exit;
+  if MessageBox(Application.Handle, 'Вы уверены, что хотите удалить элемент из списка?', 'Внимание', MB_ICONINFORMATION or MB_YESNO) <> ID_YES then
+    Exit;
 
- if SmartHandler.ApplicationsUnit.DeleteRollKey then
+  if SmartHandler.ApplicationsUnit.DeleteRollKey then
   begin
-   ShowMessage('Элемент успешно удалён из реестра.');
+    ShowMessage('Элемент успешно удалён из реестра.');
   end;
 end;
 
 procedure TFormMain.ActionDeleteARExecute(Sender: TObject);
 begin
- SmartHandler.AutorunsUnit.DeleteSel;
+  SmartHandler.AutorunsUnit.DeleteSel;
 end;
 
 procedure TFormMain.ActionDeleteExecute(Sender: TObject);
@@ -1366,44 +1259,46 @@ end;
 
 procedure TFormMain.UpdateInfo;
 begin
- if AvailableInfo then CreateInfo;
+  if AvailableInfo then
+    CreateInfo;
 end;
 
 procedure TFormMain.CreateInfo;
 begin
- ValueListEditorInfo.Strings.BeginUpdate;
- ValueListEditorInfo.Strings.Clear;
- try
-  begin
-   AddToValueEdit(ValueListEditorInfo, 'Операционная система', DelFLSpace(Info.WinVersion), '');
-   AddToValueEdit(ValueListEditorInfo, 'Оперативная память', DelFLSpace(Info.MemoryInfo), '');
-   AddToValueEdit(ValueListEditorInfo, 'Системный диск', DelFLSpace(Info.SysDriveInfo), '');
-   AddToValueEdit(ValueListEditorInfo, 'Процессор', DelFLDSpace(Info.CPU), '');
-   AddToValueEdit(ValueListEditorInfo, 'Имя компьютера', DelFLSpace(Info.MachineName), '');
-   AddToValueEdit(ValueListEditorInfo, 'Рабочая группа', DelFLSpace(Info.LanGroup), '');
-   AddToValueEdit(ValueListEditorInfo, 'Активация Windows', DelFLSpace(Info.WinActivateStatus), '');
-   AddToValueEdit(ValueListEditorInfo, 'Центр обновлений', DelFLSpace(Info.WinUpdate), '');
-   AddToValueEdit(ValueListEditorInfo, 'Время работы', Info.WindowsTimeWork, '');
-   AvailableInfo:=True;
+  ValueListEditorInfo.Strings.BeginUpdate;
+  ValueListEditorInfo.Strings.Clear;
+  try
+    begin
+      AddToValueEdit(ValueListEditorInfo, 'Операционная система', DelFLSpace(Info.WinVersion), '');
+      AddToValueEdit(ValueListEditorInfo, 'Оперативная память', DelFLSpace(Info.MemoryInfo), '');
+      AddToValueEdit(ValueListEditorInfo, 'Системный диск', DelFLSpace(Info.SysDriveInfo), '');
+      AddToValueEdit(ValueListEditorInfo, 'Процессор', DelFLDSpace(Info.CPU), '');
+      AddToValueEdit(ValueListEditorInfo, 'Имя компьютера', DelFLSpace(Info.MachineName), '');
+      AddToValueEdit(ValueListEditorInfo, 'Рабочая группа', DelFLSpace(Info.LanGroup), '');
+      AddToValueEdit(ValueListEditorInfo, 'Активация Windows', DelFLSpace(Info.WinActivateStatus), '');
+      AddToValueEdit(ValueListEditorInfo, 'Центр обновлений', DelFLSpace(Info.WinUpdate), '');
+      AddToValueEdit(ValueListEditorInfo, 'Время работы', Info.WindowsTimeWork, '');
+      AvailableInfo := True;
+    end;
+  except
+    AvailableInfo := False;
   end;
- except
-  AvailableInfo:=False;
- end;
- ValueListEditorInfo.Strings.EndUpdate;
+  ValueListEditorInfo.Strings.EndUpdate;
 end;
 
 procedure TFormMain.OpenTabItems;
 begin
- case Info.Version of
-  winXP:OpenTabNamed(TabSheetItems);
- else
-  OpenTabNamed(TabSheetItems);
- end;
+  case Info.Version of
+    winXP:
+      OpenTabNamed(TabSheetItems);
+  else
+    OpenTabNamed(TabSheetItems);
+  end;
 end;
 
-procedure TFormMain.OpenTabNamed(TabSheet:TTabSheet);
+procedure TFormMain.OpenTabNamed(TabSheet: TTabSheet);
 begin
- PageControlMain.ActivePage:=TabSheet;
+  PageControlMain.ActivePage := TabSheet;
 end;
 
 procedure TFormMain.PageControlMainChange(Sender: TObject);
@@ -1416,186 +1311,221 @@ begin                       {
  if PageControlMain.ActivePage =  TabSheetEvents then SmartHandler.EventsUnit.SetStateToPB; }
 end;
 
+procedure TFormMain.Quit;
+begin
+  LogList := nil;
+  with FormMain do
+  begin
+    if FlagLoadNote then
+      NoteUnload;
+    TimerCurElem.Enabled := False;
+    TimerTick.Enabled := False;
+    TimerUpdater.Enabled := False;
+    SmartHandler.GlobalStop;
+    SaveSettings;
+  end;
+  Application.Terminate;
+end;
+
 procedure TFormMain.ActionEndStopExecute(Sender: TObject);
 begin
- Application.ProcessMessages;
- SmartHandler.Stop:=False;
+  Application.ProcessMessages;
+  SmartHandler.Stop := False;
 end;
 
 procedure TFormMain.ActionEventsExecute(Sender: TObject);
-var ES:TFWEventSources;
-    ET:TFWEventLogRecordType;
-    DD:Word;
-    IntD:Integer;
+var
+  ES: TFWEventSources;
+  ET: TFWEventLogRecordType;
+  DD: Word;
+  IntD: Integer;
 begin
- case ComboBoxEventsList.ItemIndex of
-  0: ES:=esApplication;
-  1: ES:=esSecurity;
-  2: ES:=esSystem;
- else
-  begin
-   FillComboBoxES;
-   ES:=esSystem;
-  end;
- end;
- SmartHandler.EventsUnit.EventSources:=ES;
-
- case ComboBoxEventType.ItemIndex of
-  0: ET:=rtSuccess;
-  1: ET:=rtError;
-  2: ET:=rtWarning;
-  3: ET:=rtInformation;
-  4: ET:=rtAuditSuccess;
-  5: ET:=rtAuditFailed;
- else
-  begin
-   FillComboBoxET;
-   ET:=rtError;
-  end;
- end;
- SmartHandler.EventsUnit.EventType:=ET;
-
- case ComboBoxEventsDate.ItemIndex of
-  0:DD:=1;
-  1:DD:=7;
-  2:DD:=14;
-  3:DD:=30;
-  4:DD:=0;
- else
-  if TryStrToInt(ComboBoxEventsDate.Text, IntD) then DD:=IntD
+  case ComboBoxEventsList.ItemIndex of
+    0:
+      ES := esApplication;
+    1:
+      ES := esSecurity;
+    2:
+      ES := esSystem;
   else
-   begin
-    FillComboBoxED;
-    DD:=14;
-   end;
- end;
- SmartHandler.EventsUnit.DateData:=DD;
+    begin
+      FillComboBoxES;
+      ES := esSystem;
+    end;
+  end;
+  SmartHandler.EventsUnit.EventSources := ES;
 
- if PageControlMain.ActivePage <> TabSheetEvents then
+  case ComboBoxEventType.ItemIndex of
+    0:
+      ET := rtSuccess;
+    1:
+      ET := rtError;
+    2:
+      ET := rtWarning;
+    3:
+      ET := rtInformation;
+    4:
+      ET := rtAuditSuccess;
+    5:
+      ET := rtAuditFailed;
+  else
+    begin
+      FillComboBoxET;
+      ET := rtError;
+    end;
+  end;
+  SmartHandler.EventsUnit.EventType := ET;
+
+  case ComboBoxEventsDate.ItemIndex of
+    0:
+      DD := 1;
+    1:
+      DD := 7;
+    2:
+      DD := 14;
+    3:
+      DD := 30;
+    4:
+      DD := 0;
+  else
+    if TryStrToInt(ComboBoxEventsDate.Text, IntD) then
+      DD := IntD
+    else
+    begin
+      FillComboBoxED;
+      DD := 14;
+    end;
+  end;
+  SmartHandler.EventsUnit.DateData := DD;
+
+  if PageControlMain.ActivePage <> TabSheetEvents then
   begin
-   OpenTabNamed(TabSheetEvents);
-   Application.ProcessMessages;
-   if SmartHandler.EventsUnit.State <> gsFinished then SmartHandler.EventsUnit.Get;
+    OpenTabNamed(TabSheetEvents);
+    Application.ProcessMessages;
+    if SmartHandler.EventsUnit.State <> gsFinished then
+      SmartHandler.EventsUnit.Get;
   end
- else
+  else
   begin
-   Application.ProcessMessages;
-   SmartHandler.EventsUnit.Get;
+    Application.ProcessMessages;
+    SmartHandler.EventsUnit.Get;
   end;
 end;
 
 procedure TFormMain.ActionFindSrvFileExecute(Sender: TObject);
 begin
- SmartHandler.ServicesUnit.OpenFolderBinSelSrv;
+  SmartHandler.ServicesUnit.OpenFolderBinSelSrv;
 end;
 
 procedure TFormMain.ActionFirewallRulesExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetFireWall then
+  if PageControlMain.ActivePage <> TabSheetFireWall then
   begin
-   PageControlMain.ActivePage:=TabSheetFireWall;
-   Application.ProcessMessages;
-   if SmartHandler.FirewallUnit.State <> gsFinished then
+    PageControlMain.ActivePage := TabSheetFireWall;
+    Application.ProcessMessages;
+    if SmartHandler.FirewallUnit.State <> gsFinished then
     begin
-     SmartHandler.FirewallUnit.Get(FWModeRules);
+      SmartHandler.FirewallUnit.Get(FWModeRules);
     end;
   end
- else
+  else
   begin
-   Application.ProcessMessages;
-   SmartHandler.FirewallUnit.Get(FWModeRules);
+    Application.ProcessMessages;
+    SmartHandler.FirewallUnit.Get(FWModeRules);
   end;
 end;
 
 procedure TFormMain.ActionFWInfoExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetFireWall then
+  if PageControlMain.ActivePage <> TabSheetFireWall then
   begin
-   PageControlMain.ActivePage:=TabSheetFireWall;
-   Application.ProcessMessages;
-   if SmartHandler.FirewallUnit.State <> gsFinished then
+    PageControlMain.ActivePage := TabSheetFireWall;
+    Application.ProcessMessages;
+    if SmartHandler.FirewallUnit.State <> gsFinished then
     begin
-     SmartHandler.FirewallUnit.Get(FWModeInfo);
+      SmartHandler.FirewallUnit.Get(FWModeInfo);
     end;
   end
- else
+  else
   begin
-   Application.ProcessMessages;
-   SmartHandler.FirewallUnit.Get(FWModeInfo);
+    Application.ProcessMessages;
+    SmartHandler.FirewallUnit.Get(FWModeInfo);
   end;
 end;
 
 procedure TFormMain.ActionFWServExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetFireWall then
+  if PageControlMain.ActivePage <> TabSheetFireWall then
   begin
-   PageControlMain.ActivePage:=TabSheetFireWall;
-   Application.ProcessMessages;
-   if SmartHandler.FirewallUnit.State <> gsFinished then
+    PageControlMain.ActivePage := TabSheetFireWall;
+    Application.ProcessMessages;
+    if SmartHandler.FirewallUnit.State <> gsFinished then
     begin
-     SmartHandler.FirewallUnit.Get(FWModeServices);
+      SmartHandler.FirewallUnit.Get(FWModeServices);
     end;
   end
- else
+  else
   begin
-   Application.ProcessMessages;
-   SmartHandler.FirewallUnit.Get(FWModeServices);
+    Application.ProcessMessages;
+    SmartHandler.FirewallUnit.Get(FWModeServices);
   end;
 end;
 
 procedure TFormMain.ActionHDDExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetHDD then
+  if PageControlMain.ActivePage <> TabSheetHDD then
   begin
-   PageControlMain.ActivePage:=TabSheetHDD;
-   Application.ProcessMessages;
-   if SmartHandler.HDDUnit.State <> gsFinished then
+    PageControlMain.ActivePage := TabSheetHDD;
+    Application.ProcessMessages;
+    if SmartHandler.HDDUnit.State <> gsFinished then
     begin
-     SmartHandler.HDDUnit.Get(ComboBoxStorageList.ItemIndex);
+      SmartHandler.HDDUnit.Get(SmartHandler.HDDUnit.GetDriverNum(ComboBoxStorageList.ItemIndex));
     end;
   end
- else
+  else
   begin
-   Application.ProcessMessages;
-   SmartHandler.HDDUnit.Get(ComboBoxStorageList.ItemIndex);
+    Application.ProcessMessages;
+    SmartHandler.HDDUnit.Get(SmartHandler.HDDUnit.GetDriverNum(ComboBoxStorageList.ItemIndex));
   end;
 end;
 
 procedure TFormMain.ActionHelperExecute(Sender: TObject);
 begin
- PageControlMain.ActivePage:=TabSheetHelper;
+  PageControlMain.ActivePage := TabSheetHelper;
 end;
 
 procedure TFormMain.ActionInfoExecute(Sender: TObject);
 begin
- PageControlMain.ActivePage:=TabSheetInfo;
+  PageControlMain.ActivePage := TabSheetInfo;
 end;
 
 procedure TFormMain.ActionItemsExecute(Sender: TObject);
 begin
- OpenTabItems;
+  OpenTabItems;
 end;
 
 procedure LoadLog;
-var FS:TFileStream;
+var
+  FS: TFileStream;
 begin
- try
-  FS:=TFileStream.Create(LogFileName, fmShareDenyNone);
+  try
+    FS := TFileStream.Create(LogFileName, fmShareDenyNone);
   //FormMain.MemoLog.Lines.LoadFromStream(FS);
-  FS.Free;
   //SmartHandler.State:=gsFinished;
- except
+  finally
+    FS.Free;
   //SmartHandler.State:=gsError;
- end;
- EndThread(0);
+  end;
+  EndThread(0);
 end;
 
 procedure TFormMain.ActionLoadLogExecute(Sender: TObject);
-var ID:Cardinal;
+var
+  ID: Cardinal;
 begin
- SmartHandler.AddToProcessing;
- Application.ProcessMessages;
- BeginThread(nil, 0, @LoadLog, nil, 0, ID);
+  SmartHandler.AddToProcessing;
+  Application.ProcessMessages;
+  BeginThread(nil, 0, @LoadLog, nil, 0, ID);
 end;
 
 procedure TFormMain.ActionLogViewExecute(Sender: TObject);
@@ -1604,750 +1534,801 @@ begin
 end;
 
 procedure TFormMain.ActionMonitorStartExecute(Sender: TObject);
-begin      {
- try
-  TimerUpdaterTimer(nil);
-  TimerUpdater.Enabled:=True;
- except
-  begin
-   TimerUpdater.Enabled:=False;
-   Log(['Ошибка в мониторе "TimerUpdater"']);
-  end;
- end;  }
- SmartHandler.ProcessesUnit.EnableMonitor;
+begin
+  SmartHandler.ProcessesUnit.EnableMonitor;
 end;
 
 procedure TFormMain.ActionMonitorStopExecute(Sender: TObject);
 begin
- SmartHandler.ProcessesUnit.DisableMonitor;
-// TimerUpdater.Enabled:=False;
+  SmartHandler.ProcessesUnit.DisableMonitor;
+end;
+
+procedure TFormMain.ActionMSConfigExecute(Sender: TObject);
+begin
+  RunCommand('msconfig', '');
 end;
 
 procedure TFormMain.ActionNoteLoadExecute(Sender: TObject);
 begin
- if MessageBox(Handle, 'Загрузить список заметок?', 'Внимание', MB_YESNO or MB_ICONQUESTION) <> ID_YES then Exit;
- if FileExists(CurrentDir+DebugFileName) then
-  MemoDebug.Lines.LoadFromFile(CurrentDir+DebugFileName)
- else FileClose(FileCreate(CurrentDir+DebugFileName));
- FlagLoadNote:=True;
+  if MessageBox(Handle, 'Загрузить список заметок?', 'Внимание', MB_YESNO or MB_ICONQUESTION) <> ID_YES then
+    Exit;
+  if FileExists(CurrentDir + DebugFileName) then
+    MemoDebug.Lines.LoadFromFile(CurrentDir + DebugFileName)
+  else
+    FileClose(FileCreate(CurrentDir + DebugFileName));
+  FlagLoadNote := True;
 end;
 
 procedure TFormMain.ActionNoteUnloadExecute(Sender: TObject);
 begin
- if MessageBox(Handle, 'Выгрузить список заметок?', 'Внимание', MB_YESNO or MB_ICONQUESTION) <> ID_YES then Exit;
- NoteUnload;
+  if MessageBox(Handle, 'Выгрузить список заметок?', 'Внимание', MB_YESNO or MB_ICONQUESTION) <> ID_YES then
+    Exit;
+  NoteUnload;
 end;
 
 procedure TFormMain.ActionOnlyMainWndExecute(Sender: TObject);
 begin
- SmartHandler.ProcessesUnit.OnlyMainWnd:=not SmartHandler.ProcessesUnit.OnlyMainWnd;
- ActionOnlyMainWnd.Checked:=SmartHandler.ProcessesUnit.OnlyMainWnd;
- SmartHandler.ProcessesUnit.Get;
+  SmartHandler.ProcessesUnit.OnlyMainWnd := not SmartHandler.ProcessesUnit.OnlyMainWnd;
+  ActionOnlyMainWnd.Checked := SmartHandler.ProcessesUnit.OnlyMainWnd;
+  SmartHandler.ProcessesUnit.Get;
 end;
 
 procedure TFormMain.ActionOnlyVisableWndExecute(Sender: TObject);
 begin
- SmartHandler.ProcessesUnit.OnlyVisableWnd:=not SmartHandler.ProcessesUnit.OnlyVisableWnd;
- ActionOnlyVisableWnd.Checked:=SmartHandler.ProcessesUnit.OnlyVisableWnd;
- SmartHandler.ProcessesUnit.Get;
+  SmartHandler.ProcessesUnit.OnlyVisableWnd := not SmartHandler.ProcessesUnit.OnlyVisableWnd;
+  ActionOnlyVisableWnd.Checked := SmartHandler.ProcessesUnit.OnlyVisableWnd;
+  SmartHandler.ProcessesUnit.Get;
 end;
 
 procedure TFormMain.ActionOpenAppFolderExecute(Sender: TObject);
 begin
- SmartHandler.ApplicationsUnit.OpenInstalledPath;
+  SmartHandler.ApplicationsUnit.OpenInstalledPath;
 end;
 
 procedure TFormMain.ActionOpenARExecute(Sender: TObject);
 begin
- SmartHandler.AutorunsUnit.OpenFolderSelAR;
+  SmartHandler.AutorunsUnit.OpenFolderSelAR;
 end;
 
 procedure TFormMain.ActionOpenCleanerElementExecute(Sender: TObject);
 begin
- SmartHandler.CleanerUnit.OpenSelected;
+  SmartHandler.CleanerUnit.OpenSelected;
 end;
 
 procedure TFormMain.ActionOpenFileUnistExecute(Sender: TObject);
 begin
- SmartHandler.ApplicationsUnit.OpenUninstalledFile;
+  SmartHandler.ApplicationsUnit.OpenUninstalledFile;
 end;
 
 procedure TFormMain.ActionOpenHostsFileExecute(Sender: TObject);
 begin
- SmartHandler.OpenHostsFile;
+  SmartHandler.OpenHostsFile;
 end;
 
 procedure TFormMain.ActionOpenMD5MakerExecute(Sender: TObject);
 begin
- RunCommand(CurrentDir+'Data\MD5Maker.exe', '');
+  RunCommand(CurrentDir + 'Data\MD5Maker.exe', '');
 end;
 
 procedure TFormMain.ActionOpenPathInstExecute(Sender: TObject);
 begin
- SmartHandler.ApplicationsUnit.OpenInstalledPath;
+  SmartHandler.ApplicationsUnit.OpenInstalledPath;
 end;
 
 procedure TFormMain.ActionOpenProcExecute(Sender: TObject);
 begin
- SmartHandler.ProcessesUnit.ShowInfo;
+  SmartHandler.ProcessesUnit.ShowInfo;
 end;
 
 procedure TFormMain.ActionOpenProcFromARExecute(Sender: TObject);
 begin
- SmartHandler.AutorunsUnit.ShowARProc(ListViewProc);
- OpenTabNamed(TabSheetProc);
- ListViewProcClick(nil);
+  SmartHandler.AutorunsUnit.ShowARProc(ListViewProc);
+  OpenTabNamed(TabSheetProc);
+  ListViewProcClick(nil);
 end;
 
 procedure TFormMain.ActionOpenSrvDllExecute(Sender: TObject);
 begin
- SmartHandler.ServicesUnit.OpenFolderDllSelSrv;
+  SmartHandler.ServicesUnit.OpenFolderDllSelSrv;
 end;
 
 procedure TFormMain.ActionPortAdrExecute(Sender: TObject);
 begin
- (Sender as TsSpeedButton).Enabled:=False;
- SetRIPInfo(ListViewPorts);
- (Sender as TsSpeedButton).Enabled:=True;
+  (Sender as TsSpeedButton).Enabled := False;
+  SetRIPInfo(ListViewPorts);
+  (Sender as TsSpeedButton).Enabled := True;
 end;
 
 procedure TFormMain.ActionPortsExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetPorts then
+  if PageControlMain.ActivePage <> TabSheetPorts then
   begin
-   PageControlMain.ActivePage:=TabSheetPorts;
-   Application.ProcessMessages;
-   if SmartHandler.PortsUnit.State <> gsFinished then SmartHandler.PortsUnit.Get;
+    PageControlMain.ActivePage := TabSheetPorts;
+    Application.ProcessMessages;
+    if SmartHandler.PortsUnit.State <> gsFinished then
+      SmartHandler.PortsUnit.Get;
   end
- else SmartHandler.PortsUnit.Get;
+  else
+    SmartHandler.PortsUnit.Get;
 end;
 
 procedure TFormMain.ActionProcessesExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetProc then
+  if PageControlMain.ActivePage <> TabSheetProc then
   begin
-   PageControlMain.ActivePage:=TabSheetProc;
-   Application.ProcessMessages;
-   if SmartHandler.ProcessesUnit.State <> gsFinished then SmartHandler.ProcessesUnit.Get;
+    PageControlMain.ActivePage := TabSheetProc;
+    Application.ProcessMessages;
+    if SmartHandler.ProcessesUnit.State <> gsFinished then
+      SmartHandler.ProcessesUnit.Get;
   end
- else SmartHandler.ProcessesUnit.Get;
+  else
+    SmartHandler.ProcessesUnit.Get;
 end;
 
 procedure TFormMain.ActionProcPropExecute(Sender: TObject);
 begin
- SmartHandler.ProcessesUnit.ShowProp;
+  SmartHandler.ProcessesUnit.ShowProp;
 end;
 
 procedure TFormMain.ActionProcStopSelExecute(Sender: TObject);
 begin
- SmartHandler.ProcessesUnit.DeleteChecked;
+  SmartHandler.ProcessesUnit.DeleteChecked;
 end;
 
 procedure TFormMain.ActionPropAppsExecute(Sender: TObject);
 begin
- CreateProp(SmartHandler.ApplicationsUnit);
+  CreateProp(SmartHandler.ApplicationsUnit);
 end;
 
 procedure TFormMain.ActionPropAutorunsExecute(Sender: TObject);
 begin
- CreateProp(SmartHandler.AutorunsUnit);
+  CreateProp(SmartHandler.AutorunsUnit);
 end;
 
 procedure TFormMain.ActionPropEventsExecute(Sender: TObject);
 begin
- CreateProp(SmartHandler.EventsUnit);
+  CreateProp(SmartHandler.EventsUnit);
 end;
 
 procedure TFormMain.ActionPropTasksExecute(Sender: TObject);
 begin
- CreateProp(SmartHandler.TasksUnit);
+  CreateProp(SmartHandler.TasksUnit);
 end;
 
 procedure TFormMain.ActionQuitExecute(Sender: TObject);
 begin
- Close;
+  Close;
 end;
 
 procedure TFormMain.ActionRegeditExecute(Sender: TObject);
 begin
- RunCommand('regedit', '');
+  RunCommand('regedit', '');
 end;
 
 procedure TFormMain.ActionRegeditorExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetRegedit then
+  if PageControlMain.ActivePage <> TabSheetRegedit then
   begin
-   PageControlMain.ActivePage:=TabSheetRegedit;
-   Application.ProcessMessages;
-   if SmartHandler.RegeditUnit.State <> gsFinished then SmartHandler.RegeditUnit.Get;
+    PageControlMain.ActivePage := TabSheetRegedit;
+    Application.ProcessMessages;
+    if SmartHandler.RegeditUnit.State <> gsFinished then
+      SmartHandler.RegeditUnit.Get;
   end
- else
+  else
   begin
-   Application.ProcessMessages;
-   SmartHandler.RegeditUnit.Get;
+    Application.ProcessMessages;
+    SmartHandler.RegeditUnit.Get;
   end;
 end;
 
 procedure TFormMain.ActionRegLoadExecute(Sender: TObject);
-var OP:TOpenDialog;
+var
+  OP: TOpenDialog;
 begin
- OP:=TOpenDialog.Create(FormMain);
- OP.Title:='Выберите файл реестра';
- OP.Filter:='Все файлы|*.*';
- OP.Options:=[ofForceShowHidden, ofEnableSizing];
- if OP.Execute(Handle) then
-  if RegDatLoad(OP.FileName) then ShowMessage('Файл загружен.');
- FreeAndNil(OP);
+  OP := TOpenDialog.Create(FormMain);
+  OP.Title := 'Выберите файл реестра';
+  OP.Filter := 'Все файлы|*.*';
+  OP.Options := [ofForceShowHidden, ofEnableSizing];
+  if OP.Execute(Handle) then
+    if RegDatLoad(OP.FileName) then
+      ShowMessage('Файл загружен.');
+  OP.Free;
 end;
 
 procedure TFormMain.ActionRegUnloadExecute(Sender: TObject);
 begin
- if RegDatUnload then ShowMessage('Куст успешно выгружен.');
+  if RegDatUnload then
+    ShowMessage('Куст успешно выгружен.');
 end;
 
 procedure TFormMain.ActionRestartInfoTimerExecute(Sender: TObject);
 begin
- try
-  TimerCurElemTimer(nil);
-  TimerCurElem.Enabled:=True;
- except
-  begin
-   TimerCurElem.Enabled:=False;
-   Log(['Ошибка в мониторе "CurElem"']);
+  try
+    TimerCurElemTimer(nil);
+    TimerCurElem.Enabled := True;
+  except
+    begin
+      TimerCurElem.Enabled := False;
+      Log(['Ошибка в мониторе "CurElem"']);
+    end;
   end;
- end;
- try
-  TimerTickTimer(nil);
-  TimerTick.Enabled:=True;
- except
-  begin
-   TimerTick.Enabled:=False;
-   Log(['Ошибка в мониторе "Tick"']);
+  try
+    TimerTickTimer(nil);
+    TimerTick.Enabled := True;
+  except
+    begin
+      TimerTick.Enabled := False;
+      Log(['Ошибка в мониторе "Tick"']);
+    end;
   end;
- end;
 end;
 
 procedure TFormMain.ActionScheduleExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetSheduler then
+  if PageControlMain.ActivePage <> TabSheetSheduler then
   begin
-   PageControlMain.ActivePage:=TabSheetSheduler;
-   Application.ProcessMessages;
-   if SmartHandler.TasksUnit.State <> gsFinished then SmartHandler.TasksUnit.Get(FormMain.ActionAllTasks.Checked);
+    PageControlMain.ActivePage := TabSheetSheduler;
+    Application.ProcessMessages;
+    if SmartHandler.TasksUnit.State <> gsFinished then
+      SmartHandler.TasksUnit.Get(FormMain.ActionAllTasks.Checked);
   end
- else
+  else
   begin
-   Application.ProcessMessages;
-   SmartHandler.TasksUnit.Get(FormMain.ActionAllTasks.Checked);
+    Application.ProcessMessages;
+    SmartHandler.TasksUnit.Get(FormMain.ActionAllTasks.Checked);
   end;
 end;
 
 procedure TFormMain.ActionSendToMMExecute(Sender: TObject);
 begin
- if ListViewDelete.Selected = nil then Exit;
- RunCommand(CurrentDir+'Data\SDIAPP.exe', ListViewDelete.Selected.Caption);
+  if ListViewDelete.Selected = nil then
+    Exit;
+  RunCommand(CurrentDir + 'Data\SDIAPP.exe', ListViewDelete.Selected.Caption);
 end;
 
 procedure TFormMain.ActionSENextExecute(Sender: TObject);
 begin
- if not Assigned(ShellExplorer) then Exit;
- ShellExplorer.Back;
+  if not Assigned(ShellExplorer) then
+    Exit;
+  ShellExplorer.Back;
 end;
 
 procedure TFormMain.ActionSEPrevExecute(Sender: TObject);
 begin
- if not Assigned(ShellExplorer) then Exit;
- ShellExplorer.Back;
+  if not Assigned(ShellExplorer) then
+    Exit;
+  ShellExplorer.Back;
 end;
 
 procedure TFormMain.ActionSetHDDAttrExecute(Sender: TObject);
 begin
- ActionSetHDDAttr.Checked:= not ActionSetHDDAttr.Checked;
- SmartHandler.HDDUnit.GetAttrNames:=ActionSetHDDAttr.Checked;
+  ActionSetHDDAttr.Checked := not ActionSetHDDAttr.Checked;
+  SmartHandler.HDDUnit.GetAttrNames := ActionSetHDDAttr.Checked;
 end;
 
 procedure TFormMain.ActionSrvDeleteExecute(Sender: TObject);
 begin
- SmartHandler.ServicesUnit.DeleteSrv(SmartHandler.ServicesUnit.SelectedItem);
+  SmartHandler.ServicesUnit.DeleteSrv(SmartHandler.ServicesUnit.SelectedItem);
 end;
 
 procedure TFormMain.ActionSrvOpenExecute(Sender: TObject);
 begin
- SmartHandler.ServicesUnit.ShowSelected;
+  SmartHandler.ServicesUnit.ShowSelected;
 end;
 
 procedure TFormMain.ActionShellExplorerExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetShellExplorer then
+  if PageControlMain.ActivePage <> TabSheetShellExplorer then
   begin
-   PageControlMain.ActivePage:=TabSheetShellExplorer;
-   Application.ProcessMessages;
+    PageControlMain.ActivePage := TabSheetShellExplorer;
+    Application.ProcessMessages;
    //if SmartHandler.TasksUnit.State <> gsFinished then SmartHandler.TasksUnit.Get(FormMain.ActionAllTasks.Checked);
   end
- else
+  else
   begin
-   Application.ProcessMessages;
+    Application.ProcessMessages;
    //SmartHandler.TasksUnit.Get(FormMain.ActionAllTasks.Checked);
   end;
 end;
 
 procedure TFormMain.ActionShowAppInfoExecute(Sender: TObject);
 begin
- ShowAppInfo(SmartHandler.ApplicationsUnit);
+  ShowAppInfo(SmartHandler.ApplicationsUnit);
 end;
 
 procedure TFormMain.ActionShowSrvFromProcExecute(Sender: TObject);
-var PID:Integer;
+var
+  PID: Integer;
 begin
- if ListViewProc.Selected = nil then Exit;
- if not TryStrToInt(ListViewProc.Selected.SubItems[0], PID) then Exit;
- OpenTabNamed(TabSheetServices);
- Application.ProcessMessages;
- if SmartHandler.ServicesUnit.State <> gsFinished then SmartHandler.ServicesUnit.Get;
- SmartHandler.ServicesUnit.Select(PID);
+  if ListViewProc.Selected = nil then
+    Exit;
+  if not TryStrToInt(ListViewProc.Selected.SubItems[0], PID) then
+    Exit;
+  OpenTabNamed(TabSheetServices);
+  Application.ProcessMessages;
+  if SmartHandler.ServicesUnit.State <> gsFinished then
+    SmartHandler.ServicesUnit.Get;
+  SmartHandler.ServicesUnit.Select(PID);
 end;
 
 procedure TFormMain.ActionSrvOpenPortsExecute(Sender: TObject);
-var PID:Integer;
+var
+  PID: Integer;
 begin
- if ListViewSrvs.Selected = nil then Exit;
- if not TryStrToInt(ListViewSrvs.Selected.SubItems[0], PID) then Exit;
- if SmartHandler.PortsUnit.State <> gsFinished then ActionPorts.Execute;
- SelectPortsByPID(ListViewPorts, PID);
- OpenTabNamed(TabSheetPorts);
+  if ListViewSrvs.Selected = nil then
+    Exit;
+  if not TryStrToInt(ListViewSrvs.Selected.SubItems[0], PID) then
+    Exit;
+  if SmartHandler.PortsUnit.State <> gsFinished then
+    ActionPorts.Execute;
+  SelectPortsByPID(ListViewPorts, PID);
+  OpenTabNamed(TabSheetPorts);
 end;
 
 procedure TFormMain.ActionSrvOpenProcExecute(Sender: TObject);
 begin
- if ListViewSrvs.Selected = nil then Exit;
- if ListViewSrvs.Selected.Data = nil then Exit;
- SelectProcByPID(ListViewProc, TServiceObj(ListViewSrvs.Selected.Data^).PID);
- OpenTabNamed(TabSheetProc);
- ListViewProcClick(nil);
+  if ListViewSrvs.Selected = nil then
+    Exit;
+  if ListViewSrvs.Selected.Data = nil then
+    Exit;
+  SelectProcByPID(ListViewProc, TServiceObj(ListViewSrvs.Selected.Data^).PID);
+  OpenTabNamed(TabSheetProc);
+  ListViewProcClick(nil);
 end;
 
 procedure TFormMain.ActionSrvsExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetServices then
+  if PageControlMain.ActivePage <> TabSheetServices then
   begin
-   PageControlMain.ActivePage:=TabSheetServices;
-   if SmartHandler.ServicesUnit.State <> gsFinished then SmartHandler.ServicesUnit.Get;
+    PageControlMain.ActivePage := TabSheetServices;
+    if SmartHandler.ServicesUnit.State <> gsFinished then
+      SmartHandler.ServicesUnit.Get;
   end
- else
+  else
   begin
-   Application.ProcessMessages;
-   SmartHandler.ServicesUnit.Get;
+    Application.ProcessMessages;
+    SmartHandler.ServicesUnit.Get;
   end;
 end;
 
 procedure TFormMain.ActionSrvStartExecute(Sender: TObject);
 begin
  //Запустить службу
- SmartHandler.ServicesUnit.StartSrv(SmartHandler.ServicesUnit.SelectedItem);
+  SmartHandler.ServicesUnit.StartSrv(SmartHandler.ServicesUnit.SelectedItem);
 end;
 
 procedure TFormMain.ActionSrvSTAutoDelayedExecute(Sender: TObject);
 begin
- SmartHandler.ServicesUnit.SrvSTAutoDelayed;
+  SmartHandler.ServicesUnit.SrvSTAutoDelayed;
 end;
 
 procedure TFormMain.ActionSrvSTAutoExecute(Sender: TObject);
 begin
- SmartHandler.ServicesUnit.SrvSTAuto;
+  SmartHandler.ServicesUnit.SrvSTAuto;
 end;
 
 procedure TFormMain.ActionSrvSTBootExecute(Sender: TObject);
 begin
- SmartHandler.ServicesUnit.SrvSTBoot;
+  SmartHandler.ServicesUnit.SrvSTBoot;
 end;
 
 procedure TFormMain.ActionSrvSTDemandExecute(Sender: TObject);
 begin
- SmartHandler.ServicesUnit.SrvSTDemand;
+  SmartHandler.ServicesUnit.SrvSTDemand;
 end;
 
 procedure TFormMain.ActionSrvSTDisableExecute(Sender: TObject);
 begin
- SmartHandler.ServicesUnit.SrvSTDisable;
+  SmartHandler.ServicesUnit.SrvSTDisable;
 end;
 
 procedure TFormMain.ActionSrvStopExecute(Sender: TObject);
 begin
  //Остановить службу
- SmartHandler.ServicesUnit.StopSrv(SmartHandler.ServicesUnit.SelectedItem);
+  SmartHandler.ServicesUnit.StopSrv(SmartHandler.ServicesUnit.SelectedItem);
 end;
 
 procedure TFormMain.ActionSrvSTSysExecute(Sender: TObject);
 begin
- SmartHandler.ServicesUnit.SrvSTSys;
+  SmartHandler.ServicesUnit.SrvSTSys;
 end;
 
 procedure TFormMain.ActionStopExecute(Sender: TObject);
 begin
- SmartHandler.GlobalStop;
+  SmartHandler.GlobalStop;
 end;
 
 procedure TFormMain.ActionSwitchFWExecute(Sender: TObject);
 begin
- SmartHandler.FirewallUnit.Enabled:=not SmartHandler.FirewallUnit.Enabled;
+  SmartHandler.FirewallUnit.Enabled := not SmartHandler.FirewallUnit.Enabled;
 end;
 
 procedure TFormMain.ActionTweaksExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetTweaks then
+  if PageControlMain.ActivePage <> TabSheetTweaks then
   begin
-   PageControlMain.ActivePage:=TabSheetTweaks;
-   if SmartHandler.TweaksState = gsIsNotGetted then SmartHandler.GetTweaks(ListViewTweaks);
+    PageControlMain.ActivePage := TabSheetTweaks;
+    if SmartHandler.TweaksState = gsIsNotGetted then
+      SmartHandler.GetTweaks(ListViewTweaks);
   end
- else
+  else
   begin
-   Application.ProcessMessages;
-   SmartHandler.GetTweaks(ListViewTweaks);
+    Application.ProcessMessages;
+    SmartHandler.GetTweaks(ListViewTweaks);
   end;
 end;
 
 procedure TFormMain.ActionUpdateExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage = TabSheetInfo then UpdateInfo else
- if PageControlMain.ActivePage = TabSheetWinApps then ActionWinApps.Execute else
- if PageControlMain.ActivePage = TabSheetAutoruns then ActionAutorun.Execute else
- if PageControlMain.ActivePage = TabSheetEvents then ActionEvents.Execute else
- if PageControlMain.ActivePage = TabSheetExeing then ActionUtils.Execute else
- if PageControlMain.ActivePage = TabSheetSheduler then ActionSchedule.Execute else
+  if PageControlMain.ActivePage = TabSheetInfo then
+    UpdateInfo
+  else if PageControlMain.ActivePage = TabSheetWinApps then
+    ActionWinApps.Execute
+  else if PageControlMain.ActivePage = TabSheetAutoruns then
+    ActionAutorun.Execute
+  else if PageControlMain.ActivePage = TabSheetEvents then
+    ActionEvents.Execute
+  else if PageControlMain.ActivePage = TabSheetExeing then
+    ActionUtils.Execute
+  else if PageControlMain.ActivePage = TabSheetSheduler then
+    ActionSchedule.Execute
+  else if PageControlMain.ActivePage = TabSheetHDD then
+    ActionHDD.Execute
+  else
 // if PageControlMain.ActivePage = TabSheetLog then Unload else
- if PageControlMain.ActivePage = TabSheetTweaks then ActionTweaks.Execute;
+if PageControlMain.ActivePage = TabSheetTweaks then
+    ActionTweaks.Execute;
 end;
 
 procedure TFormMain.ActionUtilsExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetExeing then
+  if PageControlMain.ActivePage <> TabSheetExeing then
   begin
-   PageControlMain.ActivePage:=TabSheetExeing;
-   if SmartHandler.ExecuteUnit.State <> gsFinished then SmartHandler.ExecuteUnit.Get;
+    PageControlMain.ActivePage := TabSheetExeing;
+    if SmartHandler.ExecuteUnit.State <> gsFinished then
+      SmartHandler.ExecuteUnit.Get;
   end
- else
+  else
   begin
-   SmartHandler.ExecuteUnit.Get;
+    SmartHandler.ExecuteUnit.Get;
   end;
 end;
 
 procedure TFormMain.ActionWillGetBackupEventsExecute(Sender: TObject);
 begin
- if FileOpenDialog.Execute then
+  if FileOpenDialog.Execute then
   begin
-   SmartHandler.EventsUnit.BackupFile:=FileOpenDialog.FileName;
-   ActionWillGetBackupEvents.Checked:=True;
-   ActionWillGetSysEvents.Checked:=False;
+    SmartHandler.EventsUnit.BackupFile := FileOpenDialog.FileName;
+    ActionWillGetBackupEvents.Checked := True;
+    ActionWillGetSysEvents.Checked := False;
   end
- else
+  else
   begin
-   ActionWillGetSysEvents.Checked:=True;
-   ActionWillGetBackupEvents.Checked:=False;
+    ActionWillGetSysEvents.Checked := True;
+    ActionWillGetBackupEvents.Checked := False;
   end;
 end;
 
 procedure TFormMain.ActionWillGetSysEventsExecute(Sender: TObject);
 begin
- SmartHandler.EventsUnit.BackupFile:='';
- ActionWillGetSysEvents.Checked:=True;
- ActionWillGetBackupEvents.Checked:=False;
+  SmartHandler.EventsUnit.BackupFile := '';
+  ActionWillGetSysEvents.Checked := True;
+  ActionWillGetBackupEvents.Checked := False;
 end;
 
 procedure TFormMain.ActionWinAppsExecute(Sender: TObject);
 begin
- if PageControlMain.ActivePage <> TabSheetWinApps then
+  if PageControlMain.ActivePage <> TabSheetWinApps then
   begin
-   PageControlMain.ActivePage:=TabSheetWinApps;
-   if SmartHandler.ApplicationsUnit.State <> gsFinished then SmartHandler.ApplicationsUnit.Get;
+    PageControlMain.ActivePage := TabSheetWinApps;
+    if SmartHandler.ApplicationsUnit.State <> gsFinished then
+      SmartHandler.ApplicationsUnit.Get;
   end
- else
+  else
   begin
-   SmartHandler.ApplicationsUnit.Get;
+    SmartHandler.ApplicationsUnit.Get;
   end;
 end;
 
 procedure TFormMain.ActionWOW64ModeExecute(Sender: TObject);
 begin
- ActionWOW64Mode.Checked:=SmartHandler.WOWSwitch;
+  ActionWOW64Mode.Checked := SmartHandler.WOWSwitch;
 end;
 
-procedure TFormMain.ApplicationEvents1ShortCut(var Msg: TWMKey;
-  var Handled: Boolean);
+procedure TFormMain.ApplicationEvents1ShortCut(var Msg: TWMKey; var Handled: Boolean);
 begin
- case Msg.CharCode of
-  VK_ESCAPE:
-   begin
-    TForm(FindControl(Application.ActiveFormHandle)).Close;
-    Handled:=True;
-   end;
- end;
+  case Msg.CharCode of
+    VK_ESCAPE:
+      begin
+        TForm(FindControl(Application.ActiveFormHandle)).Close;
+        Handled := True;
+      end;
+  end;
 end;
 
 procedure TFormMain.ButtonedEditParamLeftButtonClick(Sender: TObject);
 begin
- ButtonedEditParam.Text:=Clipboard.AsText;
+  ButtonedEditParam.Text := Clipboard.AsText;
 end;
 
 procedure TFormMain.ButtonedEditRunKeyPress(Sender: TObject; var Key: Char);
 begin
- if Key = #13 then
+  if Key = #13 then
   begin
-   Key:=#0;
-   ButtonedEditRunRightButtonClick(nil);
+    Key := #0;
+    ButtonedEditRunRightButtonClick(nil);
   end;
 end;
 
 procedure TFormMain.ButtonedEditRunLeftButtonClick(Sender: TObject);
 begin
- ButtonedEditRun.Text:=Clipboard.AsText;
+  ButtonedEditRun.Text := Clipboard.AsText;
 end;
 
 procedure TFormMain.ButtonedEditRunRightButtonClick(Sender: TObject);
 begin
- RunCommand(ButtonedEditRun.Text, ButtonedEditParam.Text);
+  RunCommand(ButtonedEditRun.Text, ButtonedEditParam.Text);
 end;
 
-procedure TFormMain.OpenMenuTab(Tab:TTabSheet);
+procedure TFormMain.OpenMenuTab(Tab: TTabSheet);
 
-procedure SetMenuButtonActive(Button:TButtonFlat; Value:Boolean);
-begin
- case Value of
-  True:Button.ColorNormal:=$00F7F6F5;
-  False:Button.ColorNormal:=clWhite;
- end;
-end;
+  procedure SetMenuButtonActive(Button: TButtonFlat; Value: Boolean);
+  begin
+    case Value of
+      True:
+        Button.ColorNormal := $00F7F6F5;
+      False:
+        Button.ColorNormal := clWhite;
+    end;
+  end;
 
 begin
- PageControlMenu.ActivePage:=Tab;
- SetMenuButtonActive(ButtonFlatMenuStart, PageControlMenu.ActivePage = TabSheetMenuStart);
- SetMenuButtonActive(ButtonFlatMenuModules, PageControlMenu.ActivePage = TabSheetMenuModules);
- SetMenuButtonActive(ButtonFlatMenuHelp, PageControlMenu.ActivePage = TabSheetMenuHelp);
- SetMenuButtonActive(ButtonFlatMenuNav, PageControlMenu.ActivePage = TabSheetMenuNavigation);
- SetMenuButtonActive(ButtonFlatMenuMon, PageControlMenu.ActivePage = TabSheetMenuMonitor);
- SetMenuButtonActive(ButtonFlatMenuFS, PageControlMenu.ActivePage = TabSheetMenuFS);
- SetMenuButtonActive(ButtonFlatMenuTools, PageControlMenu.ActivePage = TabSheetMenuTools);
- if Tab = TabSheetMenuFS then OpenResult;
+  PageControlMenu.ActivePage := Tab;
+  SetMenuButtonActive(ButtonFlatMenuStart, PageControlMenu.ActivePage = TabSheetMenuStart);
+  SetMenuButtonActive(ButtonFlatMenuModules, PageControlMenu.ActivePage = TabSheetMenuModules);
+  SetMenuButtonActive(ButtonFlatMenuHelp, PageControlMenu.ActivePage = TabSheetMenuHelp);
+  SetMenuButtonActive(ButtonFlatMenuNav, PageControlMenu.ActivePage = TabSheetMenuNavigation);
+  SetMenuButtonActive(ButtonFlatMenuMon, PageControlMenu.ActivePage = TabSheetMenuMonitor);
+  SetMenuButtonActive(ButtonFlatMenuFS, PageControlMenu.ActivePage = TabSheetMenuFS);
+  SetMenuButtonActive(ButtonFlatMenuTools, PageControlMenu.ActivePage = TabSheetMenuTools);
+  if Tab = TabSheetMenuFS then
+    OpenResult;
 end;
 
 procedure TFormMain.ButtonFlatMenuFSClick(Sender: TObject);
 begin
- OpenMenuTab(TabSheetMenuFS);
+  OpenMenuTab(TabSheetMenuFS);
 end;
 
 procedure TFormMain.ButtonFlatMenuHelpClick(Sender: TObject);
 begin
- OpenMenuTab(TabSheetMenuHelp);
+  OpenMenuTab(TabSheetMenuHelp);
 end;
 
 procedure TFormMain.ButtonFlatMenuModulesClick(Sender: TObject);
 begin
- OpenMenuTab(TabSheetMenuModules);
+  OpenMenuTab(TabSheetMenuModules);
 end;
 
 procedure TFormMain.ButtonFlatMenuMonClick(Sender: TObject);
 begin
- OpenMenuTab(TabSheetMenuMonitor);
+  OpenMenuTab(TabSheetMenuMonitor);
 end;
 
 procedure TFormMain.ButtonFlatMenuNavClick(Sender: TObject);
 begin
- OpenMenuTab(TabSheetMenuNavigation);
+  OpenMenuTab(TabSheetMenuNavigation);
 end;
 
 procedure TFormMain.ButtonFlatMenuStartClick(Sender: TObject);
 begin
- OpenMenuTab(TabSheetMenuStart);
+  OpenMenuTab(TabSheetMenuStart);
 end;
 
 procedure TFormMain.ButtonFlatMenuToolsClick(Sender: TObject);
 begin
- OpenMenuTab(TabSheetMenuTools);
+  OpenMenuTab(TabSheetMenuTools);
 end;
 
 procedure TFormMain.ButtonIgnoreDelAppClick(Sender: TObject);
 begin
- if MessageBox(Application.Handle, PChar(LangText(100, 'Отменить ожидание окончания удаления приложения?')), PChar(LangText(41, 'Внимание')), MB_ICONINFORMATION or MB_YESNO) = ID_YES then
-  ProcessMonitor.Stop
- else Exit;
+  if MessageBox(Application.Handle, PChar(LangText(100, 'Отменить ожидание окончания удаления приложения?')), PChar(LangText(41, 'Внимание')), MB_ICONINFORMATION or MB_YESNO) = ID_YES then
+    ProcessMonitor.Stop
+  else
+    Exit;
 end;
 
 procedure TFormMain.FillComboBoxES;
 begin
- ComboBoxEventsList.Items.BeginUpdate;
- ComboBoxEventsList.Items.Clear;
- ComboBoxEventsList.Items.Add('Приложение');
- ComboBoxEventsList.Items.Add('Безопасность');
- ComboBoxEventsList.Items.Add('Система');
- ComboBoxEventsList.Items.EndUpdate;
- ComboBoxEventsList.ItemIndex:=2;
+  ComboBoxEventsList.Items.BeginUpdate;
+  ComboBoxEventsList.Items.Clear;
+  ComboBoxEventsList.Items.Add('Приложение');
+  ComboBoxEventsList.Items.Add('Безопасность');
+  ComboBoxEventsList.Items.Add('Система');
+  ComboBoxEventsList.Items.EndUpdate;
+  ComboBoxEventsList.ItemIndex := 2;
 end;
 
 procedure TFormMain.FillComboBoxET;
 begin
- ComboBoxEventType.Items.BeginUpdate;
- ComboBoxEventType.Items.Clear;
- ComboBoxEventType.Items.Add('Сведения');
- ComboBoxEventType.Items.Add('Ошибки');
- ComboBoxEventType.Items.Add('Предупреждения');
- ComboBoxEventType.Items.Add('Уведомления');
- ComboBoxEventType.Items.Add('Аудит успеха');
- ComboBoxEventType.Items.Add('Аудит отказа');
- ComboBoxEventType.Items.EndUpdate;
- ComboBoxEventType.ItemIndex:=1;
+  ComboBoxEventType.Items.BeginUpdate;
+  ComboBoxEventType.Items.Clear;
+  ComboBoxEventType.Items.Add('Сведения');
+  ComboBoxEventType.Items.Add('Ошибки');
+  ComboBoxEventType.Items.Add('Предупреждения');
+  ComboBoxEventType.Items.Add('Уведомления');
+  ComboBoxEventType.Items.Add('Аудит успеха');
+  ComboBoxEventType.Items.Add('Аудит отказа');
+  ComboBoxEventType.Items.EndUpdate;
+  ComboBoxEventType.ItemIndex := 1;
 end;
 
 procedure TFormMain.FillComboBoxED;
 begin
- ComboBoxEventsDate.Items.BeginUpdate;
- ComboBoxEventsDate.Items.Clear;
- ComboBoxEventsDate.Items.Add('Сутки');
- ComboBoxEventsDate.Items.Add('Неделя');
- ComboBoxEventsDate.Items.Add('Две недели');
- ComboBoxEventsDate.Items.Add('Месяц');
- ComboBoxEventsDate.Items.Add('За всё время');
- ComboBoxEventsDate.Items.EndUpdate;
- ComboBoxEventsDate.ItemIndex:=2;
+  ComboBoxEventsDate.Items.BeginUpdate;
+  ComboBoxEventsDate.Items.Clear;
+  ComboBoxEventsDate.Items.Add('Сутки');
+  ComboBoxEventsDate.Items.Add('Неделя');
+  ComboBoxEventsDate.Items.Add('Две недели');
+  ComboBoxEventsDate.Items.Add('Месяц');
+  ComboBoxEventsDate.Items.Add('За всё время');
+  ComboBoxEventsDate.Items.EndUpdate;
+  ComboBoxEventsDate.ItemIndex := 2;
 end;
 
 procedure TFormMain.CreateFaceItems;
 begin
- ListViewItems.Clear;
- ListViewItems.Groups.Clear;
+  ListViewItems.Clear;
+  ListViewItems.Groups.Clear;
  //Мониторинг
- SetActionDataLI(ListViewItems.Items.Add, @ActionProcesses, GetGroup(ListViewItems, 'Мониторинг', True));
- SetActionDataLI(ListViewItems.Items.Add, @ActionSrvs,      GetGroup(ListViewItems, 'Мониторинг', True));
- SetActionDataLI(ListViewItems.Items.Add, @ActionEvents,    GetGroup(ListViewItems, 'Мониторинг', True));
- SetActionDataLI(ListViewItems.Items.Add, @ActionInfo,      GetGroup(ListViewItems, 'Мониторинг', True));
- SetActionDataLI(ListViewItems.Items.Add, @ActionPorts,     GetGroup(ListViewItems, 'Мониторинг', True));
- SetActionDataLI(ListViewItems.Items.Add, @ActionHDD,       GetGroup(ListViewItems, 'Мониторинг', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionProcesses, GetGroup(ListViewItems, 'Мониторинг', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionSrvs, GetGroup(ListViewItems, 'Мониторинг', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionEvents, GetGroup(ListViewItems, 'Мониторинг', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionInfo, GetGroup(ListViewItems, 'Мониторинг', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionPorts, GetGroup(ListViewItems, 'Мониторинг', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionHDD, GetGroup(ListViewItems, 'Мониторинг', True));
 
- SetActionDataLI(ListViewItems.Items.Add, @ActionWinApps,   GetGroup(ListViewItems, 'Обслуживание', True));
- SetActionDataLI(ListViewItems.Items.Add, @ActionAutorun,   GetGroup(ListViewItems, 'Обслуживание', True));
- SetActionDataLI(ListViewItems.Items.Add, @ActionSchedule,  GetGroup(ListViewItems, 'Обслуживание', True));
- SetActionDataLI(ListViewItems.Items.Add, @ActionTweaks,    GetGroup(ListViewItems, 'Обслуживание', True));
- SetActionDataLI(ListViewItems.Items.Add, @ActionRegeditor, GetGroup(ListViewItems, 'Обслуживание', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionWinApps, GetGroup(ListViewItems, 'Обслуживание', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionAutorun, GetGroup(ListViewItems, 'Обслуживание', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionSchedule, GetGroup(ListViewItems, 'Обслуживание', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionTweaks, GetGroup(ListViewItems, 'Обслуживание', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionRegeditor, GetGroup(ListViewItems, 'Обслуживание', True));
 
- SetActionDataLI(ListViewItems.Items.Add, @ActionUtils,     GetGroup(ListViewItems, 'Инструменты', True));
- SetActionDataLI(ListViewItems.Items.Add, @ActionLogView,   GetGroup(ListViewItems, 'Инструменты', True));
- SetActionDataLI(ListViewItems.Items.Add, @ActionDebug,     GetGroup(ListViewItems, 'Инструменты', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionUtils, GetGroup(ListViewItems, 'Инструменты', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionLogView, GetGroup(ListViewItems, 'Инструменты', True));
+  SetActionDataLI(ListViewItems.Items.Add, @ActionDebug, GetGroup(ListViewItems, 'Инструменты', True));
+end;
+
+procedure TFormMain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+  CanClose := False;
+  Quit;
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
-var BMP:TBitmap;
-    i:Byte;
+var
+  BMP: TBitmap;
+  i: Byte;
 begin
- try
-  ShellExplorer:=TShellListView.Create(PanelShell);
-  with ShellExplorer do
-   begin
-    Name:='ShellExplorer';
-    Parent:=PanelShell;
-    Left:=0;
-    Top:=0;
-    Width:= 769;
-    Align:=alClient;
-    Height:=473;
-    Root:='rfDesktop';
-    Sorted:=True;
-    ReadOnly:=False;
-    HideSelection:=False;
-    TabOrder:=0;
-    ViewStyle:=vsReport;
-    ObjectTypes:=[otFolders, otNonFolders, otHidden];
-    OnClick:=OnSEClick;
-   end;
- except
-  begin
-   ShellExplorer:=nil;
-   Log(['Не смог инициализировать проводник оболочки Windows.']);
+  try
+    ShellExplorer := TShellListView.Create(PanelShell);
+    with ShellExplorer do
+    begin
+      Name := 'ShellExplorer';
+      Parent := PanelShell;
+      Left := 0;
+      Top := 0;
+      Width := 769;
+      Align := alClient;
+      Height := 473;
+      Root := 'rfDesktop';
+      Sorted := True;
+      ReadOnly := False;
+      HideSelection := False;
+      TabOrder := 0;
+      ViewStyle := vsReport;
+      ObjectTypes := [otFolders, otNonFolders, otHidden];
+      OnClick := OnSEClick;
+    end;
+  except
+    begin
+      ShellExplorer := nil;
+      Log(['Не смог инициализировать проводник оболочки Windows.']);
+    end;
   end;
- end;
 
- LPT:=0;
- LStep:=GridSz;
- Sz:=3;
+  LPT := 0;
+  LStep := GridSz;
+  Sz := 3;
 
- BMP:=TBitmap.Create;
- BMP.Width:=ImageCPUGraph.Width;
- BMP.Height:=ImageCPUGraph.Height;
- BMP.PixelFormat:=pf24bit;
- BMP.Canvas.Brush.Color:=clBlack;
- BMP.Canvas.Pen.Color:=clLime;
- BMP.Canvas.FillRect(BMP.Canvas.ClipRect);
- ImageCPUGraph.Picture.Assign(BMP);
- BMP.Free;
- for i:= 0 to PageControlMain.PageCount-1 do PageControlMain.Pages[i].TabVisible:=False;
- for i:= 0 to ImageCPUGraph.Width div Sz do NewPointForCPU(0);
- Application.OnException:=ExceptionHandler;
+  BMP := TBitmap.Create;
+  BMP.Width := ImageCPUGraph.Width;
+  BMP.Height := ImageCPUGraph.Height;
+  BMP.PixelFormat := pf24bit;
+  BMP.Canvas.Brush.Color := clBlack;
+  BMP.Canvas.Pen.Color := clLime;
+  BMP.Canvas.FillRect(BMP.Canvas.ClipRect);
+  ImageCPUGraph.Picture.Assign(BMP);
+  BMP.Free;
+  for i := 0 to PageControlMain.PageCount - 1 do
+    PageControlMain.Pages[i].TabVisible := False;
+  for i := 0 to ImageCPUGraph.Width div Sz do
+    NewPointForCPU(0);
+  Application.OnException := ExceptionHandler;
 //LogList:=@MemoLog;
- LoadSettings;
- CreateInfo;
- FillComboBoxES;
- FillComboBoxET;
- FillComboBoxED;
- CreateFaceItems;
+  LoadSettings;
+  CreateInfo;
+  FillComboBoxES;
+  FillComboBoxET;
+  FillComboBoxED;
+  CreateFaceItems;
+  OpenMenuTab(TabSheetMenuStart);
 end;
 
 procedure TFormMain.FormDestroy(Sender: TObject);
 begin
- Quit;
+  SmartHandler.Free;
 end;
 
-procedure TFormMain.FormKeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
+procedure TFormMain.FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
- case Key of
-  VK_ESCAPE: Close;
- end;
+  case Key of
+    VK_ESCAPE:
+      Close;
+  end;
 end;
 
 procedure TFormMain.FormShow(Sender: TObject);
 begin
+  TimerTickTimer(nil);
  {$IFDEF DEBUG}
   Exit;
  {$ENDIF}
- if not WarningAboutInconsistency then
+  if not WarningAboutInconsistency then
   begin
-   WarningAboutInconsistency:=True;
+    WarningAboutInconsistency := True;
    //Если битность не совпадает...
-   if Info.Bits <> AppBits then
+    if Info.Bits <> AppBits then
     begin
-     case MessageBox(Application.Handle, PChar(LangText(-1, 'Разрядность выполняемой версии приложения не соответствует разрядности вашей операционной системы.'#13#10'Запустить соответствующую версию?')), PChar(AppNameRu), MB_ICONWARNING or MB_YESNOCANCEL) of
-      ID_YES:
-       begin
-        if FileExists(CurrentDir+App64) then
-         begin
-          ShellExecute(Application.Handle, 'open', PChar(CurrentDir+App64), '', '', SW_NORMAL);
+      case MessageBox(Application.Handle, PChar(LangText(-1, 'Разрядность выполняемой версии приложения не соответствует разрядности вашей операционной системы.'#13#10'Запустить соответствующую версию?')), PChar(AppNameRu), MB_ICONWARNING or MB_YESNOCANCEL) of
+        ID_YES:
+          begin
+            if FileExists(CurrentDir + App64) then
+            begin
+              ShellExecute(Application.Handle, 'open', PChar(CurrentDir + App64), '', '', SW_NORMAL);
+              Halt;
+            end
+            else
+            begin
+              if MessageBox(Application.Handle, PChar('Файл 64-битного приложения не найден.'#13#10'Выключить перенаправление WOW64?'), PChar(AppNameRu), MB_ICONWARNING or MB_YESNO) = ID_YES then
+                ActionWOW64Mode.Execute;
+            end;
+          end;
+        ID_NO:
+          if MessageBox(Application.Handle, PChar('Выключить перенаправление WOW64?'), PChar(AppNameRu), MB_ICONWARNING or MB_YESNO) = ID_YES then
+            ActionWOW64Mode.Execute;
+        ID_CANCEL:
           Halt;
-         end
-        else
-         begin
-          if MessageBox(Application.Handle, PChar('Файл 64-битного приложения не найден.'#13#10'Выключить перенаправление WOW64?'), PChar(AppNameRu), MB_ICONWARNING or MB_YESNO) = ID_YES
-          then ActionWOW64Mode.Execute;
-         end;
-       end;
-      ID_NO:
-       if MessageBox(Application.Handle, PChar('Выключить перенаправление WOW64?'), PChar(AppNameRu), MB_ICONWARNING or MB_YESNO) = ID_YES
-       then ActionWOW64Mode.Execute;
-      ID_CANCEL:Halt;
-     end;
+      end;
     end;
   end;
- if not WarningAboutTrustlevel then
+  if not WarningAboutTrustlevel then
   begin
-   WarningAboutTrustlevel:=True;
-   if not IsProgAdmin then
-   case MessageBox(Application.Handle, PChar(LangText(-1, 'У программы нет прав администратора. Это повлияет на точность и возможности программы.'#13#10'Перезапустить программу от имени администратора?')), PChar(AppNameRu), MB_ICONWARNING or MB_YESNOCANCEL) of
-    ID_YES:
-     begin
-      if True then
-       begin
-        ShellExecute(Application.Handle, 'open', PChar(CurrentDir+'\UAC.exe'), PChar('"'+ParamStr(0)+'"'), '', SW_NORMAL);
-        Quit;
-       end;
-     end;
-    ID_CANCEL:Quit;
-   end;
+    WarningAboutTrustlevel := True;
+    if not IsProgAdmin then
+      case MessageBox(Application.Handle, PChar(LangText(-1, 'У программы нет прав администратора. Это повлияет на точность и возможности программы.'#13#10'Перезапустить программу от имени администратора?')), PChar(AppNameRu), MB_ICONWARNING or MB_YESNOCANCEL) of
+        ID_YES:
+          begin
+            if True then
+            begin
+              ShellExecute(Application.Handle, 'open', PChar(CurrentDir + '\UAC.exe'), PChar('"' + ParamStr(0) + '"'), '', SW_NORMAL);
+              Quit;
+              Close;
+            end;
+          end;
+        ID_CANCEL:
+          Quit;
+      end;
   end;
  //TimerTick.Enabled:=True;
  //TimerCurElem.Enabled:=True;
@@ -2355,309 +2336,341 @@ end;
 
 procedure TFormMain.TimerCurElemTimer(Sender: TObject);
 begin
- PanelAwating.Visible:=ProcessMonitor.Executing;
+  PanelAwating.Visible := ProcessMonitor.Executing;
  //CheckTabsPos;
 end;
 
 procedure TFormMain.TimerTickTimer(Sender: TObject);
-var Ico:TIcon;
-    lpMemoryStatus:TMemoryStatus;
-    ID, Sz:Integer;
-    DSI:TDriveSpaceInfoType;
-    CPU:Byte;
+var
+  Ico: TIcon;
+  lpMemoryStatus: TMemoryStatus;
+  ID, Sz: Integer;
+  DSI: TDriveSpaceInfoType;
+  CPU: Byte;
 begin
- Ico:=TIcon.Create;
+  Ico := TIcon.Create;
 
  //Информация об ОЗУ
- try
-   lpMemoryStatus.dwLength:=SizeOf(lpMemoryStatus);
-   GlobalMemoryStatus(lpMemoryStatus);
-   ID:=Round(lpMemoryStatus.dwMemoryLoad / (100 / 16));
-   if ID < 0 then ID:=0 else if ID > 15 then ID:=15;
-   PanelRAM.Caption:=Format('ОЗУ %d%%', [lpMemoryStatus.dwMemoryLoad]);
-   ImageListGuage.GetIcon(ID, Ico);
-   ImageMem.Hint:=Format('Используется %d%%'#13#10'Всего %d МБ'#13#10'Доступно %d МБ', [lpMemoryStatus.dwMemoryLoad, lpMemoryStatus.dwTotalPhys div Sqr(1024), lpMemoryStatus.dwAvailPhys div Sqr(1024)]);
-   ImageMem.Picture.Assign(Ico);
- except
-  begin
-   TimerTick.Enabled:=False;
-   Log(['Приостановлен таймер наблюдения за активностью системы из-за ошибки при получении инф. об ОЗУ']);
+  try
+    lpMemoryStatus.dwLength := SizeOf(lpMemoryStatus);
+    GlobalMemoryStatus(lpMemoryStatus);
+    ID := Round(lpMemoryStatus.dwMemoryLoad / (100 / 16));
+    if ID < 0 then
+      ID := 0
+    else if ID > 15 then
+      ID := 15;
+    PanelRAM.Caption := Format('ОЗУ %d%%', [lpMemoryStatus.dwMemoryLoad]);
+    ImageListGuage.GetIcon(ID, Ico);
+    ImageMem.Hint := Format('Используется %d%%'#13#10'Всего %d МБ'#13#10'Доступно %d МБ', [lpMemoryStatus.dwMemoryLoad, lpMemoryStatus.dwTotalPhys div Sqr(1024), lpMemoryStatus.dwAvailPhys div Sqr(1024)]);
+    ImageMem.Picture.Assign(Ico);
+  except
+    begin
+      TimerTick.Enabled := False;
+      Log(['Приостановлен таймер наблюдения за активностью системы из-за ошибки при получении инф. об ОЗУ']);
+    end;
   end;
- end;
 
  //Информация о системном диске
- try
-   DSI:=GetDriveSpaceInfo(C[1]+':');
-   Sz:=DSI.TotalSize div (1024 * 1024);
-   if Sz = 0 then Sz:=1;
-   ID:=Round((Sz - DSI.FreeSize div (1024 * 1024)) * (100 / Sz));
-   PanelHDD.Caption:=Format(C[1]+':\ %d%%', [ID]);
-   ImageDrvC.Hint:=Format('Используется %d%%'#13#10'Всего ~%d ГБ'#13#10'Свободно ~%d ГБ', [ID, Sz div 1024, DSI.FreeSize div (Sqr(1024)*1024)]);
-   ID:=Round(ID / (100 / 16));
-   if ID < 0 then ID:=0 else if ID > 15 then ID:=15;
-   ImageListGuage.GetIcon(ID, Ico);
-   ImageDrvC.Picture.Assign(Ico);
- except
-  begin
-   TimerTick.Enabled:=False;
-   Log(['Приостановлен таймер наблюдения за активностью системы из-за ошибки при получении инф. о системном диске']);
+  try
+    DSI := GetDriveSpaceInfo(C[1] + ':');
+    Sz := DSI.TotalSize div (1024 * 1024);
+    if Sz = 0 then
+      Sz := 1;
+    ID := Round((Sz - DSI.FreeSize div (1024 * 1024)) * (100 / Sz));
+    PanelHDD.Caption := Format(C[1] + ':\ %d%%', [ID]);
+    ImageDrvC.Hint := Format('Используется %d%%'#13#10'Всего ~%d ГБ'#13#10'Свободно ~%d ГБ', [ID, Sz div 1024, DSI.FreeSize div (Sqr(1024) * 1024)]);
+    ID := Round(ID / (100 / 16));
+    if ID < 0 then
+      ID := 0
+    else if ID > 15 then
+      ID := 15;
+    ImageListGuage.GetIcon(ID, Ico);
+    ImageDrvC.Picture.Assign(Ico);
+  except
+    begin
+      TimerTick.Enabled := False;
+      Log(['Приостановлен таймер наблюдения за активностью системы из-за ошибки при получении инф. о системном диске']);
+    end;
   end;
- end;
 
  //Информация о загрузке ЦП
- try
-   CPU:=Round(CPUUsage);
-   NewPointForCPU(CPU);
-   PanelCPU.Caption:=Format('ЦП %d%%', [CPU]);
-   ImageCPU.Hint:=Format('Загруженность %d%%', [CPU]);
-   ID:=Round(CPU / (100 / 16));
-   if ID < 0 then ID:=0 else if ID > 15 then ID:=15;
-   ImageListGuage.GetIcon(ID, Ico);
-   ImageCPU.Picture.Assign(Ico);
- except
-  begin
-   TimerTick.Enabled:=False;
-   Log(['Приостановлен таймер наблюдения за активностью системы из-за ошибки при получении инф. о загрузке ЦП']);
+  try
+    CPU := Round(CPUUsage);
+    NewPointForCPU(CPU);
+    PanelCPU.Caption := Format('ЦП %d%%', [CPU]);
+    ImageCPU.Hint := Format('Загруженность %d%%', [CPU]);
+    ID := Round(CPU / (100 / 16));
+    if ID < 0 then
+      ID := 0
+    else if ID > 15 then
+      ID := 15;
+    ImageListGuage.GetIcon(ID, Ico);
+    ImageCPU.Picture.Assign(Ico);
+  except
+    begin
+      TimerTick.Enabled := False;
+      Log(['Приостановлен таймер наблюдения за активностью системы из-за ошибки при получении инф. о загрузке ЦП']);
+    end;
   end;
- end;
 
  //Проверим список на наличие в нем уже удалённых программ
- try
-   SmartHandler.ApplicationsUnit.CheckItems;
- except
-  begin
-   TimerTick.Enabled:=False;
-   Log(['Приостановлен таймер наблюдения за активностью системы из-за ошибки при обновлении списка Программ и компонентов']);
+  try
+    if Assigned(SmartHandler.ApplicationsUnit) then SmartHandler.ApplicationsUnit.CheckItems;
+  except
+    begin
+      TimerTick.Enabled := False;
+      Log(['Приостановлен таймер наблюдения за активностью системы из-за ошибки при обновлении списка Программ и компонентов']);
+    end;
   end;
- end;
 
  //Общая информация
- try
-  UpdateInfo;
- except
-  begin
-   TimerTick.Enabled:=False;
-   Log(['Приостановлен таймер наблюдения за активностью системы из-за ошибки при обновлении общей информации']);
+  try
+    UpdateInfo;
+  except
+    begin
+      TimerTick.Enabled := False;
+      Log(['Приостановлен таймер наблюдения за активностью системы из-за ошибки при обновлении общей информации']);
+    end;
   end;
- end;
 
- FreeAndNil(Ico);
+ Ico.Free;
 end;
 
 function CtrlDown: Boolean;
-var State:TKeyboardState;
+var
+  State: TKeyboardState;
 begin
- GetKeyboardState(State);
- Result:= ((State[vk_Control] and 128) <> 0);
+  GetKeyboardState(State);
+  Result := ((State[vk_Control] and 128) <> 0);
 end;
 
 procedure TFormMain.TimerUpdaterTimer(Sender: TObject);
 begin
- if CtrlDown then
-  if SmartHandler.ProcessesUnit.MonitorIsEnable then SmartHandler.ProcessesUnit.SelectFormUnderMouse;
+  if CtrlDown then
+    if SmartHandler.ProcessesUnit.MonitorIsEnable then
+      SmartHandler.ProcessesUnit.SelectFormUnderMouse;
 end;
 
 procedure TFormMain.ListViewWinAppsMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-var MPos:TPoint;
+var
+  MPos: TPoint;
 begin
- if Button = mbRight then
+  if Button = mbRight then
   begin
-   if ListViewWinApps.Selected <> nil then
+    if ListViewWinApps.Selected <> nil then
     begin
-     GetCursorPos(MPos);
-     PopupMenuApps.Popup(MPos.X, MPos.Y);
+      GetCursorPos(MPos);
+      PopupMenuApps.Popup(MPos.X, MPos.Y);
     end;
   end;
 end;
 
 procedure TFormMain.ListViewWindowsClick(Sender: TObject);
-var PID:Integer;
+var
+  PID: Integer;
 begin
- if ListViewWindows.Selected = nil then Exit;
- if not TryStrToInt(ListViewWindows.Selected.SubItems[0], PID) then Exit;
+  if ListViewWindows.Selected = nil then
+    Exit;
+  if not TryStrToInt(ListViewWindows.Selected.SubItems[0], PID) then
+    Exit;
 
- SelectProcByPID(ListViewProc, PID);
- SelectProcByPID(TreeViewPID, PID);
+  SelectProcByPID(ListViewProc, PID);
+  SelectProcByPID(TreeViewPID, PID);
 end;
 
 procedure TFormMain.LabelOffAllSchClick(Sender: TObject);
 begin
- SmartHandler.TasksUnit.OffSelectedTasks;
+  SmartHandler.TasksUnit.OffSelectedTasks;
 end;
 
 procedure TFormMain.Label21Click(Sender: TObject);
 begin
- SmartHandler.AutorunsUnit.DeleteChecked;
+  SmartHandler.AutorunsUnit.DeleteChecked;
 end;
 
 procedure TFormMain.LabelDelSelectClick(Sender: TObject);
 begin
- SmartHandler.ApplicationsUnit.DeleteChecked;
+  SmartHandler.ApplicationsUnit.DeleteChecked;
 end;
 
 procedure TFormMain.LabelMouseEnter(Sender: TObject);
 begin
- if not (Sender is TLabel) then Exit;
- if not (Sender as TLabel).Enabled then Exit;
+  if not (Sender is TLabel) then
+    Exit;
+  if not (Sender as TLabel).Enabled then
+    Exit;
 
- with (Sender as TLabel) do
+  with (Sender as TLabel) do
   begin
-   Font.Color:=LinkColor;
-   Font.Style:=Font.Style + [fsUnderline];
-   Cursor:=crHandPoint;
+    Font.Color := LinkColor;
+    Font.Style := Font.Style + [fsUnderline];
+    Cursor := crHandPoint;
   end;
 end;
 
 procedure TFormMain.LabelMouseLeave(Sender: TObject);
 begin
- if not (Sender is TLabel) then Exit;
- with (Sender as TLabel) do
+  if not (Sender is TLabel) then
+    Exit;
+  with (Sender as TLabel) do
   begin
-   Font.Color:=UnLinkColor;
-   Font.Style:=(Font.Style - [fsUnderline]);
-   Cursor:=crDefault;
+    Font.Color := UnLinkColor;
+    Font.Style := (Font.Style - [fsUnderline]);
+    Cursor := crDefault;
   end;
 end;
 
 procedure TFormMain.ListViewARDblClick(Sender: TObject);
 begin
- SmartHandler.AutorunsUnit.ShowInfo;
+  SmartHandler.AutorunsUnit.ShowInfo;
 end;
 
-procedure TFormMain.ListViewARMouseDown(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Integer);
-var MPos:TPoint;
+procedure TFormMain.ListViewARMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+var
+  MPos: TPoint;
 begin
- if Button = mbRight then
+  if Button = mbRight then
   begin
-   if ListViewAR.Selected <> nil then
+    if ListViewAR.Selected <> nil then
     begin
-     GetCursorPos(MPos);
-     PopupMenuAutorun.Popup(MPos.X, MPos.Y);
+      GetCursorPos(MPos);
+      PopupMenuAutorun.Popup(MPos.X, MPos.Y);
     end;
   end;
 end;
 
 procedure TFormMain.ListViewContextDblClick(Sender: TObject);
 begin
- SmartHandler.ContextMenuUnit.ShowInfo;
+  SmartHandler.ContextMenuUnit.ShowInfo;
 end;
 
-procedure TFormMain.ListViewDeleteMouseDown(Sender: TObject;
-  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-var MPos:TPoint;
+procedure TFormMain.ListViewDeleteMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+var
+  MPos: TPoint;
 begin
- if Button = mbRight then
+  if Button = mbRight then
   begin
-   if not (Sender is TListView) then Exit;
-   if (Sender as TListView).Selected <> nil then
+    if not (Sender is TListView) then
+      Exit;
+    if (Sender as TListView).Selected <> nil then
     begin
-     GetCursorPos(MPos);
-     PopupMenuCleaner.Popup(MPos.X, MPos.Y);
+      GetCursorPos(MPos);
+      PopupMenuCleaner.Popup(MPos.X, MPos.Y);
     end;
   end;
 end;
 
 procedure TFormMain.ListViewEventsDblClick(Sender: TObject);
 begin
- if ListViewEvents.Selected = nil then Exit; 
- SmartHandler.EventsUnit.ShowSelectedEvent;
+  if ListViewEvents.Selected = nil then
+    Exit;
+  SmartHandler.EventsUnit.ShowSelectedEvent;
 end;
 
 procedure TFormMain.ListViewHDDDblClick(Sender: TObject);
-var TRINT:Integer;
+var
+  TRINT: Integer;
 begin
- if ListViewHDD.Selected = nil then Exit;
- if not TryStrToInt(ListViewHDD.Selected.Caption, TRINT) then Exit;
- SmartHandler.HDDUnit.ShowAttribute(IntToStr(TRINT));
+  if ListViewHDD.Selected = nil then
+    Exit;
+  if not TryStrToInt(ListViewHDD.Selected.Caption, TRINT) then
+    Exit;
+  SmartHandler.HDDUnit.ShowAttribute(IntToStr(TRINT));
 end;
 
 procedure TFormMain.ListViewItemsDblClick(Sender: TObject);
 begin
- if ListViewItems.Selected = nil then Exit;
- if ListViewItems.Selected.Data <> nil then
-  TAction(ListViewItems.Selected.Data^).Execute;
+  if ListViewItems.Selected = nil then
+    Exit;
+  if ListViewItems.Selected.Data <> nil then
+    TAction(ListViewItems.Selected.Data^).Execute;
 end;
 
 procedure TFormMain.ListViewParamDblClick(Sender: TObject);
 begin
- if ListViewParam.Selected = nil then Exit;
- SmartHandler.CleanerUnit.ScanFiles:=ActionAutoCheck.Checked;
- SmartHandler.CleanerUnit.GetByID(ListViewParam.Selected.Index);
+  if ListViewParam.Selected = nil then
+    Exit;
+  SmartHandler.CleanerUnit.ScanFiles := ActionAutoCheck.Checked;
+  SmartHandler.CleanerUnit.GetByID(ListViewParam.Selected.Index);
 end;
 
 procedure TFormMain.ListViewPortsDblClick(Sender: TObject);
 begin
- SmartHandler.PortsUnit.ShowInfo;
+  SmartHandler.PortsUnit.ShowInfo;
 end;
 
-procedure TFormMain.ListViewPortsMouseDown(Sender: TObject;
-  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
-var MPos:TPoint;
+procedure TFormMain.ListViewPortsMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+var
+  MPos: TPoint;
 begin
- if Button = mbRight then
+  if Button = mbRight then
   begin
-   if ListViewPorts.Selected <> nil then
+    if ListViewPorts.Selected <> nil then
     begin
-     GetCursorPos(MPos);
-     PopupMenuPorts.Popup(MPos.X, MPos.Y);
+      GetCursorPos(MPos);
+      PopupMenuPorts.Popup(MPos.X, MPos.Y);
     end;
   end;
 end;
 
 procedure TFormMain.ListViewProcClick(Sender: TObject);
-var PID:Integer;
+var
+  PID: Integer;
 begin
- if ListViewProc.Selected = nil then Exit;
- if not TryStrToInt(ListViewProc.Selected.SubItems[siPID], PID) then Exit;
+  if ListViewProc.Selected = nil then
+    Exit;
+  if not TryStrToInt(ListViewProc.Selected.SubItems[siPID], PID) then
+    Exit;
  //ShowMessage(GetCmdLineProc(OpenProcess(PROCESS_QUERY_INFORMATION or PROCESS_VM_READ, False, PID))+' '+IntToStr(PID));
- SelectProcByPID(TreeViewPID, PID);
- SelectWndByPID(ListViewWindows, PID);
+  SelectProcByPID(TreeViewPID, PID);
+  SelectWndByPID(ListViewWindows, PID);
 end;
 
-procedure TFormMain.ListViewProcKeyDown(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
+procedure TFormMain.ListViewProcKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
- if Key = VK_DELETE then SmartHandler.ProcessesUnit.DeleteSelected;
+  if Key = VK_DELETE then
+    SmartHandler.ProcessesUnit.DeleteSelected;
 end;
 
-procedure TFormMain.ListViewProcMouseDown(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Integer);
-var MPos:TPoint;
-    ShowPopup:Boolean;
+procedure TFormMain.ListViewProcMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+var
+  MPos: TPoint;
+  ShowPopup: Boolean;
 begin
- ShowPopup:=False;
- if Button = mbRight then
+  ShowPopup := False;
+  if Button = mbRight then
   begin
-   if Sender is TListView then
+    if Sender is TListView then
     begin
-     if (Sender as TListView).Selected <> nil then ShowPopup:=True;
+      if (Sender as TListView).Selected <> nil then
+        ShowPopup := True;
     end
-   else
-    if Sender is TTreeView then
-     begin
-      if (Sender as TTreeView).Selected <> nil then ShowPopup:=True;
-     end
+    else if Sender is TTreeView then
+    begin
+      if (Sender as TTreeView).Selected <> nil then
+        ShowPopup := True;
+    end
   end;
- if ShowPopup then
+  if ShowPopup then
   begin
-   GetCursorPos(MPos);
-   PopupMenuProc.Popup(MPos.X, MPos.Y);
+    GetCursorPos(MPos);
+    PopupMenuProc.Popup(MPos.X, MPos.Y);
   end;
 end;
 
-procedure TFormMain.ListViewSrvsMouseDown(Sender: TObject; Button: TMouseButton;
-  Shift: TShiftState; X, Y: Integer);
-var MPos:TPoint;
+procedure TFormMain.ListViewSrvsMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+var
+  MPos: TPoint;
 begin
- if Button = mbRight then
+  if Button = mbRight then
   begin
-   if ListViewSrvs.Selected <> nil then
+    if ListViewSrvs.Selected <> nil then
     begin
-     GetCursorPos(MPos);
-     PopupMenuSrvs.Popup(MPos.X, MPos.Y);
+      GetCursorPos(MPos);
+      PopupMenuSrvs.Popup(MPos.X, MPos.Y);
     end;
   end;
 end;
 
 end.
+

@@ -31,18 +31,18 @@
 #Имя стиля
 StyleName=
 #Ширины окна
-Width=1040
+Width=1224
 #Высота окна
-Height=682
+Height=770
 #Слева
-Left=76
+Left=259
 #Сверху
-Top=0
+Top=129
 #Последнее разрешение
 LastResolutionWidth=1366
 LastResolutionHeight=768
 #Состояние окна
-WindowState=2
+WindowState=0
 
 
 

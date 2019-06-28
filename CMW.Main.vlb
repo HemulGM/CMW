@@ -10,9 +10,6 @@ Coordinates=938,78,88,36
 [ActionTweaks]
 Coordinates=938,133,94,36
 
-[Bevel3]
-Coordinates=17,319,54,36
-
 [TimerTick]
 Coordinates=0,490,71,36
 
@@ -67,9 +64,6 @@ Coordinates=938,1013,114,36
 [Panel1]
 Coordinates=29,849,54,58
 
-[Label21]
-Coordinates=768,386,60,58
-
 [ButtonAutorun]
 Coordinates=480,155,97,58
 
@@ -84,9 +78,6 @@ Coordinates=829,1261,102,36
 
 [TabSheetEvents]
 Coordinates=1126,56,109,36
-
-[Bevel4]
-Coordinates=17,1261,54,36
 
 [MenuItemUtils]
 Coordinates=1126,111,97,36
@@ -133,32 +124,20 @@ Coordinates=615,694,81,58
 [TabSheetItems]
 Coordinates=1126,716,101,36
 
-[LabelAppElements]
-Coordinates=768,694,122,58
-
 [ButtonEvents]
 Coordinates=209,1165,91,58
 
 [ListViewTweaks]
 Coordinates=326,507,116,256
 
-[Bevel1]
-Coordinates=1126,771,54,36
-
 [LabelInfoRam]
 Coordinates=768,617,94,58
-
-[Bevel7]
-Coordinates=1126,826,54,36
 
 [Label10]
 Coordinates=511,1261,60,58
 
 [Label3]
 Coordinates=150,1165,53,58
-
-[Label22]
-Coordinates=615,155,60,58
 
 [LabelRefreshWinApps]
 Coordinates=758,463,142,58
@@ -257,7 +236,7 @@ Coordinates=1301,276,72,36
 Coordinates=88,511,116,234
 
 []
-Coordinates=1340,661,129,36
+Coordinates=1340,936,54,36
 Visible=True
 
 [Bevel8]
@@ -272,20 +251,8 @@ Coordinates=938,243,60,58
 [LabelCountInstall]
 Coordinates=615,1079,114,58
 
-[LabelAutorun1]
-Coordinates=480,617,98,58
-
-[LabelCountAutorun]
-Coordinates=615,1,125,58
-
-[LabelTsk]
-Coordinates=768,771,67,58
-
 [LabelCountTask]
 Coordinates=768,155,108,58
-
-[LabelEvt]
-Coordinates=450,1,65,58
 
 [MenuItemGoToSrvFromPort]
 Coordinates=1126,331,176,36
@@ -323,20 +290,8 @@ Coordinates=580,1283,117,36
 [MenuItemKill]
 Coordinates=76,1283,89,36
 
-[Bevel10]
-Coordinates=1126,936,61,36
-
 [PopupMenuProc]
 Coordinates=1154,1321,110,36
-
-[ProgressBarState]
-Coordinates=480,309,116,58
-
-[Label25]
-Coordinates=73,319,60,58
-
-[Label26]
-Coordinates=81,1187,60,58
 
 [MenuItemGoToProcFromPorts]
 Coordinates=1448,1,189,36
@@ -392,23 +347,14 @@ Coordinates=1448,111,184,36
 [TabSheetPorts]
 Coordinates=1340,716,100,36
 
-[Bevel9]
-Coordinates=26,1379,54,36
-
 [MenuItemGoToProcFromSrv]
 Coordinates=1448,221,179,36
 
 [ImageList1]
 Coordinates=1340,771,77,36
 
-[Label30]
-Coordinates=699,1283,60,58
-
 [MenuItemGoToSrvFromProc]
 Coordinates=1448,276,179,36
-
-[Label33]
-Coordinates=418,1187,60,58
 
 [PopupMenuSrvs]
 Coordinates=1340,826,109,36
@@ -419,29 +365,17 @@ Coordinates=1340,881,92,36
 [Panel4]
 Coordinates=785,309,54,58
 
-[Bevel5]
-Coordinates=1340,936,54,36
-
-[Bevel11]
-Coordinates=1340,991,61,36
-
 [ImageListFiles32]
 Coordinates=1340,1046,112,36
 
 [Label34]
 Coordinates=634,309,60,58
 
-[Label12]
-Coordinates=634,848,60,58
-
 [MenuItemOpenAR]
 Coordinates=1126,386,120,36
 
 [MenuItemOpenPathInst]
 Coordinates=1126,1156,150,36
-
-[Label32]
-Coordinates=19,453,60,58
 
 [ImageListClearUnit]
 Coordinates=1340,386,124,36
@@ -482,17 +416,11 @@ Coordinates=450,1,116,212
 [ActionDeleteAppRKEY]
 Coordinates=1675,276,145,36
 
-[Label19]
-Coordinates=616,1156,60,58
-
 [TabSheetHDD]
 Coordinates=795,1453,98,36
 
 [MenuItemShowAppInfo]
 Coordinates=1675,331,148,36
-
-[LabelCountHDD]
-Coordinates=616,617,108,58
 
 [ActionLogView]
 Coordinates=686,1453,100,36
@@ -520,12 +448,6 @@ Coordinates=1675,441,127,36
 
 [ActionOpenPathInst]
 Coordinates=1675,496,129,36
-
-[Bevel2]
-Coordinates=1548,386,54,36
-
-[Label29]
-Coordinates=785,925,60,58
 
 [ImageListHDD]
 Coordinates=1548,496,98,36

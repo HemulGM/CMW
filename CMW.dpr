@@ -41,21 +41,22 @@ uses
 {$R *.res}
 
 begin
- Application.Initialize;
- Application.MainFormOnTaskbar := True;
- Application.ShowMainForm := False;
- Application.Title := 'Complex maintenance of workstation';
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.ShowMainForm := False;
+  Application.Title := 'Complex maintenance of workstation';
+  ReportMemoryLeaksOnShutdown := True;
  //
- FormLoading := TFormLoading.Create(nil);
- FormLoading.Show;
- FormLoading.Step('Запуск');
- Application.ProcessMessages;
- FormLoading.Step('OSInfo.Init');
- CMW.OSInfo.Init;
+  FormLoading := TFormLoading.Create(nil);
+  FormLoading.Show;
+  FormLoading.Step('Запуск');
+  Application.ProcessMessages;
+  FormLoading.Step('OSInfo.Init');
+  CMW.OSInfo.Init;
  //
- FormLoading.Step('Application.Initialize');
- FormLoading.Step('Forms Initialize');
- Application.CreateForm(TFormMain, FormMain);
+  FormLoading.Step('Application.Initialize');
+  FormLoading.Step('Forms Initialize');
+  Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TFormAutorun, FormAutorun);
   Application.CreateForm(TFormAbout, FormAbout);
   Application.CreateForm(TFormApp, FormApp);
@@ -71,12 +72,12 @@ begin
   Application.CreateForm(TFormExec, FormExec);
   Application.CreateForm(TFormReg, FormReg);
   FormLoading.Step('SmartHandler.Initialize');
- CMW.Main.Init;
- FormLoading.Step('SmartHandler.GlobalStart');
- SmartHandler.GlobalStart;
- FormLoading.Step('Готово');
- FormLoading.Close;
- FormMain.Show;
- Application.Run;
+  CMW.Main.Init;
+  FormLoading.Step('SmartHandler.GlobalStart');
+  SmartHandler.GlobalStart;
+  FormLoading.Step('Готово');
+  FormLoading.Close;
+  FormMain.Show;
+  Application.Run;
 end.
 

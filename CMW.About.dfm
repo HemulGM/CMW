@@ -4,8 +4,8 @@ object FormAbout: TFormAbout
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077
-  ClientHeight = 145
-  ClientWidth = 529
+  ClientHeight = 265
+  ClientWidth = 385
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object FormAbout: TFormAbout
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
-    Left = 8
+    Left = 120
     Top = 8
     Width = 129
     Height = 129
@@ -372,16 +372,9 @@ object FormAbout: TFormAbout
       8C7E57DF6CA978EF09500271FC1FD01E688FA985EF490000000049454E44AE42
       6082}
   end
-  object Bevel1: TBevel
-    Left = 143
-    Top = 8
-    Width = 9
-    Height = 129
-    Shape = bsLeftLine
-  end
   object ValueListEditorHemulGM: TValueListEditor
-    Left = 153
-    Top = 16
+    Left = 8
+    Top = 143
     Width = 368
     Height = 113
     DisplayOptions = [doKeyColFixed]

@@ -15,6 +15,7 @@ object FormApp: TFormApp
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   PrintScale = poNone
   Scaled = False
   ShowHint = True

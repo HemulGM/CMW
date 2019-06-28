@@ -1,15 +1,18 @@
 unit Module.Applications;
 
 interface
- uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, Vcl.ImgList,
-  Dialogs, ExtCtrls, ComCtrls, System.Win.Registry, ShellAPI, Vcl.StdCtrls, Vcl.ValEdit,
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Vcl.ImgList, Dialogs, ExtCtrls, ComCtrls, System.Win.Registry, ShellAPI,
+  Vcl.StdCtrls, Vcl.ValEdit,
   //
   CMW.Utils, CMW.ModuleStruct, CMW.OSInfo, Vcl.Grids;
   //
 
- type
+type
   TApplicationUnit = class;
+
   TFormApp = class(TForm)
     EditDisplayName: TEdit;
     Panel1: TPanel;
@@ -22,380 +25,471 @@ interface
     procedure ButtonDelRKEYClick(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
-    FLastApp:^TApplicationUnit;
+    FLastApp: ^TApplicationUnit;
   public
     { Public declarations }
   end;
 
   TApplicationUnit = class(TSystemUnit)
-    REGSI:Word;
-    UNISI:Word;
-    VERSI:Word;
-    PATHSI:Word;
-    SIDATE:Word;
-    SIPUB:WORD;
-    SISIZE:WORD;
-
-   private
-    DI:Integer;
-    MSGr:Word;
-    ListInstalls:TStringList;
-    FDisableIcon:TIcon;
-    function ExistsPathKey(Ident:string):Boolean;
-    function GetUninstallInfo(Roll:TRegistry; RHKEY:HKEY; RollPath, Ident:string; Item:TListItem):Boolean;
-    function GetAppKeyName(Name:string):string;
+    REGSI: Word;
+    UNISI: Word;
+    VERSI: Word;
+    PATHSI: Word;
+    SIDATE: Word;
+    SIPUB: WORD;
+    SISIZE: WORD;
+  private
+    DI: Integer;
+    MSGr: Word;
+    ListInstalls: TStringList;
+    FDisableIcon: TIcon;
+    function ExistsPathKey(Ident: string): Boolean;
+    function GetUninstallInfo(Roll: TRegistry; RHKEY: HKEY; RollPath, Ident: string; Item: TListItem): Boolean;
+    function GetAppKeyName(Name: string): string;
     procedure ListViewWinAppsDblClick(Sender: TObject);
-   public
-    function FGet:TGlobalState; override;
+    procedure SetListView(Value: TListView); override;
+  public
+    function FGet: TGlobalState; override;
     procedure OnChanged; override;
     procedure Initialize; override;
-    function SelectedName:string;
-    function InsertInfo(ValueListEditor:TValueListEditor; WithEmpty:Boolean; var AccessError:Boolean):Boolean;
+    function SelectedName: string;
+    function InsertInfo(ValueListEditor: TValueListEditor; WithEmpty: Boolean; var AccessError: Boolean): Boolean;
     procedure OpenInstalledPath;
     procedure OpenUninstalledFile;
-    function DeleteSelected:Boolean;
-    function DeleteItem(LI:TListItem):Boolean;
-    function DeleteChecked:Boolean;
-    function DeleteRollKey:Boolean; overload;
-    function DeleteRollKey(RKEY:string):Boolean; overload;
+    function DeleteSelected: Boolean;
+    function DeleteItem(LI: TListItem): Boolean;
+    function DeleteChecked: Boolean;
+    function DeleteRollKey: Boolean; overload;
+    function DeleteRollKey(RKEY: string): Boolean; overload;
     procedure CheckItems;
     procedure Stop; override;
     constructor Create; override;
     destructor Destroy; override;
-    property DisableIcon:TIcon read FDisableIcon write FDisableIcon;
+    property DisableIcon: TIcon read FDisableIcon write FDisableIcon;
   end;
 
 const
   RKEYName = 'Ключ реестра';
 
 var
-  FormApp:TFormApp;
+  FormApp: TFormApp;
 
-  procedure ShowAppInfo(Apps:TApplicationUnit);
+procedure ShowAppInfo(Apps: TApplicationUnit);
 
 implementation
- uses CMW.Main;
+
+uses
+  CMW.Main;
 
 {$R *.dfm}
 
 procedure ShowAppInfo;
-var Perm:Boolean;
-    Old:Integer;
+var
+  Perm: Boolean;
+  Old: Integer;
 begin
- with FormApp do
+  with FormApp do
   begin
-   FLastApp:=@Apps;
-   if Apps.InsertInfo(ValueListEditor1, True, Perm) then
+    FLastApp := @Apps;
+    if Apps.InsertInfo(ValueListEditor1, True, Perm) then
     begin
-     LabelPermission.Visible:=Perm;
-     ButtonDelRKEY.Visible:=not LabelPermission.Visible;
-     if ValueListEditor1.Strings.Count * ValueListEditor1.RowHeights[0] + 4 <= 400 then
-      ValueListEditor1.Height:=ValueListEditor1.Strings.Count * ValueListEditor1.RowHeights[0] + 4
-     else ValueListEditor1.Height:=400;
-     Old:=ValueListEditor1.Height;
-     ClientHeight:=ValueListEditor1.Top + ValueListEditor1.Height + 50;
-     ValueListEditor1.Height:=Old;
-     EditDisplayName.Text:=Apps.SelectedName;
-     ShowModal;
+      LabelPermission.Visible := Perm;
+      ButtonDelRKEY.Visible := not LabelPermission.Visible;
+      if ValueListEditor1.Strings.Count * ValueListEditor1.RowHeights[0] + 4 <= 400 then
+        ValueListEditor1.Height := ValueListEditor1.Strings.Count * ValueListEditor1.RowHeights[0] + 4
+      else
+        ValueListEditor1.Height := 400;
+      Old := ValueListEditor1.Height;
+      ClientHeight := ValueListEditor1.Top + ValueListEditor1.Height + 50;
+      ValueListEditor1.Height := Old;
+      EditDisplayName.Text := Apps.SelectedName;
+      ShowModal;
     end;
   end;
 end;
 
 procedure TApplicationUnit.Initialize;
 begin
- ListView.OnDblClick:=ListViewWinAppsDblClick;
+  ListView.OnDblClick := ListViewWinAppsDblClick;
 end;
 
 procedure TApplicationUnit.ListViewWinAppsDblClick(Sender: TObject);
 begin
- ShowAppInfo(Self);
+  ShowAppInfo(Self);
 end;
 
-function TApplicationUnit.DeleteRollKey(RKEY:string):Boolean;
-var FRoll:TRegistry;
-    Ident, StrKey:string;
+function TApplicationUnit.DeleteRollKey(RKEY: string): Boolean;
+var
+  FRoll: TRegistry;
+  Ident, StrKey: string;
 begin
- Result:=False;
- if RKEY.Length < 2 then
+  Result := False;
+  if RKEY.Length < 2 then
   begin
-   MessageBox(Application.Handle, 'Неверный ключ реестра', 'Ошибка', MB_ICONERROR or MB_OK);
-   Exit;
+    MessageBox(Application.Handle, 'Неверный ключ реестра', 'Ошибка', MB_ICONERROR or MB_OK);
+    Exit;
   end;
- Ident:=RKEY;
- FRoll:=TRegistry.Create(RootAccess);
- StrKey:=Copy(Ident, 1, 4);
- FRoll.RootKey:=StrKeyToRoot(StrKey);
- Delete(Ident, 1, 4);
- if FRoll.OpenKey(Ident, False) then
+  Ident := RKEY;
+  FRoll := TRegistry.Create(RootAccess);
+  StrKey := Copy(Ident, 1, 4);
+  FRoll.RootKey := StrKeyToRoot(StrKey);
+  Delete(Ident, 1, 4);
+  if FRoll.OpenKey(Ident, False) then
   begin
-   if MessageBox(Application.Handle, PWideChar(Format('Вы действительно хотите удалить следующий ключ реестра: %s\%s?', [RootKeyToStr(FRoll.RootKey), FRoll.CurrentPath])), 'Внимание', MB_ICONASTERISK or MB_YESNO) <> ID_YES then Exit;
-   FRoll.CloseKey;
+    if MessageBox(Application.Handle, PWideChar(Format('Вы действительно хотите удалить следующий ключ реестра: %s\%s?', [RootKeyToStr(FRoll.RootKey), FRoll.CurrentPath])), 'Внимание', MB_ICONASTERISK or MB_YESNO) <> ID_YES then
+      Exit;
+    FRoll.CloseKey;
    //ShowMessage('deletting');
-   Log(['Программы и компоненты: Удалён ключ программы удаления', Strkey+Ident]);
-   Result:=FRoll.DeleteKey(Ident);
+    Log(['Программы и компоненты: Удалён ключ программы удаления', StrKey + Ident]);
+    Result := FRoll.DeleteKey(Ident);
   end
- else
+  else
   begin
-   Log(['Программы и компоненты: Ключ не смог быть удалён', Strkey+Ident]);
-   if FRoll.KeyExists(Ident) then
-    MessageBox(Application.Handle, PWideChar('Не могу получить доступ к нужной ветке реестра.'), 'Внимание', MB_ICONERROR or MB_OK)
-   else MessageBox(Application.Handle, PWideChar('Ключ не существует, либо не хватает прав для доступка к ветке реестра.'), 'Внимание', MB_ICONINFORMATION or MB_OK);
+    Log(['Программы и компоненты: Ключ не смог быть удалён', StrKey + Ident]);
+    if FRoll.KeyExists(Ident) then
+      MessageBox(Application.Handle, PWideChar('Не могу получить доступ к нужной ветке реестра.'), 'Внимание', MB_ICONERROR or MB_OK)
+    else
+      MessageBox(Application.Handle, PWideChar('Ключ не существует, либо не хватает прав для доступка к ветке реестра.'), 'Внимание', MB_ICONINFORMATION or MB_OK);
   end;
- FRoll.Free;
+  FRoll.Free;
 end;
 
-function TApplicationUnit.DeleteRollKey:Boolean;
+function TApplicationUnit.DeleteRollKey: Boolean;
 begin
- if ListView.Selected = nil then Exit(False);
- Result:=DeleteRollKey(ListView.Selected.SubItems[REGSI]);
+  if ListView.Selected = nil then
+    Exit(False);
+  Result := DeleteRollKey(ListView.Selected.SubItems[REGSI]);
 end;
 
-function TApplicationUnit.GetAppKeyName(Name:string):string;
+function TApplicationUnit.GetAppKeyName(Name: string): string;
 begin
- Result:=Name;
- if Name = 'Comments' then Exit('Комментарии');
- if Name = 'Contact' then Exit('Контакты');
- if Name = 'DisplayName' then Exit('Отображаемое имя');
- if Name = 'DisplayVersion' then Exit('Версия');
- if Name = 'EstimatedSize' then Exit('Размер (КБ)');
- if Name = 'Size' then Exit('Размер (КБ)');
- if Name = 'HelpLink' then Exit('Справка');
- if Name = 'HelpTelephone' then Exit('Тех. поддержка');
- if Name = 'InstallDate' then Exit('Дата установки');
- if Name = 'InstallLocation' then Exit('Каталог установки');
- if Name = 'InstallPath' then Exit('Каталог установки');
+  Result := Name;
+  if Name = 'Comments' then
+    Exit('Комментарии');
+  if Name = 'Contact' then
+    Exit('Контакты');
+  if Name = 'DisplayName' then
+    Exit('Отображаемое имя');
+  if Name = 'DisplayVersion' then
+    Exit('Версия');
+  if Name = 'EstimatedSize' then
+    Exit('Размер (КБ)');
+  if Name = 'Size' then
+    Exit('Размер (КБ)');
+  if Name = 'HelpLink' then
+    Exit('Справка');
+  if Name = 'HelpTelephone' then
+    Exit('Тех. поддержка');
+  if Name = 'InstallDate' then
+    Exit('Дата установки');
+  if Name = 'InstallLocation' then
+    Exit('Каталог установки');
+  if Name = 'InstallPath' then
+    Exit('Каталог установки');
 
- if Name = 'InstallSource' then Exit('Каталог установщика');
- if Name = 'ModifyPath' then Exit('Исправление');
- if Name = 'NoModify' then Exit('Флаг исправления');
- if Name = 'NoRepair' then Exit('Флаг восстановления');
- if Name = 'Publisher' then Exit('Производитель');
- if Name = 'Language' then Exit('Язык');
- if Name = 'Readme' then Exit('Readme файл');
- if Name = 'UninstallString' then Exit('Удаление');
+  if Name = 'InstallSource' then
+    Exit('Каталог установщика');
+  if Name = 'ModifyPath' then
+    Exit('Исправление');
+  if Name = 'NoModify' then
+    Exit('Флаг исправления');
+  if Name = 'NoRepair' then
+    Exit('Флаг восстановления');
+  if Name = 'Publisher' then
+    Exit('Производитель');
+  if Name = 'Language' then
+    Exit('Язык');
+  if Name = 'Readme' then
+    Exit('Readme файл');
+  if Name = 'UninstallString' then
+    Exit('Удаление');
 
- if Name = 'URLInfoAbout' then Exit('Ссылка для справки');
- if Name = 'URLUpdateInfo' then Exit('Ссылка для обновления');
- if Name = 'Version' then Exit('Тех. версия');
- if Name = 'VersionMajor' then Exit('Тех. версия выс.');
- if Name = 'VersionMinor' then Exit('Тех. версия низ.');
- if Name = 'WindowsInstaller' then Exit('Флаг установщика Win.');
- if Name = 'SystemComponent' then Exit('Флаг сис. компонента');
+  if Name = 'URLInfoAbout' then
+    Exit('Ссылка для справки');
+  if Name = 'URLUpdateInfo' then
+    Exit('Ссылка для обновления');
+  if Name = 'Version' then
+    Exit('Тех. версия');
+  if Name = 'VersionMajor' then
+    Exit('Тех. версия выс.');
+  if Name = 'VersionMinor' then
+    Exit('Тех. версия низ.');
+  if Name = 'WindowsInstaller' then
+    Exit('Флаг установщика Win.');
+  if Name = 'SystemComponent' then
+    Exit('Флаг сис. компонента');
 
- if Name = 'Inno Setup: App Path' then Exit('Каталог установки Inno Setup');
- if Name = 'Inno Setup: Deselected Components' then Exit('Искл. компоненты Inno Setup');
- if Name = 'Inno Setup: Icon Group' then Exit('Иконка Inno Setup');
- if Name = 'DisplayIcon' then Exit('Иконка');
- if Name = 'QuietUninstallString' then Exit('Скрытое удаление');
- if Name = 'UninstallDataFile' then Exit('Инф. удаления');
- if Name = 'Inno Setup: Language' then Exit('Язык Inno Setup');
- if Name = 'Inno Setup: Selected Components' then Exit('Выбран. компоненты Inno Setup');
- if Name = 'Inno Setup: Setup Type' then Exit('Тип установки Inno Setup');
- if Name = 'Inno Setup: Setup Version' then Exit('Версия установки Inno Setup');
- if Name = 'Inno Setup: User' then Exit('Пользователь Inno Setup');
+  if Name = 'Inno Setup: App Path' then
+    Exit('Каталог установки Inno Setup');
+  if Name = 'Inno Setup: Deselected Components' then
+    Exit('Искл. компоненты Inno Setup');
+  if Name = 'Inno Setup: Icon Group' then
+    Exit('Иконка Inno Setup');
+  if Name = 'DisplayIcon' then
+    Exit('Иконка');
+  if Name = 'QuietUninstallString' then
+    Exit('Скрытое удаление');
+  if Name = 'UninstallDataFile' then
+    Exit('Инф. удаления');
+  if Name = 'Inno Setup: Language' then
+    Exit('Язык Inno Setup');
+  if Name = 'Inno Setup: Selected Components' then
+    Exit('Выбран. компоненты Inno Setup');
+  if Name = 'Inno Setup: Setup Type' then
+    Exit('Тип установки Inno Setup');
+  if Name = 'Inno Setup: Setup Version' then
+    Exit('Версия установки Inno Setup');
+  if Name = 'Inno Setup: User' then
+    Exit('Пользователь Inno Setup');
 
- if Name = 'InstallSourceFile' then Exit('Файл установщика');
- if Name = 'SilentSettings' then Exit('Файл параметров уст.');
+  if Name = 'InstallSourceFile' then
+    Exit('Файл установщика');
+  if Name = 'SilentSettings' then
+    Exit('Файл параметров уст.');
 end;
 
-function TApplicationUnit.SelectedName:string;
+function TApplicationUnit.SelectedName: string;
 begin
- if ListView.Selected = nil then Exit('');
- Result:=ListView.Selected.Caption;
+  if ListView.Selected = nil then
+    Exit('');
+  Result := ListView.Selected.Caption;
 end;
 
-function GetValueNames(Rl:TRegistry; Strings: TStrings):Boolean;
+procedure TApplicationUnit.SetListView(Value: TListView);
+begin
+  inherited;
+  ListView.SmallImages := TImageList.CreateSize(16, 16);
+  ListView.SmallImages.ColorDepth := cd32Bit;
+  ListView.LargeImages := TImageList.CreateSize(16, 16);
+  ListView.LargeImages.ColorDepth := cd32Bit;
+end;
+
+function GetValueNames(Rl: TRegistry; Strings: TStrings): Boolean;
 var
   Len: DWORD;
   I: Integer;
   Info: TRegKeyInfo;
   S: string;
 begin
- Result:=False;
- Strings.Clear;
- if Rl.GetKeyInfo(Info) then
+  Result := False;
+  Strings.Clear;
+  if Rl.GetKeyInfo(Info) then
   begin
-   SetString(S, nil, Info.MaxValueLen + 1);
-   for I := 0 to Info.NumValues - 1 do
+    SetString(S, nil, Info.MaxValueLen + 1);
+    for I := 0 to Info.NumValues - 1 do
     begin
-     Len := Info.MaxValueLen + 1;
-     RegEnumValue(Rl.CurrentKey, I, PChar(S), Len, nil, nil, nil, nil);
-     Strings.Add(PChar(S));
+      Len := Info.MaxValueLen + 1;
+      RegEnumValue(Rl.CurrentKey, I, PChar(S), Len, nil, nil, nil, nil);
+      Strings.Add(PChar(S));
     end;
-   Result:=True;
+    Result := True;
   end;
 end;
 
-function TApplicationUnit.InsertInfo(ValueListEditor:TValueListEditor; WithEmpty:Boolean; var AccessError:Boolean):Boolean;
-var Ident:string;
-    Values:TStrings;
-    i:Word;
+function TApplicationUnit.InsertInfo(ValueListEditor: TValueListEditor; WithEmpty: Boolean; var AccessError: Boolean): Boolean;
+var
+  Ident: string;
+  Values: TStrings;
+  i: Word;
 begin
- Result:=False;
- if ListView.Selected = nil then Exit;
- if ListView.Selected.SubItems.Count < 2 then
+  Result := False;
+  if ListView.Selected = nil then
+    Exit;
+  if ListView.Selected.SubItems.Count < 2 then
   begin
-   Log(['Обращение к SubItem записи ListView вне границы', ListView, ListView.Selected.SubItems.Count, 1]);
-   Exit;
+    Log(['Обращение к SubItem записи ListView вне границы', ListView, ListView.Selected.SubItems.Count, 1]);
+    Exit;
   end;
- AccessError:=False;
- Ident:=ListView.Selected.SubItems[REGSI];
- Roll.RootKey:=StrKeyToRoot(Copy(Ident, 1, 4));
- Delete(Ident, 1, 4);
- ValueListEditor.Strings.Clear;
- if Roll.OpenKeyReadOnly(Ident) then
+  AccessError := False;
+  Ident := ListView.Selected.SubItems[REGSI];
+  Roll.RootKey := StrKeyToRoot(Copy(Ident, 1, 4));
+  Delete(Ident, 1, 4);
+  ValueListEditor.Strings.Clear;
+  if Roll.OpenKeyReadOnly(Ident) then
   begin
-   Values:=TStringList.Create;
-   if GetValueNames(Roll, Values) then
+    Values := TStringList.Create;
+    if GetValueNames(Roll, Values) then
     begin
-     if Values.Count > 0 then
+      if Values.Count > 0 then
       begin
-       for i:=0 to Values.Count - 1 do
+        for i := 0 to Values.Count - 1 do
         begin
-         AddToValueEdit(ValueListEditor, GetAppKeyName(Values[i]), Roll.GetDataAsString(Values[i], False), '');
+          AddToValueEdit(ValueListEditor, GetAppKeyName(Values[i]), Roll.GetDataAsString(Values[i], False), '');
         end;
       end;
     end
-   else AccessError:=True;
-   AddToValueEdit(ValueListEditor, RKEYName, RootKeyToStr(Roll.RootKey)+'\'+Roll.CurrentPath, '');
+    else
+      AccessError := True;
+    Values.Free;
+    AddToValueEdit(ValueListEditor, RKEYName, RootKeyToStr(Roll.RootKey) + '\' + Roll.CurrentPath, '');
   end
- else AccessError:=True;
- Result:=True;
+  else
+    AccessError := True;
+  Result := True;
 end;
 
 procedure TApplicationUnit.OpenUninstalledFile;
-var Ident:string;
+var
+  Ident: string;
 begin
- if ListView.Selected = nil then Exit;
- if ListView.Selected.SubItems.Count < 2 then
+  if ListView.Selected = nil then
+    Exit;
+  if ListView.Selected.SubItems.Count < 2 then
   begin
-   Log(['Обращение к SubItem записи ListView вне границы', ListView, ListView.Selected.SubItems.Count, 1]);
-   Exit;
+    Log(['Обращение к SubItem записи ListView вне границы', ListView, ListView.Selected.SubItems.Count, 1]);
+    Exit;
   end;
- Ident:=ListView.Selected.SubItems[UNISI];
- NormFileName(Ident);
- if Ident <> '' then OpenFolderAndSelectFile(Ident)
- else MessageBox(Application.Handle, 'Нет допустимого расположения для выбранного элемента.', 'Внимание', MB_ICONINFORMATION or MB_OK);
+  Ident := ListView.Selected.SubItems[UNISI];
+  NormFileName(Ident);
+  if Ident <> '' then
+    OpenFolderAndSelectFile(Ident)
+  else
+    MessageBox(Application.Handle, 'Нет допустимого расположения для выбранного элемента.', 'Внимание', MB_ICONINFORMATION or MB_OK);
 end;
 
 procedure TApplicationUnit.OpenInstalledPath;
-var Ident:string;
+var
+  Ident: string;
 begin
- if ListView.Selected = nil then Exit;
- if ListView.Selected.SubItems.Count < 2 then
+  if ListView.Selected = nil then
+    Exit;
+  if ListView.Selected.SubItems.Count < 2 then
   begin
-   Log(['Обращение к SubItem записи ListView вне границы', ListView, ListView.Selected.SubItems.Count, 1]);
-   Exit;
+    Log(['Обращение к SubItem записи ListView вне границы', ListView, ListView.Selected.SubItems.Count, 1]);
+    Exit;
   end;
- Ident:=ListView.Selected.SubItems[REGSI];
- Roll.RootKey:=StrKeyToRoot(Copy(Ident, 1, 4));
- Delete(Ident, 1, 4);
- if Roll.OpenKey(Ident, False) then
+  Ident := ListView.Selected.SubItems[REGSI];
+  Roll.RootKey := StrKeyToRoot(Copy(Ident, 1, 4));
+  Delete(Ident, 1, 4);
+  if Roll.OpenKey(Ident, False) then
   begin
-   if Roll.ValueExists('InstallLocation') then Ident:=Roll.ReadString('InstallLocation')
-   else
-   if Roll.ValueExists('InstallPath') then Ident:=Roll.ReadString('InstallPath')
-   else
-   if Roll.ValueExists('UninstallString') then Ident:=ExtractFilePath(NormFileNameF(Roll.ReadString('UninstallString')))
-   else
-   if Roll.ValueExists('DisplayIcon') then Ident:=ExtractFilePath(NormFileNameF(Roll.ReadString('DisplayIcon')))
-   else Ident:='';
-   if Ident <> '' then OpenFolderAndSelectFile(Ident)
-   else MessageBox(Application.Handle, 'Нет допустимого расположения для выбранного элемента.', 'Внимание', MB_ICONINFORMATION or MB_OK);
+    if Roll.ValueExists('InstallLocation') then
+      Ident := Roll.ReadString('InstallLocation')
+    else if Roll.ValueExists('InstallPath') then
+      Ident := Roll.ReadString('InstallPath')
+    else if Roll.ValueExists('UninstallString') then
+      Ident := ExtractFilePath(NormFileNameF(Roll.ReadString('UninstallString')))
+    else if Roll.ValueExists('DisplayIcon') then
+      Ident := ExtractFilePath(NormFileNameF(Roll.ReadString('DisplayIcon')))
+    else
+      Ident := '';
+    if Ident <> '' then
+      OpenFolderAndSelectFile(Ident)
+    else
+      MessageBox(Application.Handle, 'Нет допустимого расположения для выбранного элемента.', 'Внимание', MB_ICONINFORMATION or MB_OK);
   end;
 end;
 
 procedure TApplicationUnit.CheckItems;
-var i:Integer;
+var
+  i: Integer;
 begin
- if State <> gsFinished then Exit;
- if ListView.Items.Count <= 0 then Exit;
- i:=0;
- while (ListView.Items.Count > 0) and (i < ListView.Items.Count) do
+  if State <> gsFinished then
+    Exit;
+  if ListView.Items.Count <= 0 then
+    Exit;
+  i := 0;
+  while (ListView.Items.Count > 0) and (i < ListView.Items.Count) do
   begin
-   if not ExistsPathKey(ListView.Items[i].SubItems[REGSI]) then
+    if not ExistsPathKey(ListView.Items[i].SubItems[REGSI]) then
     begin
-     ListView.Items[i].Delete;
-     Continue;
+      ListView.Items[i].Delete;
+      Continue;
     end;
-   Inc(i);
+    Inc(i);
   end;
 end;
 
-function TApplicationUnit.ExistsPathKey(Ident:string):Boolean;
-var HKeyRes:HKEY;
+function TApplicationUnit.ExistsPathKey(Ident: string): Boolean;
+var
+  HKeyRes: HKEY;
 begin
- HKeyRes:=StrKeyToRoot(Copy(Ident, 1, 4));
- Delete(Ident, 1, 5);
- RegOpenKeyEx(HKeyRes, PChar(Ident), 0, RootAccess, HKeyRes);
- Result:=HKeyRes <> 0;
+  HKeyRes := StrKeyToRoot(Copy(Ident, 1, 4));
+  Delete(Ident, 1, 5);
+  RegOpenKeyEx(HKeyRes, PChar(Ident), 0, RootAccess, HKeyRes);
+  Result := HKeyRes <> 0;
 end;
 
-function TApplicationUnit.DeleteItem(LI:TListItem):Boolean;
-var Text:string;
+function TApplicationUnit.DeleteItem(LI: TListItem): Boolean;
+var
+  Text: string;
 begin
- Result:=False;
- if LI = nil then Exit;
- if LI.SubItems.Count < 2 then
+  Result := False;
+  if LI = nil then
+    Exit;
+  if LI.SubItems.Count < 2 then
   begin
-   Log(['Обращение к SubItem записи ListView вне границы', ListView, LI.SubItems.Count, 1]);
-   Exit(False);
+    Log(['Обращение к SubItem записи ListView вне границы', ListView, LI.SubItems.Count, 1]);
+    Exit(False);
   end;
- Text:=LI.SubItems[UNISI];
- if Length(Text) <= 1 then
+  Text := LI.SubItems[UNISI];
+  if Length(Text) <= 1 then
   begin
-   MessageBox(Application.Handle, 'Отсутствует команда удаления!', 'Ошибка', MB_ICONEXCLAMATION or MB_OK);
-   Exit(False);
+    MessageBox(Application.Handle, 'Отсутствует команда удаления!', 'Ошибка', MB_ICONEXCLAMATION or MB_OK);
+    Exit(False);
   end;
- Result:=ProcessMonitor.Execute(Text);
+  Result := ProcessMonitor.Execute(Text);
 end;
 
-function TApplicationUnit.DeleteSelected:Boolean;
+function TApplicationUnit.DeleteSelected: Boolean;
 begin
- Result:=False;
- if ListView.Selected = nil then Exit;
- Result:=DeleteItem(ListView.Selected);
+  Result := False;
+  if ListView.Selected = nil then
+    Exit;
+  Result := DeleteItem(ListView.Selected);
 end;
 
-function TApplicationUnit.DeleteChecked:Boolean;
-var i:Integer;
+function TApplicationUnit.DeleteChecked: Boolean;
+var
+  i: Integer;
 begin
- if ListView.Items.Count <= 0 then Exit(False);
- //while True do
- Inform(LangText(-1, 'Деинсталляция программ'));
- FState:=gsProcess;
+  if ListView.Items.Count <= 0 then
+    Exit(False);
+  if FState = gsProcess then
+    Exit(False);
 
- for i:= 0 to ListView.Items.Count - 1 do
+  Inform(LangText(-1, 'Деинсталляция программ'));
+  FState := gsProcess;
+  while CalcChecked(ListView) > 0 do
   begin
-   Application.ProcessMessages;
-   if ListView.Items[i].Checked then
+    if Stopping then
+      Break;
+    for i := 0 to ListView.Items.Count - 1 do
     begin
-     ListView.Items[i].Checked:=False;
-     DeleteItem(ListView.Items[i]);
-     Application.ProcessMessages;
+      if Stopping then
+        Break;
+
+      if ListView.Items[i].Checked then
+      begin
+        ListView.Items[i].Checked := False;
+        DeleteItem(ListView.Items[i]);
+        Application.ProcessMessages;
+        Break;
+      end;
     end;
   end;
 
- FState:=gsFinished;
- OnChanged;
- Inform('Деинсталляция программ зевершена');
- Result:=True;
+  FState := gsFinished;
+  OnChanged;
+  Inform('Деинсталляция программ зевершена');
+  Result := True;
 end;
 
 procedure TApplicationUnit.OnChanged;
 begin
- inherited;
- OnListViewSort;
+  inherited;
+  OnListViewSort;
 end;
 
 procedure TApplicationUnit.Stop;
 begin
- inherited;
+  inherited;
 end;
 
 constructor TApplicationUnit.Create;
 begin
- inherited;
+  inherited;
+  FDisableIcon := TIcon.Create;
  {
  try
   Roll:=TRegistry.Create(KEY_READ);   //KEY_ALL_ACCESS
@@ -422,154 +516,161 @@ begin
     Log(['Модуль программ и компонентов не может получить доступ к реестру. Список элементов может быть не полный.', SysErrorMessage(GetLastError)]);
    end;
   end;  }
- ListInstalls:=TStringList.Create;
+    ListInstalls := TStringList.Create;
 end;
 
 destructor TApplicationUnit.Destroy;
 begin
- if Assigned(Roll) then Roll.Free;
- inherited;
-end;
-
-function TApplicationUnit.GetUninstallInfo(Roll:TRegistry; RHKEY:HKEY; RollPath, Ident:string; Item:TListItem):Boolean;
-var II, IiD:Word;
-    Str:string;
-    IconName, UnInstallPath, PubStr:string;
-    WillLoadIco:Boolean;
-    SZ:Extended;
-
-function GetIconName(ProductName:string):Boolean;
-var l:Integer;
-    nRoll:TRegistry;
-begin
- Result:=False;
- if ListInstalls.Count <= 0 then Exit(False);
- nRoll:=TRegistry.Create(KEY_READ);
- nRoll.RootKey:=HKEY_LOCAL_MACHINE;
- for l:= 0 to ListInstalls.Count - 1 do
+  if Assigned(FListView) then
   begin
-   if nRoll.OpenKey('SOFTWARE\Classes\Installer\Products\'+ListInstalls.Strings[l], False) then
-    if nRoll.ReadString('ProductName') = ProductName then
-     if FileExists(nRoll.ReadString('ProductIcon')) then
-      begin
-       IconName:=nRoll.ReadString('ProductIcon');
-       nRoll.CloseKey;
-       nRoll.Free;
-       Exit(True);
-      end;
-   if FStop then Exit;
-   nRoll.CloseKey;
+    FListView.SmallImages.Free;
+    FListView.LargeImages.Free;
   end;
- nRoll.CloseKey;
- nRoll.Free;
+  FDisableIcon.Free;
+  ListInstalls.Free;
+  inherited;
 end;
 
-begin
- with Roll do
-  begin
-   RootKey:=RHKEY;
-   Item.Caption:=Ident;             //Заголовок
-   Item.ImageIndex:=DI;             //Иконка
-   Item.GroupID:=1;                 //Группа
-   SIPUB:=Item.SubItems.Add('');    //Издатель
-   SIDATE:=Item.SubItems.Add('');   //Установлено
-   SISIZE:=Item.SubItems.Add('');   //Размер
-   VERSI:=Item.SubItems.Add('');    //Версия
-   PATHSI:=Item.SubItems.Add('');    //Каталог установки
-   UNISI:=Item.SubItems.Add('');    //Команда удаления
-   REGSI:=Item.SubItems.Add('');    //Ключ реестра
-   if OpenKeyReadOnly(RollPath+'\'+Ident) then //Log(['not OpenKeyReadOnly(RollPath+Ident)', RollPath+'\'+Ident]);
-    begin
-     try Str:=ReadString('DisplayName') except Str:=''; end;
-     if Str = '' then Str:=Ident;
-     Item.Caption:=Str;
-     PubStr:=ReadString('Publisher');
-     Item.SubItems[SIPUB]:=PubStr;
-     Item.GroupID:=0;
-     IconName:='';
-     UnInstallPath:='';
-     try
-      if ValueExists('UninstallString') then
-       begin
-        UnInstallPath:=ReadString('UninstallString');
-       end
-      else
-       if ValueExists('UninstallString_Hidden') then
-        begin
-         UnInstallPath:=ReadString('UninstallString_Hidden');
-        end
-       else
-        if ValueExists('QuietUninstallString') then
-         begin
-          UnInstallPath:=ReadString('QuietUninstallString');
-         end
-        else
-         if ValueExists('WindowsInstaller') then //msiexec.exe /uninstall {2706334C-1B77-41B8-8CAB-EB997D0CCA83}
-          begin
-           UnInstallPath:='msiexec.exe /uninstall '+Ident;
-          end
-         else
-          begin
-           Item.GroupID:=1;
-          end;
-      if FLoadIcons then
-       begin
-        IconName:=UnInstallPath;
-        if FileExists(ReadString('DisplayIcon')) then
-         begin
-          WillLoadIco:=True;
-          IconName:=ReadString('DisplayIcon');
-         end
-        else
-         if FileExists(NormFileNameF(ReadString('DisplayIcon'))) then
-          begin
-           WillLoadIco:=True;
-           IconName:=NormFileNameF(ReadString('DisplayIcon'));
-          end
-         else
-          if GetIconName(ReadString('DisplayName')) then
-           begin
-            //IconName:=GetIconName(ReadString('DisplayName'));
-            WillLoadIco:=True;
-           end
-          else
-           if FileExists(IconName) then
-            begin
-             WillLoadIco:=True;
-             //IconName:=self data
-            end
-           else
-            if FileExists(NormFileNameF(IconName)) then
-             begin
-              WillLoadIco:=True;
-              NormFileName(IconName);
-             end
-            else
-             if FileExists(FCurrentOS.Sys32+'\'+IconName) then
-              begin
-               WillLoadIco:=True;
-               IconName:=FCurrentOS.Sys32+'\'+IconName;
-              end
-             else
-              if FileExists(FCurrentOS.Sys32+'\'+IconName+'.exe') then
-               begin
-                WillLoadIco:=True;
-                IconName:=FCurrentOS.Sys32+'\'+IconName+'.exe';
-               end
-              else
-               begin
-                WillLoadIco:=False;
-                //IconName:=self data
-               end;
-       end
-      else WillLoadIco:=False;
+function TApplicationUnit.GetUninstallInfo(Roll: TRegistry; RHKEY: HKEY; RollPath, Ident: string; Item: TListItem): Boolean;
+var
+  II, IiD: Word;
+  Str: string;
+  IconName, UnInstallPath, PubStr: string;
+  WillLoadIco: Boolean;
+  SZ: Extended;
 
-      if WillLoadIco and FLoadIcons then
-       begin
-        II:=0;
-        IiD:=2;
-        if FileExists(IconName) then
-         begin    {
+  function GetIconName(ProductName: string): Boolean;
+  var
+    l: Integer;
+    nRoll: TRegistry;
+  begin
+    Result := False;
+    if ListInstalls.Count <= 0 then
+      Exit(False);
+    nRoll := TRegistry.Create(KEY_READ);
+    nRoll.RootKey := HKEY_LOCAL_MACHINE;
+    for l := 0 to ListInstalls.Count - 1 do
+    begin
+      if nRoll.OpenKey('SOFTWARE\Classes\Installer\Products\' + ListInstalls.Strings[l], False) then
+        if nRoll.ReadString('ProductName') = ProductName then
+          if FileExists(nRoll.ReadString('ProductIcon')) then
+          begin
+            IconName := nRoll.ReadString('ProductIcon');
+            nRoll.CloseKey;
+            nRoll.Free;
+            Exit(True);
+          end;
+      if FStop then
+        Exit;
+      nRoll.CloseKey;
+    end;
+    nRoll.CloseKey;
+    nRoll.Free;
+  end;
+
+begin
+  with Roll do
+  begin
+    RootKey := RHKEY;
+    Item.Caption := Ident;             //Заголовок
+    Item.ImageIndex := DI;             //Иконка
+    Item.GroupID := 1;                 //Группа
+    SIPUB := Item.SubItems.Add('');    //Издатель
+    SIDATE := Item.SubItems.Add('');   //Установлено
+    SISIZE := Item.SubItems.Add('');   //Размер
+    VERSI := Item.SubItems.Add('');    //Версия
+    PATHSI := Item.SubItems.Add('');    //Каталог установки
+    UNISI := Item.SubItems.Add('');    //Команда удаления
+    REGSI := Item.SubItems.Add('');    //Ключ реестра
+    if OpenKeyReadOnly(RollPath + '\' + Ident) then //Log(['not OpenKeyReadOnly(RollPath+Ident)', RollPath+'\'+Ident]);
+    begin
+      try
+        Str := ReadString('DisplayName')
+      except
+        Str := '';
+      end;
+      if Str = '' then
+        Str := Ident;
+      Item.Caption := Str;
+      PubStr := ReadString('Publisher');
+      Item.SubItems[SIPUB] := PubStr;
+      Item.GroupID := 0;
+      IconName := '';
+      UnInstallPath := '';
+      try
+        if ValueExists('UninstallString') then
+        begin
+          UnInstallPath := ReadString('UninstallString');
+        end
+        else if ValueExists('UninstallString_Hidden') then
+        begin
+          UnInstallPath := ReadString('UninstallString_Hidden');
+        end
+        else if ValueExists('QuietUninstallString') then
+        begin
+          UnInstallPath := ReadString('QuietUninstallString');
+        end
+        else if ValueExists('WindowsInstaller') then //msiexec.exe /uninstall {2706334C-1B77-41B8-8CAB-EB997D0CCA83}
+        begin
+          UnInstallPath := 'msiexec.exe /uninstall ' + Ident;
+        end
+        else
+        begin
+          Item.GroupID := 1;
+        end;
+        if FLoadIcons then
+        begin
+          IconName := UnInstallPath;
+          if FileExists(ReadString('DisplayIcon')) then
+          begin
+            WillLoadIco := True;
+            IconName := ReadString('DisplayIcon');
+          end
+          else if FileExists(NormFileNameF(ReadString('DisplayIcon'))) then
+          begin
+            WillLoadIco := True;
+            IconName := NormFileNameF(ReadString('DisplayIcon'));
+          end
+          else if GetIconName(ReadString('DisplayName')) then
+          begin
+            //IconName:=GetIconName(ReadString('DisplayName'));
+            WillLoadIco := True;
+          end
+          else if FileExists(IconName) then
+          begin
+            WillLoadIco := True;
+             //IconName:=self data
+          end
+          else if FileExists(NormFileNameF(IconName)) then
+          begin
+            WillLoadIco := True;
+            NormFileName(IconName);
+          end
+          else if FileExists(FCurrentOS.Sys32 + '\' + IconName) then
+          begin
+            WillLoadIco := True;
+            IconName := FCurrentOS.Sys32 + '\' + IconName;
+          end
+          else if FileExists(FCurrentOS.Sys32 + '\' + IconName + '.exe') then
+          begin
+            WillLoadIco := True;
+            IconName := FCurrentOS.Sys32 + '\' + IconName + '.exe';
+          end
+          else
+          begin
+            WillLoadIco := False;
+                //IconName:=self data
+          end;
+        end
+        else
+          WillLoadIco := False;
+
+        if WillLoadIco and FLoadIcons then
+        begin
+          II := 0;
+          IiD := 2;
+          if FileExists(IconName) then
+          begin    {
           Icon:=ExtractAssociatedIconEx(hInstance, PChar(IconName), II, IiD);
           IconN:=TIcon.Create;
           IconN.Handle:=Icon;
@@ -577,203 +678,209 @@ begin
           Item.ImageIndex:=ListView.LargeImages.AddIcon(IconN);
           IconN.Free;  }
 
-          Item.ImageIndex:=GetFileIcon(IconName, is16, TImageList(ListView.SmallImages));
-          if Item.ImageIndex < 0 then Item.ImageIndex:=DI;
-         end;
-       end;
-     except
-      Log(['Ошибка чтения данных записи реестра:', Roll.CurrentPath, GetLastError]);
-     end;
-     if Pos('microsoft', AnsiLowerCase(PubStr)) <> 0 then Item.GroupID:=MSGr;
-     try
-      Item.SubItems[VERSI]:=ReadString('DisplayVersion');
-     except
-      begin
-       Item.SubItems[VERSI]:=LangText(53, 'Неизвестно');
-       Log(['Данные о версии не получены', Roll.CurrentPath, GetLastError]);
+            Item.ImageIndex := GetFileIcon(IconName, is16, TImageList(ListView.SmallImages));
+            if Item.ImageIndex < 0 then
+              Item.ImageIndex := DI;
+          end;
+        end;
+      except
+        Log(['Ошибка чтения данных записи реестра:', Roll.CurrentPath, GetLastError]);
       end;
-     end;
+      if Pos('microsoft', AnsiLowerCase(PubStr)) <> 0 then
+        Item.GroupID := MSGr;
+      try
+        Item.SubItems[VERSI] := ReadString('DisplayVersion');
+      except
+        begin
+          Item.SubItems[VERSI] := LangText(53, 'Неизвестно');
+          Log(['Данные о версии не получены', Roll.CurrentPath, GetLastError]);
+        end;
+      end;
      //try ListItem.SubItems.Add(ReadString('Publisher')) except ListItem.SubItems.Add(LangText[53]) end;
      //Item.SubItems[UNISI]:=UnInstallPath;
 
-     if ValueExists('InstallDate') then
+      if ValueExists('InstallDate') then
       begin
-       if GetDataType('InstallDate') = rdString then
+        if GetDataType('InstallDate') = rdString then
         begin
-         Item.SubItems[SIDATE]:=FormatDateTime('c', InstallDateToNorm(ReadString('InstallDate'), GetFileDateChg(NormFileNameF(UnInstallPath))))
+          Item.SubItems[SIDATE] := FormatDateTime('c', InstallDateToNorm(ReadString('InstallDate'), GetFileDateChg(NormFileNameF(UnInstallPath))))
         end
       end
-     else
-      if FileExists(NormFileNameF(UnInstallPath)) then Item.SubItems[SIDATE]:=FormatDateTime('c', GetFileDateChg(NormFileNameF(UnInstallPath)));
-     if ValueExists('EstimatedSize') then
+      else if FileExists(NormFileNameF(UnInstallPath)) then
+        Item.SubItems[SIDATE] := FormatDateTime('c', GetFileDateChg(NormFileNameF(UnInstallPath)));
+      if ValueExists('EstimatedSize') then
       begin
-       SZ:=ReadInteger('EstimatedSize');
-       Item.SubItems[SISIZE]:=Format('%n МБ', [SZ / 1024]);
+        SZ := ReadInteger('EstimatedSize');
+        Item.SubItems[SISIZE] := Format('%n МБ', [SZ / 1024]);
       end;
-     Item.SubItems[UNISI]:=UnInstallPath;
-     Item.SubItems[REGSI]:=RootKeyToStr(RootKey)+'\'+RollPath+'\'+Ident;
+      Item.SubItems[UNISI] := UnInstallPath;
+      Item.SubItems[REGSI] := RootKeyToStr(RootKey) + '\' + RollPath + '\' + Ident;
 
-     if ValueExists('InstallLocation') then
-      Item.SubItems[PATHSI]:=ReadString('InstallLocation')
-     else
-      if ValueExists('InstallPath') then
-       Item.SubItems[PATHSI]:=ReadString('InstallPath')
+      if ValueExists('InstallLocation') then
+        Item.SubItems[PATHSI] := ReadString('InstallLocation')
+      else if ValueExists('InstallPath') then
+        Item.SubItems[PATHSI] := ReadString('InstallPath')
+      else if ValueExists('DisplayIcon') then
+        Item.SubItems[PATHSI] := ExtractFilePath(NormFileNameF(ReadString('DisplayIcon')))
       else
-       if ValueExists('DisplayIcon') then
-        Item.SubItems[PATHSI]:=ExtractFilePath(NormFileNameF(ReadString('DisplayIcon')))
-       else
-         Item.SubItems[PATHSI]:=ExtractFilePath(UnInstallPath);
+        Item.SubItems[PATHSI] := ExtractFilePath(UnInstallPath);
 
-
-     Result:=True;
-     CloseKey;
+      Result := True;
+      CloseKey;
     end
-   else
+    else
     begin
-     Item.SubItems[REGSI]:=RootKeyToStr(RootKey)+'\'+RollPath+'\'+Ident;
-     Result:=False;
+      Item.SubItems[REGSI] := RootKeyToStr(RootKey) + '\' + RollPath + '\' + Ident;
+      Result := False;
     end;
    //Log([Item.Caption, '|', UnInstallPath, '|', RootKeyToStr(RootKey)+'\'+RollPath+'\'+Ident]);
   end;
 end;
 
-function TApplicationUnit.FGet:TGlobalState;
-var ListUninst: TStringList;
-    i:Integer;
-    R:Byte;
-    RollPath:string;
+function TApplicationUnit.FGet: TGlobalState;
+var
+  ListUninst: TStringList;
+  i: Integer;
+  R: Byte;
+  RollPath: string;
     //HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Installer\Products\7DC6881F37F9A714299EE7A00B0F0E99
 
 begin
- Inform(LangText(-1, 'Построение списка установленных программ и компонентов...'));
- Result:=gsProcess;
+  Inform(LangText(-1, 'Построение списка установленных программ и компонентов...'));
+  Result := gsProcess;
 
- if Assigned(ListView.SmallImages) then ListView.SmallImages.Free;
- if Assigned(ListView.LargeImages) then ListView.LargeImages.Free;
+  if Assigned(ListView.SmallImages) then
+    ListView.SmallImages.Free;
+  if Assigned(ListView.LargeImages) then
+    ListView.LargeImages.Free;
 
- ListView.SmallImages:=TImageList.CreateSize(16, 16);
- ListView.SmallImages.ColorDepth:=cd32Bit;
- ListView.LargeImages:=TImageList.CreateSize(16, 16);
- ListView.LargeImages.ColorDepth:=cd32Bit;
+  ListView.SmallImages.Clear;
+  ListView.LargeImages.Clear;
 
- if not Assigned(DisableIcon) then DI:=-1 else
+  if not Assigned(DisableIcon) then
+    DI := -1
+  else
   begin
-   DI:=ListView.SmallImages.AddIcon(DisableIcon);
-       ListView.LargeImages.AddIcon(DisableIcon);
+    DI := ListView.SmallImages.AddIcon(DisableIcon);
+    ListView.LargeImages.AddIcon(DisableIcon);
   end;
 
- ListUninst:=TStringList.Create;
- Roll.RootKey:=HKEY_LOCAL_MACHINE;
- Roll.OpenKey('SOFTWARE\Classes\Installer\Products', False);
- Roll.GetKeyNames(ListInstalls);
- Roll.CloseKey;
- ListView.Items.BeginUpdate;
- ListView.Items.Clear;
- ListView.GroupView:=FGrouping;
- MSGr:=ListView.Groups.Count - 1;
- for R:= 0 to 3 do
-  with Roll, ListView.Items do
-   begin
-    if Stopping then
-     begin
-      Log(['Построение списка установленных программ и компонентов прервано', GetLastError]);
-      Exit(gsStopped);
-     end;
-    case R of
-     0:
+  ListUninst := TStringList.Create;
+  Roll.RootKey := HKEY_LOCAL_MACHINE;
+  Roll.OpenKey('SOFTWARE\Classes\Installer\Products', False);
+  Roll.GetKeyNames(ListInstalls);
+  Roll.CloseKey;
+  ListView.Items.BeginUpdate;
+  ListView.Items.Clear;
+  ListView.GroupView := FGrouping;
+  MSGr := ListView.Groups.Count - 1;
+  for R := 0 to 3 do
+    with Roll, ListView.Items do
+    begin
+      if Stopping then
       begin
-       RootKey:=HKEY_LOCAL_MACHINE;
-       RollPath:='Software\Microsoft\Windows\CurrentVersion\Uninstall';
+        Log(['Построение списка установленных программ и компонентов прервано', GetLastError]);
+        Exit(gsStopped);
       end;
-     1:
-      begin
-       RootKey:=HKEY_LOCAL_MACHINE;
-       RollPath:='Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall';
+      case R of
+        0:
+          begin
+            RootKey := HKEY_LOCAL_MACHINE;
+            RollPath := 'Software\Microsoft\Windows\CurrentVersion\Uninstall';
+          end;
+        1:
+          begin
+            RootKey := HKEY_LOCAL_MACHINE;
+            RollPath := 'Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall';
+          end;
+        2:
+          begin
+            RootKey := HKEY_CURRENT_USER;
+            RollPath := 'Software\Microsoft\Windows\CurrentVersion\Uninstall';
+          end;
+        3:
+          begin
+            RootKey := HKEY_CURRENT_USER;
+            RollPath := 'Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall';
+          end;
       end;
-     2:
+      if (Info.Bits = x64) and (AppBits <> x64) and ((R = 1) or (R = 3)) and (not SmartHandler.NowWowRedirection) then
       begin
-       RootKey:=HKEY_CURRENT_USER;
-       RollPath:='Software\Microsoft\Windows\CurrentVersion\Uninstall';
+        Log(['Пропущен раздел реестра', RootKeyToStr(RootKey), RollPath, 'т.к. разрядность программы не соответствует разрядности ОС', Ord(AppBits), Ord(Info.Bits)]);
+        Continue;
       end;
-     3:
+      if not KeyExists(RollPath) then
       begin
-       RootKey:=HKEY_CURRENT_USER;
-       RollPath:='Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall';
+        Log(['Пропущен раздел реестра', RootKeyToStr(RootKey), RollPath, 'т.к. ветка не существует', Ord(AppBits), Ord(Info.Bits)]);
+        Continue;
       end;
-    end;
-    if (Info.Bits = x64) and (AppBits <> x64) and ((R = 1) or (R = 3)) and (not SmartHandler.NowWowRedirection) then
-     begin
-      Log(['Пропущен раздел реестра', RootKeyToStr(RootKey), RollPath, 'т.к. разрядность программы не соответствует разрядности ОС', Ord(AppBits), Ord(Info.Bits)]);
-      Continue;
-     end;
-    if not KeyExists(RollPath) then
-     begin
-      Log(['Пропущен раздел реестра', RootKeyToStr(RootKey), RollPath, 'т.к. ветка не существует', Ord(AppBits), Ord(Info.Bits)]);
-      Continue;
-     end;
-    if not OpenKey(RollPath, False) then
-     begin
-      Log(['Пропущен раздел реестра', RootKeyToStr(RootKey), RollPath, 'Не удалось открыть ветку.', Ord(AppBits), Ord(Info.Bits)]);
-      Continue;
-     end;
-    GetKeyNames(ListUninst);
-    CloseKey;
-    if ListUninst.Count > 0 then
-     for i:=0 to ListUninst.Count-1 do
+      if not OpenKey(RollPath, False) then
       begin
-       GetUninstallInfo(Roll, Roll.RootKey, RollPath, ListUninst[i], Add);
-       OnChanged;
-       if Stopping then
+        Log(['Пропущен раздел реестра', RootKeyToStr(RootKey), RollPath, 'Не удалось открыть ветку.', Ord(AppBits), Ord(Info.Bits)]);
+        Continue;
+      end;
+      GetKeyNames(ListUninst);
+      CloseKey;
+      if ListUninst.Count > 0 then
+        for i := 0 to ListUninst.Count - 1 do
         begin
-         ListUninst.Free;
-         Log(['Построение списка установленных программ и компонентов прервано.', GetLastError]);
-         Exit(gsStopped);
-        end;
-      end
-    else Log(['Пропущен раздел реестра', RollPath, 'т.к. нет элементов в ветке', Ord(AppBits), Ord(Info.Bits)]);
-   end;
- ListUninst.Free;
- OnChanged;
- Inform('Построение списка установленных программ и компонентов завершено.');
- try
-  Result:=gsFinished;
- except
-  Exit;
- end;
+          GetUninstallInfo(Roll, Roll.RootKey, RollPath, ListUninst[i], Add);
+          OnChanged;
+          if Stopping then
+          begin
+            ListUninst.Free;
+            Log(['Построение списка установленных программ и компонентов прервано.', GetLastError]);
+            Exit(gsStopped);
+          end;
+        end
+      else
+        Log(['Пропущен раздел реестра', RollPath, 'т.к. нет элементов в ветке', Ord(AppBits), Ord(Info.Bits)]);
+    end;
+  ListUninst.Free;
+  OnChanged;
+  Inform('Построение списка установленных программ и компонентов завершено.');
+  try
+    Result := gsFinished;
+  except
+    Exit;
+  end;
 end;
 
 procedure TFormApp.ButtonCloseClick(Sender: TObject);
 begin
- Close;
+  Close;
 end;
 
 procedure TFormApp.ButtonDelRKEYClick(Sender: TObject);
-var Row:string;
+var
+  Row: string;
 begin
- if MessageBox(Application.Handle, 'Вы уверены, что хотите удалить элемент из списка?', 'Внимание', MB_ICONINFORMATION or MB_YESNO) <> ID_YES then Exit;
+  if MessageBox(Application.Handle, 'Вы уверены, что хотите удалить элемент из списка?', 'Внимание', MB_ICONINFORMATION or MB_YESNO) <> ID_YES then
+    Exit;
 
- Row:=ValueListEditor1.Values[RKEYName];
- if Row.Length <= 0 then
+  Row := ValueListEditor1.Values[RKEYName];
+  if Row.Length <= 0 then
   begin
-   if not InputQuery('Небольшая ошибка', 'Пожалуйста укажите ключ самостоятельно:', Row) then
-    Exit
-   else if Row.Length <= 0 then Exit;
+    if not InputQuery('Небольшая ошибка', 'Пожалуйста укажите ключ самостоятельно:', Row) then
+      Exit
+    else if Row.Length <= 0 then
+      Exit;
   end;
 
- if FLastApp.DeleteRollKey(Row) then
+  if FLastApp.DeleteRollKey(Row) then
   begin
-   ShowMessage('Элемент успешно удалён из реестра.');
-   Close;
+    ShowMessage('Элемент успешно удалён из реестра.');
+    Close;
   end;
 
 end;
 
-procedure TFormApp.FormKeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
+procedure TFormApp.FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
- case Key of
-  VK_ESCAPE: Close;
- end;
+  case Key of
+    VK_ESCAPE:
+      Close;
+  end;
 end;
 
 {
@@ -877,3 +984,4 @@ begin
 end;}
 
 end.
+
