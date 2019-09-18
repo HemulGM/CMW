@@ -1091,7 +1091,8 @@ begin
   MySLink := MyObject as IShellLink;
   MyPFile.Load(PWideChar(LinkFileName), STGM_READ);
   MySLink.GetPath(Buff, MAX_PATH, FileInfo, SLGP_UNCPRIORITY);
-  FreeAndNil(MyObject);
+
+  //FreeAndNil(MyObject);
   Result := Buff;
 end;
 

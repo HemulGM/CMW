@@ -456,7 +456,7 @@ begin
             Result := gsStopped;
             Break;
           end;
-          if ExtractFileExt(ListAutoRun[j]) = '.ini' then
+          if LowerCase(ExtractFileExt(ListAutoRun[j])) = '.ini' then
           begin
             Log(['Лишний файл в каталоге АЗ, пропущен', ListAutoRun[j], GetLastError]);
             Continue;
@@ -539,7 +539,7 @@ end;
 destructor TAutorunUnit.Destroy;
 begin
   Clear;
-  if Assigned(FListView) then
+  if Assigned(FListView) and Assigned(FListView.SmallImages) then
   begin
     FListView.SmallImages.Free;
   end;

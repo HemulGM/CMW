@@ -32,7 +32,7 @@ object FormMain: TFormMain
     Top = 120
     Width = 1025
     Height = 470
-    ActivePage = TabSheetBSOD
+    ActivePage = TabSheetAutoruns
     Align = alClient
     ParentShowHint = False
     ShowHint = False
@@ -44,10 +44,6 @@ object FormMain: TFormMain
     object TabSheetAutoruns: TTabSheet
       Caption = 'Autoruns'
       ImageIndex = 4
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel3: TPanel
         Left = 0
         Top = 385
@@ -70,25 +66,27 @@ object FormMain: TFormMain
             AlignWithMargins = True
             Left = 3
             Top = 22
-            Width = 111
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
             OnClick = Label21Click
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 111
           end
           object Label22: TLabel
             AlignWithMargins = True
             Left = 3
             Top = 41
-            Width = 94
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
             OnClick = ActionAutorunExecute
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 94
           end
           object LabelCountAutorun: TLabel
             AlignWithMargins = True
@@ -503,10 +501,6 @@ object FormMain: TFormMain
     object TabSheetEvents: TTabSheet
       Caption = 'Events'
       ImageIndex = 5
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewEvents: TListView
         Left = 0
         Top = 0
@@ -574,13 +568,14 @@ object FormMain: TFormMain
             AlignWithMargins = True
             Left = 3
             Top = 22
-            Width = 94
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
             OnClick = ActionEventsExecute
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 94
           end
           object LabelCountEvent: TLabel
             AlignWithMargins = True
@@ -601,10 +596,6 @@ object FormMain: TFormMain
     object TabSheetSheduler: TTabSheet
       Caption = 'Sheduler'
       ImageIndex = 6
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewSchedule: TListView
         Left = 0
         Top = 0
@@ -664,13 +655,14 @@ object FormMain: TFormMain
             AlignWithMargins = True
             Left = 3
             Top = 41
-            Width = 94
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
             OnClick = ActionScheduleExecute
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 94
           end
           object LabelCountTask: TLabel
             AlignWithMargins = True
@@ -689,13 +681,14 @@ object FormMain: TFormMain
             AlignWithMargins = True
             Left = 3
             Top = 22
-            Width = 129
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1054#1090#1082#1083#1102#1095#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
             OnClick = LabelOffAllSchClick
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 129
           end
         end
       end
@@ -903,10 +896,6 @@ object FormMain: TFormMain
     object TabSheetWinApps: TTabSheet
       Caption = 'Apps'
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PanelCtrlApps: TPanel
         Left = 0
         Top = 385
@@ -978,25 +967,27 @@ object FormMain: TFormMain
             AlignWithMargins = True
             Left = 3
             Top = 22
-            Width = 111
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
             OnClick = LabelDelSelectClick
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 111
           end
           object LabelRefreshWinApps: TLabel
             AlignWithMargins = True
             Left = 3
             Top = 41
-            Width = 94
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
             OnClick = ActionWinAppsExecute
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 94
           end
         end
       end
@@ -1077,10 +1068,6 @@ object FormMain: TFormMain
     object TabSheetTweaks: TTabSheet
       Caption = 'Tweaks'
       ImageIndex = 10
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewTweaks: TListView
         Left = 0
         Top = 0
@@ -1166,25 +1153,27 @@ object FormMain: TFormMain
             AlignWithMargins = True
             Left = 3
             Top = 22
-            Width = 127
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1047#1072#1074#1077#1088#1096#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
             OnClick = ActionProcStopSelExecute
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 127
           end
           object Label28: TLabel
             AlignWithMargins = True
             Left = 3
             Top = 41
-            Width = 94
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
             OnClick = ActionProcessesExecute
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 94
           end
           object LabelCountProc: TLabel
             AlignWithMargins = True
@@ -1389,10 +1378,6 @@ object FormMain: TFormMain
     object TabSheetServices: TTabSheet
       Caption = #1057#1083#1091#1078#1073#1099
       ImageIndex = 11
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewSrvs: TListView
         Left = 0
         Top = 0
@@ -1457,13 +1442,14 @@ object FormMain: TFormMain
             AlignWithMargins = True
             Left = 3
             Top = 22
-            Width = 94
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
             OnClick = ActionSrvsExecute
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 94
           end
           object LabelCountService: TLabel
             AlignWithMargins = True
@@ -1484,10 +1470,6 @@ object FormMain: TFormMain
     object TabSheetPorts: TTabSheet
       Caption = #1055#1086#1088#1090#1099
       ImageIndex = 12
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewPorts: TListView
         Left = 0
         Top = 0
@@ -1556,10 +1538,6 @@ object FormMain: TFormMain
     object TabSheetHDD: TTabSheet
       Caption = 'HDD'
       ImageIndex = 13
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object ListViewHDD: TListView
         Left = 0
         Top = 0
@@ -1614,13 +1592,14 @@ object FormMain: TFormMain
             AlignWithMargins = True
             Left = 3
             Top = 22
-            Width = 94
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
             OnClick = ActionHDDExecute
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 94
           end
         end
       end
@@ -1628,10 +1607,6 @@ object FormMain: TFormMain
     object TabSheetHelper: TTabSheet
       Caption = 'Helper'
       ImageIndex = 14
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GridPanel3: TGridPanel
         Left = 0
         Top = 0
@@ -1691,10 +1666,6 @@ object FormMain: TFormMain
     object TabSheetFireWall: TTabSheet
       Caption = #1041#1088#1072#1085#1076#1084#1072#1091#1101#1088
       ImageIndex = 15
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Panel9: TPanel
         Left = 0
         Top = 385
@@ -1730,25 +1701,27 @@ object FormMain: TFormMain
             AlignWithMargins = True
             Left = 3
             Top = 22
-            Width = 111
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1059#1076#1072#1083#1080#1090#1100' '#1074#1099#1076#1077#1083#1077#1085#1085#1099#1077
             Enabled = False
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 111
           end
           object Label38: TLabel
             AlignWithMargins = True
             Left = 3
             Top = 41
-            Width = 94
+            Width = 179
             Height = 13
             Align = alTop
             Caption = #1054#1073#1085#1086#1074#1080#1090#1100' '#1089#1087#1080#1089#1086#1082
             OnClick = ActionFirewallRulesExecute
             OnMouseEnter = LabelMouseEnter
             OnMouseLeave = LabelMouseLeave
+            ExplicitWidth = 94
           end
         end
       end
@@ -2524,10 +2497,6 @@ object FormMain: TFormMain
           Caption = #1071#1097#1080#1082
           ImageIndex = 1
           TabVisible = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Shape9: TShape
             AlignWithMargins = True
             Left = 1011
@@ -3246,10 +3215,6 @@ object FormMain: TFormMain
           Caption = #1063#1077#1088#1090#1105#1078
           ImageIndex = 2
           TabVisible = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Shape12: TShape
             AlignWithMargins = True
             Left = 894
@@ -4218,10 +4183,6 @@ object FormMain: TFormMain
           Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
           ImageIndex = 4
           TabVisible = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Shape23: TShape
             AlignWithMargins = True
             Left = 473
@@ -5157,10 +5118,6 @@ object FormMain: TFormMain
           Caption = 'TabSheetMenuHelp'
           ImageIndex = 6
           TabVisible = False
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
           object Shape21: TShape
             AlignWithMargins = True
             Left = 406
@@ -5427,7 +5384,7 @@ object FormMain: TFormMain
     Left = 373
     Top = 327
     Bitmap = {
-      494C01012900D000880520002000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
+      494C01012900D0008C0520002000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
       00000000000036000000280000008000000060010000010020000000000000C0
       020000000000000000000000000000000000008500FF008300FF008100FF0070
       00FF006D00FF006B00FF006B00FF006900FF005F00FF005E00FF005D00FF005B
@@ -11074,7 +11031,7 @@ object FormMain: TFormMain
     Left = 742
     Top = 287
     Bitmap = {
-      494C01012700B800200510001000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
+      494C01012700B800240510001000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000040000000A0000000010020000000000000A0
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -12984,7 +12941,7 @@ object FormMain: TFormMain
     Left = 371
     Top = 247
     Bitmap = {
-      494C010111001800A00230003000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010111001800A40230003000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C0000000F0000000010020000000000000D0
       0200000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -18938,7 +18895,7 @@ object FormMain: TFormMain
     Left = 791
     Top = 238
     Bitmap = {
-      494C01011A002800A00220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C01011A002800A40220002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000E0000000010020000000000000C0
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -22657,7 +22614,7 @@ object FormMain: TFormMain
     Left = 644
     Top = 287
     Bitmap = {
-      494C01010C0078023C0510001000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
+      494C01010C007802400510001000FFFFFFFF2000FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -23203,7 +23160,7 @@ object FormMain: TFormMain
     Left = 742
     Top = 238
     Bitmap = {
-      494C010110001800500232003200FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010110001800540232003200FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000C8000000FA0000000100200000000000400D
       0300000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -29683,7 +29640,7 @@ object FormMain: TFormMain
     Left = 791
     Top = 287
     Bitmap = {
-      494C0101050008004C0210001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010105000800500210001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000002000000001002000000000000020
       0000000000000000000000000000000000002D2A2A60625B5BCE797171FF7971
       71FF797171FF797171FF797171FF797171FF797171FF797171FF797171FF7971
@@ -29975,7 +29932,7 @@ object FormMain: TFormMain
     Left = 505
     Top = 239
     Bitmap = {
-      494C010101001800740110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010101001800780110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -30119,7 +30076,7 @@ object FormMain: TFormMain
     Left = 501
     Top = 327
     Bitmap = {
-      494C010129008801680110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C0101290088016C0110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000040000000B0000000010020000000000000B0
       000000000000000000000000000000000000009700FF00A300FF008900FF009C
       00FF009600FF007D00FF009100FF007600FF0026009E00000020000000090000

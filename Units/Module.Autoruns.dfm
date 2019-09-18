@@ -41,9 +41,6 @@ object FormAutorun: TFormAutorun
     ReadOnly = True
     TabOrder = 0
     Text = 'EditDisplayName'
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitWidth = 475
   end
   object Panel1: TPanel
     Left = 0
@@ -92,10 +89,11 @@ object FormAutorun: TFormAutorun
     end
   end
   object ValueListEditor1: TValueListEditor
-    Left = 0
-    Top = 35
-    Width = 491
-    Height = 269
+    AlignWithMargins = True
+    Left = 3
+    Top = 38
+    Width = 485
+    Height = 263
     Align = alClient
     BorderStyle = bsNone
     DefaultColWidth = 130
@@ -110,10 +108,13 @@ object FormAutorun: TFormAutorun
     TitleCaptions.Strings = (
       #1055#1072#1088#1072#1084#1077#1090#1088
       #1047#1085#1072#1095#1077#1085#1080#1077)
-    ExplicitHeight = 258
+    ExplicitLeft = 0
+    ExplicitTop = 35
+    ExplicitWidth = 491
+    ExplicitHeight = 269
     ColWidths = (
       130
-      359)
+      353)
     RowHeights = (
       18)
   end
