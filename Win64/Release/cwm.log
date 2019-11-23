@@ -36,3 +36,8 @@
 07.09.2019 18:37:42: mon init 
 11.09.2019 10:39:25: Каталог пользователей C:\Users 
 11.09.2019 10:39:29: mon init 
+12.10.2019 13:35:44: Каталог пользователей C:\Users 
+12.10.2019 13:35:47: mon init 
+12.10.2019 13:36:26: Пропущен раздел реестра HKCU Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall т.к. ветка не существует 1 1 
+12.10.2019 13:37:20: ILCreateFromPath(PChar(FileName)) = nil. FileName= \"C:\Program Files\InstallShield Installation Information\{D0087539-3C57-44E0-BEE7-D779D546CBE1}\Sims3SP09Setup.exe\" -runfromtemp -l0x0019 -removeonly 
+12.10.2019 13:37:30: Не смог создать процесс: \"C:\Program Files\InstallShield Installation Information\{D0087539-3C57-44E0-BEE7-D779D546CBE1}\Sims3SP09Setup.exe\" -runfromtemp -l0x0019 -removeonly 0  Ошибка: 2 
